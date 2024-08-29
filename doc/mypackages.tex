@@ -1,0 +1,62 @@
+\usepackage{amsmath,amssymb}
+\usepackage[upgrade=true]{acro}
+\usepackage{url}
+\usepackage[hidelinks]{hyperref} %hidelinks because I don't like those colored boxes
+
+% biblatex tells me to load inputenc before biblatex
+\usepackage[utf8]{inputenc}
+
+% Different options for using natbib:
+%. \usepackage[round]{natbib}
+%. \bibliographystyle{rusnat}
+%. \bibliographystyle{humannat}
+%. \bibliographystyle{apa}
+% Apparently, APA is better implemented in apacite:
+%. \usepackage[natbibapa]{apacite}
+%. \bibliographystyle{apacite}
+% Apparently, the most recent APA is even better implemented in biblatex:
+% Use natbib=true to have all natbib commands available
+%.\usepackage[style=authoryear,natbib=true]{biblatex}
+\usepackage[style=apa,natbib=true]{biblatex}
+% Zotero writes 'Extra' field to 'notes'.
+% Here, I remove 'notes':
+\DeclareSourcemap{
+  \maps[datatype=bibtex, overwrite=true]{
+    \map{
+      % \perdatasource[Caritas_ZHAW_biblatex.bib]
+      % \pertype[article]
+      \step[fieldset=note, null]
+    }
+  }
+}
+
+\usepackage{wasysym}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{listings}
+\usepackage{siunitx}
+\usepackage{rotating}
+\usepackage{xcolor}             % for use of \textcolor{}{} and \textcolor[rgb]{}{}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+%% \usepackage{fourier} % or {libertine} or {lmodern, textcomp} {kpfonts}
+%% -> all can render €
+%% %\usepackage{tgpagella} % also nice but no €
+\usepackage[title]{appendix}
+
+% \usepackage[tt=false]{libertine}
+\usepackage{libertinus}
+\usepackage[T1]{fontenc}
+%\usepackage[scaled=0.85]{beramono}
+
+%%% whatch out: pdfcprot seems to conflict with some other package via newcommand ifpdftex
+%\usepackage[activate=normal]{pdfcprot}
+
+% I like this one: it makes hyperlinks out of DOIs
+\usepackage{doi}
+% Natbib writes 'doi:', the doi package does not have to do this as well
+\renewcommand{\doitext}{}

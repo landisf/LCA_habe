@@ -1,0 +1,129 @@
+\documentclass[a4paper,11pt]{article}
+
+% \usepackage{amsmath,amssymb,graphicx,url,acro}
+% \usepackage[utf8]{inputenc}
+% \usepackage{natbib, usebib}
+% \usepackage{libertine}
+% \usepackage{hyperref}
+\input{mypackages}
+\input{myacronyms}
+\input{mycommands}
+
+\author{Florian Landis\footnote{E-mail: ladi@zhaw.ch}}
+\title{Distribution across households of consumption based responsibility for GWP}
+\date{}
+
+% \newcommand{\der}[2]{\frac{\partial #1}{\partial #2}}
+
+% \newbibfield{title}
+% \bibinput{capital_depreciation}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+  Let's list what's happening.
+\end{abstract}
+
+\section{Global warming potential}
+\label{sec:gwp}
+
+\ac{gwp} is a measure of how much global warming is caused by the emissions related to the production, consumption, and disposal of consumption goods.
+\ac{gwp} is determined using methods of \ac{lca}.
+
+\section{Distribution of \ac{gwp} across households}
+\label{sec:dist}
+
+Different households have different purchasing power.
+Here we sort households into deciles according to their equivalent lifetime income\footnote{
+  \emph{Equivalent} income is a measure of household income that takes in to account that household members living in the same household can achieve the same per capita utility of consumption with spending less than if each household members were living on their own.
+  Different measures of equivalent income exist.
+  We use the definition $EI=\sqrt{s}I$, where $s$ denotes to size of the household and $I$ its nominal income.
+}, where lifetime income is approximated by current spending.\footnote{
+  \emph{Lifetime} income is used as a measure of how well-off a given household is.
+  During different stages of a consumer's life, \emph{current} income may be quite different from average annual lifetime income (consider, e.g., years of formation or retirement).
+  To the extent that households are aware of their approximate level of lifetime income, they will make use of saving and credits to smooth their consumption over time.
+  Thus, their current expenditure must be regarded as a better proxy of their lifetime income than their current income.
+}
+Per-capita \acl{eli} $ELI_h$ of household $h$ is defined as
+\begin{align*}
+  ELI_h = \frac{E_h}{\sqrt{s_h}},
+\end{align*}
+where $s_h$ is household size and $E_h$ are current consumption expenditures of household $h$.
+When we sort Swiss households into deciles by \ac{eli}, Figure \ref{fig:eli} shows how \ac{eli} is distributed within and across deciles.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/eqexp_boxed.pdf}
+  \caption{\ac{eli} per decile as whisker plot.}
+  \label{fig:eli}
+\end{figure}
+
+The (per-capita) \ac{gwp} in a given household is determined as the product of the level of (per-capita) expenditure and the emissions intensity of consumption.
+Figure \ref{fig:int} shows the emissions intensity of consumption for households in the ten deciles.
+We see that, on average, the consumption of lower income households exhibits higher emissions intensity than the consumption of households of high income households.
+In addition to that, also the spread of emissions intensities within the decile is larger for low-income households than in the high-income deciles.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/gwp_chf_boxed.pdf}
+  \caption[Emissions intensities across deciles]{Emissions intensities of different households' consumption within and across deciles of equivalent lifetime income.}
+  \label{fig:int}
+\end{figure}
+
+This has as a consequence that the inequality across deciles in mean per-capita expenditure is dampened when we consider across-decile inequality of per capita \ac{gwp}.
+This is illustrated in Figure \ref{fig:exp_gwp}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=0.49\textwidth]{../figures/pcexp_boxed.pdf}
+  \includegraphics[width=0.49\textwidth]{../figures/gwp_boxed.pdf}
+  \caption[Expenditures and \ac{gwp}]{Per-capita expenditure (left panel) and per-capita \ac{gwp} (right panel) within and across deciles. }
+  \label{fig:exp_gwp}
+\end{figure}
+
+\clearpage
+\subsection{\ac{gwp} by category}
+\label{sec:cats}
+
+Figure \ref{fig:gwp_cat} shows how mean per-capita \ac{gwp} is composed of different consumption categories.
+We see that the main contributers to \ac{gwp} across deciles are ``food and drink'', ``utilities'' (including heating and electricity), ``private transport'' (with the main component of gasoline and diesel consumption), and ``electronic equipment''.
+Consumption categories that only start to become relevant for more affluent households include restauration and lodging, clothing and footwear, furniture and household equipment, hobbies, holidays, and education.
+To some extent this also reflects that expenditures is not a perfect measure of lifetime income and households in different deciles are of different age (?).
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics[width=\textwidth]{../figures/gwp_cat.pdf}
+  \caption[\ac{gwp} per decile]{
+    Per capita \ac{gwp} from consumption across expenditure deciles.
+  }
+  \label{fig:gwp_cat}
+\end{figure}
+
+\section{Exposure to policies}
+\label{policies}
+If policies make utility bills more expensive\ldots
+For a discussion about CBAMs in CH (CO$_2$-Grenzausgleich), see \href{https://www.seco.admin.ch/seco/de/home/wirtschaftslage---wirtschaftspolitik/wirtschaftspolitik/Wachstumpolitik/cbam_co2_grenzausgleichsmechanismus.html}{SECO}\footnote{
+  \url{https://www.seco.admin.ch/seco/de/home/wirtschaftslage---wirtschaftspolitik/wirtschaftspolitik/Wachstumpolitik/cbam_co2_grenzausgleichsmechanismus.html}
+}:
+EU does CBAM since October 2023, but Switzerland, for the time being, does not.
+
+\section{Caveats}
+\label{sec:caveats}
+
+\begin{itemize}
+\item We allocated GWP of IT infrastructure in proportion to owned devices.
+  But we don't know how frequently electronic devices are exchanged or how long they are used.
+This makes it hard to pinpoint annualized LCA for these devices.
+Alternatively, we could make the whole thing proportional to expenditures, but then, we would have te problem that units are undetermined.
+\item For travel passes, we know the expenditure, but we do not know the corresponding person kilometers travelled.
+  From the microcensus we can at least glean that household type is the main differentiating factor to determine person kilometers per CHF spent.
+  We thus distribute person kilometers in different transport modes across households of a given type according to spending on public transport\ldots
+\item Restauration is obviously difficult.
+  We follow Froemelt et al. in using it in proportion to expenditure.
+\item Household data is from 2015 to 2017.
+  More recent data is available but due to irregularities during the Corona crisis, it has not been aggregated across yearly waves to yield a large enough data set for a systematic analysis across different narrowly defined household types.
+  (Cite media communication of BFS?)
+\item I do not conduct a general equilibrium analysis and thus, our estimates of policy impacts only cover potential effects from more expensive consumer goos and their distributional effects, but not effects on income from labor, capital, or government transfers.
+\end{itemize}
+
+\end{document}

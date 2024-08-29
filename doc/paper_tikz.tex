@@ -1,0 +1,40 @@
+\documentclass[tikz]{standalone}
+
+\usepackage{graphicx}
+% \usepackage{tikz}
+
+\begin{document}
+% In paper.tex, \textwidth is 14.6979cm
+% Half of that is: 7.34895 cm
+\begin{tikzpicture}
+  \node[anchor=north,inner sep=0] at (7.34895cm,12cm) {
+    \includegraphics{../figures/gwp_chf_boxed.pdf}
+  };
+  \node[anchor=south west,inner sep=0] at (0,0) {
+    \includegraphics{../figures/gwp_chf_poor_boxed.pdf}
+  };
+  \node[anchor=south east,inner sep=0] at (14.6979cm,0) {
+    \includegraphics{../figures/gwp_chf_rich_boxed.pdf}
+  };
+  \draw[black,dashed,thick] (1.7cm,5.43cm)--(2.8cm,7.55cm);
+  \draw[black,dashed,thick] (4.5cm,5.43cm)--(3.8cm,7.55cm);
+  \draw[black,dashed,thick] (11.4cm,5.43cm)--(12.1cm,7.55cm);
+  \draw[black,dashed,thick] (14.2cm,5.43cm)--(13.1cm,7.55cm);
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node[anchor=north,inner sep=0] at (7.34895cm,12cm) {
+    \includegraphics{../figures/gwp_boxed.pdf}
+  };
+  \node[anchor=south west,inner sep=0] at (0,0) {
+    \includegraphics{../figures/gwp_poor_boxed.pdf}
+  };
+  \node[anchor=south east,inner sep=0] at (14.6979cm,0) {
+    \includegraphics{../figures/gwp_rich_boxed.pdf}
+  };
+  \draw[black,dashed,thick] (1.65cm,5.43cm)--(2.75cm,7.55cm);
+  \draw[black,dashed,thick] (4.5cm,5.43cm)--(3.65cm,7.55cm);
+  \draw[black,dashed,thick] (11.35cm,5.43cm)--(12.15cm,7.55cm);
+  \draw[black,dashed,thick] (14.2cm,5.43cm)--(13.05cm,7.55cm);
+\end{tikzpicture}
+\end{document}

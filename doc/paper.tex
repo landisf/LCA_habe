@@ -1,0 +1,1081 @@
+\documentclass[a4paper,11pt,abstract=true]{scrartcl}
+
+\usepackage{layouts}
+\input{mypackages}
+\input{myacronyms}
+\input{mycommands}
+
+\author{Florian Landis\thanks{%
+    ZHAW School of Management and Law, Center for Energy and the Environment, \\
+    Gertrudstrasse 8, 8000 Winterthur, \\
+    \href{mailto:florian.landis@zhaw.ch}{florian.landis@zhaw.ch}}
+}
+
+\title{Distributional Impacts of Swiss Climate Policy\thanks{%
+  I acknowledge financial support for this study by Caritas Schweiz and \ac{sgg}.
+  I am thankful for comments and suggestions from Aline Masé, Ingmar Schlecht, and Paula Castro.
+  The views expressed in this report are my own.
+}}
+\date{}
+
+\bibliography{Caritas_ZHAW_biblatex}
+
+\begin{document}
+
+\maketitle
+\begin{abstract}
+  Different consumption patterns have been linked to different levels of responsibility for current \ac{ghg} emissions and it is well established that the affluent are responsible for higher levels of global \ac{ghg} emission than are the poor.
+%  This holds for comparisons between countries across the globe as well as for comparisons between different household types within countries.
+  Here I couple a \acl{lca} of consumer goods with household survey data about consumption patterns to arrive at household level responsibility for global \ac{ghg} emissions {by consumption category}.
+  This allows me to provide a detailed analysis of how different consumption categories contribute to this responsibility.
+  From this, I offer some insights into how this information can be used for the design of policies that create equitable outcomes.
+
+  I conclude that the distributional impacts of \ac{ghg} pricing with revenue recycling will remain unproblematic as climate policy continues to cover more \ac{ghg}s from more regions.
+  If it is desired that high-income households make a bigger contribution to the emissions reduction effort than others, focusing climate policy on transport (high confidence), eating out, and clothing (both with lower confidence) may provide avenues for achieving that.
+  This is the case, since responsibility for \ac{ghg} emissions from these consumption categories increases faster with income than it does for other goods.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+
+The distribution of consumption based responsibility for climate change of different parts of the population has recently gained increased attention.
+Analyses of this distribution can be used to gauge how important it is that different parts of the population partake in the decarbonization effort.
+The World Inequality Lab of the Paris School of Economics, e.g., observe that the rich part of the world are responsible for a share of global \ac{ghg} emissions that is disproportionate to their share of the global population.
+They make the argument that the additional emissions caused by lifting everybody above the poverty threshold of earning US\$ 5.5 per day, could be compensated by the top 10 percent of global emitters cutting their emissions by one third \citep{chancel_climate_2023}.
+Similar observations can be made within countries:
+The more affluent consume more and therefore are responsible for a higher share of global \ac{ghg} emissions than are low-income households.
+But apart from the general demand that high-income individuals contribute accordingly to the emissions reduction effort, little concrete policy advice has been deduced from these observations on the national level.
+With this paper I want to contribute to the discussion with a detailed analysis of consumption based responsibility for global \ac{ghg} emissions by Swiss households.
+
+Upon a closer look, two strands of the discussion around distributional issues can be identified.
+The first strand, happening more in the academic literature and finding its way into the policy discussions from there, focuses on exposure of households to costly climate policy.
+It finds that low-income households spend a larger fraction of their expenditure budget on energy and emissions-intensive goods than do high-income ones \citep[][,e.g., focuses on transport fuels]{sterner_distributional_2012}.
+This makes them more vulnerable to cost increases due to carbon pricing and requirements to adopt expensive technologies for emissions reductions, and such policies have to be expected to have regressive distributional effects.\footnote{%
+  A policy intervention is said to have a \emph{regressive} impact, if its net cost relative to income is higher for low-income households than it is for high-income ones.
+  The impacts are said to be \emph{progressive} if it's the high-income households that incur higher costs relative to income.
+}
+It has been well established that if climate policy is revenue raising, however, revenue can be redistributed to households (in a lump-sum per-capita fashion, e.g.) and that this revenue recycling is more than enough to compensate the regressive direct effects of carbon pricing and produce overall progressive effects.
+\citet{berry_distributional_2019} shows this in the case of France for different parts of household energy consumption.
+It has also been found that besides the direct income on household purchasing power through increasing prices, there are also indirect effects through changes in productivity of regulated sectors and thus changes (drops, usually) in wages and capital rents.
+Commonly such indirect effects are found to be skewing policy impacts further towards progressivity, since high-income households derive a higher share of income from wages and capital rents while low-income households' income is made up of a higher share of transfers
+\citep[see][for some examples]{rausch_distributional_2011, landis_efficient_2019, landis_between-_2021}.
+% \begin{itemize}
+  % \item \citet{sterner_distributional_2012} focuses on transport fuels; includes indirect price effects on other goods, but no behavioural responses.
+  %   Discusses different approaches, also with behavioural responses.
+  %   Does not consider rebates.
+  %   Finds some level of neutrality, regressivity in most the analyzed European countries, but progressivity for Serbia.
+  % \item \citet{landis_between-_2021} (CGE, a bit complicated); Figs. 5 and 6 decompose direct (uses-side), indirect effects (GE, labor market), and recycling.
+  %   Study for EU and realistic policy assumptions. Progressive outcomes throughout with recycling of revenues.
+  % \item \citet{berry_distributional_2019} (distinguishes transport and residential, explores recycling, determines minimum recycling for distributionally flatness according to one index, determines reductions of fuel poverty as a function of percent revenue rebating).
+% \end{itemize}
+
+The second strand, also originating in studies by academic institutions, focuses on responsibility for global warming through the consumption of different parts of the global population.
+%%%%%
+Several reports and studies explore the global and national inequalities related to this responsibility.
+On a global level Oxfam America's Climate Equality report \citep{khalfan_climate_2023} and the World Inequality Lab's Climate Inequality Report \citep{chancel_climate_2023}, provide insights as to how responsibility for global warming and wealth/income are correlated.
+They conclude that the bulk of the responsibility lies with the rich part of the world and that lifting the poorest out of poverty at the current \ac{ghg} intensity of consumption can easily be compensated by meaningful \ac{ghg} emissions reduction by the richest part of the population.
+\citet{chancel_climate_2023} present a similar analysis but also provide numbers for inequalities \emph{within} countries.
+They find similar patterns within countries as across the global population:
+The richest are responsible for far more global warming than their share in the population alone would justify.
+For Switzerland, Sotomo's Energiewende-Index \citep{stuckelberger_helion_2024} provides additional detail.
+Based on a consumer survey and the numbers from two \acs{co2} calculators, the report provides estimates of global warming caused by different parts of the population and it differentiates different consumption categories such as \emph{base level}, \emph{housing}, \emph{mobility} (subdivided into flying and driving), \emph{consumption}, and \emph{food}.\footnote{%
+  In German:
+``Grundverbrauch'', ``Wohnen'', ``Mobilität: Fahren'', ``Mobilität: Fliegen'', ``Konsum'', and ``Ernährung''.}
+% With respect to inequalities in responsibility for global warming, the study finds that \ac{ghg} emissions correlate with income and age but to a lesser extent with place of residence.
+% The focus of the study is on comparing actual emissions of households with their self-perception.
+%%%%
+As outlined in the first, introductory, paragraph, this type of analysis allows to make statements about responsibility-based obligations of different countries to contribute to the global effort of reducing \ac{ghg} emissions.
+This constitutes a valid input into international negotiations about climate policy, where different countries coordinate on national emissions reduction targets and set individual policies to reach them.\footnote{%
+Note that this measure of responsibility for \emph{concurrent} \ac{ghg} emissions competes with other measures like historic responsibility for determining which countries should exert which efforts for combating global warming.
+}
+But when differences in responsibility for global emissions are analysed for households within the same country, it is less clear what conclusions can be drawn from that.
+The fact that also within countries, high-income households are responsible for more global \ac{ghg} emissions than are households with low incomes has earned some media attention and the general sentiment is that it must be ensured that rich households do their fair share when it comes to emissions reductions.
+But do they do that already under typical proposals for climate policy?
+And if not, what are policy instruments to mend that?
+Without administrative borders between households of different income levels, it seems unlikely that policies will be differentiated by household income and the scope of designing national climate policies to target households of different income levels may be limited.
+
+% Both strands of the literature allow for an analysis of their first-order effects based on embodied carbon.
+% Exposure to costly climate policy is determined by embodied carbon (and equivalents from other \acp{ghg}) divided by total expenditure, while the responsibility for global warming is directly determined by embodied carbon.
+
+%At the same time, high \ac{ghg} emissions also mean potentially high exposure to climate policy:
+%Those who emit large amounts of \acp{ghg} are also those who have to change their consumption patterns the most if we want to reach net-zero emissions.
+
+In this paper I shed light on both these distributional aspects by analysing the \ac{gwp} associated with the \ac{ghg} emissions embodied in the consumption of different categories of goods across households of Switzerland.
+I exploit a data base of \ac{gwp} estimates for consumption goods used in \ac{habe}\footnote{%
+  Bundesamt für Statistik, Haushaltsbudgeterhebung (HABE) 2015--2017;\\
+  \ac{habe} is a survey of almost 10'000 households representative of the Swiss population by the \ac{fso}.
+}
+provided by \citet{jakobs_nfp73_2023} and couple it with the \ac{habe} data.
+By looking at \ac{gwp} \emph{per consumption good}, I can assess to what extent it may be possible to design climate policy to target goods that are consumed in particular by high income households or avoid other goods that are mainly consumed by low-income households.
+Comparing \ac{gwp} embodied in households' consumption patterns with their expenditure budgets, on the other hand, gives me a measure of their exposure to costly climate policy that encompasses all world regions and all \acp{ghg}.\footnote{%
+  The analysis is precise for a ``carbon'' price that applies globally and to all \acp{ghg}s according to their \ac{gwp} and for a situation where production processes and supply chains have not yet adjusted to the increased cost of emitting.
+  If other (globally uniform) policies are in place that make emitting activities more expensive, and as processes and supply chains adapt, my analysis loses in precision but I would claim that it is still indicative of general trends.
+}
+
+The contributions of this paper are twofold.
+First, it gives an overview over the extent to which policy makers can make sure that high-income households ``do their fair share''.
+I find that for some consumption categories such as transport fuels, clothing, spare time activities, and eating out in restaurants high-income households consume a larger share of the national total than for other categories.
+Policies that cause emissions reductions for these goods (and luxury versions of those goods in particular) can help ensure that high-income households participate in the emissions reduction effort to an appropriate degree.
+Second, the paper discusses exposure of different income classes to costly climate policy.
+In that respect, my analysis lacks rigour and realistic policy detail compared to previous studies of EU and Swiss climate policy \citep[e.g.,][]{landis_efficient_2019, landis_between-_2021} but I provide an outlook on how consumption patterns influence distributional outcomes if climate policy extends in scope both spatial and in terms of \ac{ghg} coverage.
+Fundamentally, distributional patterns can be expected to remain similar as for the current regulation that concentrates on national emissions of \ac{co2}, since comparing emissions intensity of consumption between high and low-income households looks qualitatively similar if we look at national \ac{co2} emissions or global emissions of all \acs{ghg}.
+If climate policy is carbon pricing, the per-capita lump-sum redistribution to households will produce overall progressive outcomes in the short  to medium term.\footnote{%
+  In the long term, all emissions should be avoided and no carbon pricing revenue will be available for redistribution.
+%  It is the hope of us all, that by then, the costs of green technologies have sunk to levell where they do not cause disproportionate distress to low-income househols, even those with elevated energy needs.
+}
+I find that including aviation, motor fuels, and transport emissions in general in the \ac{co2}-levy would make sense from the perspective of distributing direct policy impacts.
+In either case, I can also report that the revenue recycling mechanism of the \ac{co2}-levy guarantees progressive outcomes.
+
+In the following, Section~\ref{sec:dat_meth} describes the methodology and Section~\ref{sec:gwp} shows results for my analysis of inequalities in responsibility in climate change.
+Section~\ref{sec:climpol} discusses the possible implications of these findings for policy making.
+Section~\ref{sec:conclusion} summarizes my findings and concludes.
+\clearpage
+
+\section{Data and method}
+\label{sec:dat_meth}
+
+In determining \acp{gwp} related with the consumption of different households, I follow and build upon previous work by \citet{jakobs_nfp73_2023}  which in turn implement methodology developed and described by \citet{froemelt_using_2018}.
+The different types of data and processing steps that are needed to arrive at numbers for per-capita \ac{gwp} are described in the following and discussed in some more detail in~\ref{app:hhdata}.
+
+\subsection*{Data and data processing}
+I use survey data from the 2015--2017 \ac{habe},\footnote{%
+  Bundesamt für Statistik, Haushaltsbudgeterhebung (HABE) 2015--2017
+} which gives information about income and spending for 9955 households \citep[see][for more information]{oetliker_haushaltsbudgeterhebung_2022}.
+\ac{habe} gives monthly spending in \acp{chf} for a fine grained classification of consumption goods.
+In addition to values in \ac{chf} the survey records quantities purchased for food and beverages (in kg or litres) and for motor fuels (in litres).
+For several categories of vehicles,  white goods, and electronic equipment, the survey also establishes the number of items owned per household.
+
+\acp{gwp} of different consumption categories are given by \citet{jakobs_nfp73_2023}.
+\citeauthor{jakobs_nfp73_2023} combine \ac{lca} data from the data bases
+ecoinvent 3.3,\footnote{\url{https://support.ecoinvent.org/ecoinvent-version-3.3}}
+Agribalyse 1.2,\footnote{\url{https://doc.agribalyse.fr/documentation-en}} and
+% agribalyse relies on ecoinvent itself
+exiobase 2.2 \citep{wood_global_2015}\footnote{\url{https://www.exiobase.eu/}}
+to provide \acp{gwp} per \ac{habe} consumption category.
+\citet{froemelt_using_2018} provide a correspondence table of \ac{habe} consumption categories and the previously listed three \ac{lca} data bases in the supplementary material of their paper.
+For non-\ac{co2} \aclp{ghg}, \ac{gwp} has been determined according to the \ac{ipcc}'s 2021 methodology for calculating the warming equivalent to a given amount of \ac{co2} over a period of 100 years.
+This makes the unit for \acp{gwp} ``kg \ac{co2e}''.
+
+The \ac{gwp} data by \citet{jakobs_nfp73_2023} are expressly constructed for use with \ac{habe} data:
+The consumption categories of the two data sets match exactly and most \ac{gwp} factors can be multiplied by units of consumption (\ac{chf}, kg, litres, or number of devices owned) available in \ac{habe}.\footnote{%
+  \ac{gwp} are estimates rather than precise numbers and \citet{jakobs_nfp73_2023} provide mean, median, and standard deviation of the distribution of estimated \ac{gwp}.
+  For the purpose of this analysis, I use the mean estimates.
+}
+Where units do not match, the \ac{habe} data insufficiently relates to consumed physical quantities and additional calculations need to be made.
+Since energy goods like heating fuels are bound to make up a relevant part of households' \acp{gwp}, and since price differences across years and regions make spending in \ac{chf} an unreliable proxy for energy consumed, I convert \ac{chf} spent on fuels and electricity into energy consumed.  % (in \ac{mj}).
+For this, I take annual (and where possible regional) energy prices into account.
+For public transport, \ac{chf} spent on travel cards is a poor measure for distance travelled.
+To improve on \ac{habe}'s information that is given as spending in \ac{chf}, I employ data from the Mobility and Transport Microcensus \citep{biedermann_verkehrsverhalten_2017}.
+The micro-census is a survey conducted by the \ac{fso} asking Swiss residents about their mobility behaviour.
+I use km travelled on different modes of public transport for different household types from the micro-census and compare them with CHF spent according to \ac{habe} and derive a transport mode and household type specific conversion factor in km per CHF.
+
+%More detail about the data processing for matching \ac{gwp} and \ac{habe} data is found in~\ref{app:hhdata}.
+
+\subsection*{Categorizing households}
+To analyse which part of the Swiss population is responsible for how much \ac{gwp} through their consumption, the set of households in the data from the \ac{habe} survey can be partitioned into different groups.
+\ac{habe} records a diverse set of socio-economic indicators that describe the entire household or its representative or household head (i.e., the household member that makes the largest contribution to total household income).
+Indicators describe properties such as ``household size'', ``degree of urbanization'', ``ownership of residence'' and many more.
+An important dimension along which \ac{gwp} is discussed in the literature is income.
+In order to be able to control the size of the income groups I create my own partition into income quantiles. %\footnote{%
+%  The \ac{fso} provides a grouping of households into five income quintiles in \ac{habe}.
+% }
+To this end, I need to define an appropriate measure of income and order households according to it.
+I observe that current (annual or monthly) income may fluctuate for some households due to special circumstances which households can compensate through intertemporal consumption smoothing.
+I thus view current consumption expenditures as a more reliable measure of how well off households are (of their lifetime income) than current income.
+% This is in line with what other researchers have done: cite
+Assuming that income is shared equally within a household, total income not only needs to be divided by the size of the household (giving per-capita income), but it also needs to be considered that the purchased consumption goods (such as electronic devices, lighting, or room heat) are shared, and consumption is more efficient at generating consumer utility from a given amount of expenditure for big households than for small ones.
+The \ac{oecd} established a de facto standard for equivalence scales to compensate for this.
+This so-called ``modified \ac{oecd} equivalence scale''\footnote{%
+  See, e.g., \url{https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Glossary:Equivalised_income}
+} measures the first adult in a household with weight 1 and additional adults with weight 0.5 and additional children with weight 0.3.
+Dividing total household income with this equivalence scale gives equivalent income.
+
+Combining the above two considerations, I group households into income quantile groups\footnote{%
+  Quantile groups of (equivalent lifetime) income are constructed by ordering households according to income and grouping together those that are situated between quantiles of income.
+  For 10-quantiles, or deciles, this means that the first decile group corresponds to the 10 percent of the population with the lowest (equivalent lifetime) income (their income is between 0 and the first decile of income).
+  The second decile group comprises households with income between the first and second income decile, etc.
+  % Besides deciles, I consider quintiles (5-deciles) within deciles
+}
+by ordering them according to their ``equivalent lifetime income'' which is proxied by dividing current household expenditures by the equivalence scale.
+
+\clearpage
+
+\section{Responsibility for global warming}
+\label{sec:gwp}
+
+For the purpose of this study, a household's responsibility for global warming is determined by the \ac{ghg} emissions related to the production and consumption of goods and services consumed by household members.
+This includes emissions from all \acp{ghg} and emissions caused across the globe.
+%In order to make emissions of different \acp{ghg} comparable, they are expressed in terms of their \acf{gwp} over 100 years compared to \ac{co2}'s \ac{gwp}.
+This responsibility is established by considering \emph{current} annual consumption and thus accounts for \emph{current} \ac{ghg} emissions.\footnote{%
+  That is the emissions from this year or some recent year in which the consumption goods in question were produced.
+}
+My measure of responsibility therefore counts the contribution of consumers towards current global \ac{ghg} emissions, a number that needs to go to (net-)zero if we want to stop global warming at a level that is sustainable.
+%It should not be confused with other measures of responsibility that try to establish different populations' (usually countries') share in cumulative past emissions and thus their share in responsibility in the current level of global warming caused since the beginning of industrialization.
+%The latter responsibility for cumulative \emph{past} \ac{ghg} emissions is often used to argue that some countries have a higher moral duty than others to invest in fixing the problem of global warming or supporting countries with difficulties in decarbonizing their economy.
+%The herein considered responsibility for \emph{current} \ac{ghg} emissions is more suited for identifying those parts of the population that need to change their behaviour most urgently.
+This can inform policy making in two ways.
+First, policies must ensure that emissions from all parts of the population and all important categories of consumption are reduced.
+An account of what parts of the population contribute to global warming through which categories of consumption can help assess if current or proposed policies do a good job at this.
+% By prioritizing addressing the emissions of those parts of the population that have a high responsibility for current emissions and high capacity to change consumption behaviour,
+Second, policy frameworks should make sure that those who need to change their consumption patterns also have the means and incentives to do this.
+%By identifying those who need to make big changes in consumption patterns and assessing if they have the capacity and face the right incentives to do so, we can derive suggestions for better policy making.
+To this end, I show in the following how both \ac{gwp} per person and \ac{gwp} per CHF expenditure is distributed across different parts of the Swiss population as well as how different consumption categories contribute to the overall \ac{gwp}.
+
+% Unlike \cite{chancel_climate_2023}, I do not inlcude the responsibility for \ac{ghg} related to investment activities.
+
+\subsection{{GWP} for different households}
+
+For establishing the responsibility for global warming on a per-person basis, the \ac{gwp} from different consumption categories for a household are added up and divided by the number of persons in that household.
+By grouping households according to their socio-economic properties, averages for different household groups can be established and the typical \ac{gwp} can be compared across the groups.
+At the same time, heterogeneity within such groups turns out to be large, and therefore, this paper shows not only mean \ac{gwp} per population group but summarizes the distribution of observations within those groups using box plots.\footnote{%
+  See \citet{krzywinski_visualizing_2014} for a more in-depth discussion of box plots.}
+The boxes drawn in these plots are characterized by three horizontal lines: the y-axis values for the observations at the first, the second, and the third quartile.
+%The observation at the first quartile, e.g., is characterized by 25 percent of the observations having a lower y-axis value.
+%The second quartile is thus the median observation: 50 percent of observations lie below it.
+The boxes are complemented by whiskers that reach out to the last observation that lies less than 1.5 times the interquartile range (the distance between the first and the third quartile) beyond the box.
+It is customary to plot outliers beyond the whiskers as explicit dots, but I abstain from showing them here, directing the attention to the main bulk of the `observations rather than to single observations.
+Superimposed on the box plots are the weighted means of the y-axis values within the respective household groups (depicted by an empty circle).
+
+I find (equivalent) lifetime income to be the most important criterion for determining \ac{gwp}.
+To see this, consider that lifetime income is strongly related to household expenditures.
+Figure~\ref{fig:exp} shows that, some considerable heterogeneity within income decile groups notwithstanding, per-capita expenditures increase notably for higher deciles of lifetime income.
+At the same time, emissions-intensity of consumption (measured as \ac{gwp} per spending in kg \ac{co2e} per CHF) is higher for low-income decile groups than for high-income ones (top panel in Figure~\ref{fig:gwp_chf}), but this trend is weaker and the trend in per-capita spending dominates the overall trend in per-capita \ac{gwp} shown in Figure~\ref{fig:gwp} (top panel).
+At the same time, within--decile group variation in results is bigger for per-capita \ac{gwp} than for per-capita spending, driven in part by the considerable within--decile group variation of \ac{gwp} \emph{intensity} shown in Figure~\ref{fig:gwp_chf}.
+
+% Show expenditures
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/pcexp_boxed.pdf}
+  \caption[Expenditures]{Annual per-capita expenditure within and across decile groups. }
+  \label{fig:exp}
+\end{figure}
+
+% Show exposure and then in particular for low-income households
+\begin{figure}[htp]
+  \centering
+  \includegraphics[page=1]{paper_tikz.pdf}
+  % \begin{tikzpicture}
+  %   \node[anchor=north,inner sep=0] at (0.5\textwidth,12cm) {
+  %     \includegraphics{../figures/gwp_chf_boxed.pdf}
+  %   };
+  %   \node[anchor=south west,inner sep=0] at (0,0) {
+  %     \includegraphics{../figures/gwp_chf_poor_boxed.pdf}
+  %   };
+  %   \node[anchor=south east,inner sep=0] at (\textwidth,0) {
+  %     \includegraphics{../figures/gwp_chf_rich_boxed.pdf}
+  %   };
+  %   \draw[black,dashed,thick] (1.7cm,5.43cm)--(2.8cm,7.55cm);
+  %   \draw[black,dashed,thick] (4.5cm,5.43cm)--(3.8cm,7.55cm);
+  %   \draw[black,dashed,thick] (11.4cm,5.43cm)--(12.1cm,7.55cm);
+  %   \draw[black,dashed,thick] (14.2cm,5.43cm)--(13.1cm,7.55cm);
+  % \end{tikzpicture}
+  \caption[\ac{gwp} per CHF across deciles]{\ac{gwp} intensity in kg \ac{co2e} per CHF within and across decile groups (top panel) and within the first and tenth decile groups (bottom panels). }
+  \label{fig:gwp_chf}
+\end{figure}
+
+% Show responsibility and then in particular for the high income households
+\begin{figure}[htp]
+  \centering
+  \includegraphics[page=2]{paper_tikz.pdf}
+  % \begin{tikzpicture}
+  %   \node[anchor=north,inner sep=0] at (0.5\textwidth,12cm) {
+  %     \includegraphics{../figures/gwp_boxed.pdf}
+  %   };
+  %   \node[anchor=south west,inner sep=0] at (0,0) {
+  %     \includegraphics{../figures/gwp_poor_boxed.pdf}
+  %   };
+  %   \node[anchor=south east,inner sep=0] at (\textwidth,0) {
+  %     \includegraphics{../figures/gwp_rich_boxed.pdf}
+  %   };
+  %   \draw[black,dashed,thick] (1.65cm,5.43cm)--(2.75cm,7.55cm);
+  %   \draw[black,dashed,thick] (4.5cm,5.43cm)--(3.65cm,7.55cm);
+  %   \draw[black,dashed,thick] (11.35cm,5.43cm)--(12.15cm,7.55cm);
+  %   \draw[black,dashed,thick] (14.2cm,5.43cm)--(13.05cm,7.55cm);
+  % \end{tikzpicture}
+  \caption[\ac{gwp} across deciles]{Per-capita \ac{gwp} within and across decile groups (top panel) and within the first and tenth decile groups (bottom panels). }
+  \label{fig:gwp}
+\end{figure}
+
+\clearpage
+
+While we can identify clear trends of the means across decile groups of the population in the top panels of Figures~\ref{fig:gwp_chf} and~\ref{fig:gwp}, further subdividing decile groups into 2-percentile-groups (or quintile groups within decile groups; see bottom panels) does not add as much additional insight.
+In Figure~\ref{fig:gwp_chf} there is no clear and significant trend visible for \ac{gwp} intensity within the tenth decile group.
+The figure for the first decile group suggests that the negative correlation between lifetime income and \ac{gwp} intensity may also be at play within the decile group but the numbers of observations within decile sub-groups is not high enough to say this with confidence.
+(A more detailed discussion of this can be found in~\ref{app:cis}).
+What we can say, is that the first 2-percentile-group has a higher mean \ac{gwp} intensity than the following four.
+Similarly, in Figure~\ref{fig:gwp}, no clear trend is visible across 2-percentile groups within the first decile group, and a positive correlation between lifetime income and per-capita \ac{gwp} suggests itself within the tenth decile group, with the highest-income 2-percentile-group showing significantly more per-capita \ac{gwp} than the preceding four.
+
+Among the other socio-economic descriptors along which the population can be divided in \ac{habe}, I find household composition, home owner status, and the degree of urbanization to be the ones that showed the most meaningful differences in per-capita \ac{gwp}.\footnote{%
+  Besides household composition, home owner status, and the degree of urbanization, I checked gender of household head, canton of residence, region of residence, and pensioner status of household head.
+}
+Figure~\ref{fig:types} gives an overview of the results for these groupings of Swiss households.
+The top panel show that the household composition (in terms of number of household members and their age) is another relevant determinant of average per-capita \ac{gwp}.
+If household heads are retired, the household's per-capita \ac{gwp} is noticeably lower, and big households can use their economy of scale to live with lower per-capita \ac{gwp}.
+% The middle panel shows that these trends, by and large, also hold when controlling for income.
+The bottom panel shows that home owners, on average, emit more per capita than do residents who rent their home (left) and that residents of peri-urban areas (the ``Agglomeration'') have the the highest and the residents of urban areas the lowest per-capita \ac{gwp} (even though this trend is not very distinctive).
+
+The fact that the correlation of lifetime income and per-capita \ac{gwp} is strong, and that households with different household composition, home owner status, and degree of urbanization will also have different income,  begs the question if different \ac{gwp} can just be explained by the income differences alone.
+The analysis in~\ref{app:cross} shows that that differences in \ac{gwp} across those three household properties persist if we differentiate them within decile groups of lifetime income.
+This suggests that these different household types have different per-capita \ac{gwp} due to differing consumption patterns: They allocate their income in different ways across the consumption goods they purchase.
+This is be further analyzed in the following.
+
+% Show different ways to cut through the populaton
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/hh_type_box.pdf}
+
+  % \includegraphics{../figures/hh_type_income_box.pdf}
+  % \includegraphics{../figures/Pensioner_box.pdf}
+  \includegraphics{../figures/Renting_box.pdf}
+  \includegraphics{../figures/Urbanization_box.pdf}
+  \caption[\ac{gwp} across HH types]{%
+    \ac{gwp} within and across different sets of household groups.
+    Top panel: Households grouped by household composition.
+    Households are labelled ``elderly'' if one household member is aged 65 or older.
+    % ``Parents'' live in the same households as their children.
+    % Middle panel: Households grouped by household composition and quintile of lifetime income.
+    Bottom panel: Households grouped by ownership of dwelling (left) and degree of urbanization (right).
+  }
+  \label{fig:types}
+\end{figure}
+
+% ---------------------------------------------------------------------------------------
+% Alternative graphs and why they did not make it into the report:
+
+% This is just one single box
+% \includegraphics{../figures/avg_gwp_boxed.pdf}
+
+% This is too disjoint (by definition) and not relevant
+% \includegraphics{../figures/eqexp_boxed.pdf}
+
+% Here, nothing interesting happens
+% \includegraphics{../figures/Female_box.pdf}
+% \includegraphics{../figures/Canton_box.pdf}
+% \includegraphics{../figures/Pensioner_box.pdf}
+% \includegraphics{../figures/Region_box.pdf}
+
+% These just show that HABE quintiles give flatter distribution than 'my' quintiles
+% \includegraphics{../figures/gwp_boxed_HABEquintiles.pdf}
+% \includegraphics{../figures/gwp_boxed_myquintiles.pdf}
+% \includegraphics{../figures/Quintile_box.pdf}
+% \includegraphics{../figures/hh_type_HABEincome_box.pdf}
+
+% Household expenditures (not per-capita) are not so relevant
+% \includegraphics{../figures/exp_boxed.pdf}
+
+% Interesting but a bit obscure
+% \includegraphics{../figures/hh_type_box_gwp_per_chf.pdf}
+% ---------------------------------------------------------------------------------------
+
+\clearpage
+\subsection{{GWP} by category}
+
+Figure~\ref{fig:gwp_cat} shows how mean per-capita \ac{gwp} is composed of contributions from different consumption categories.
+We see that the main contributors to \ac{gwp} across decile groups are the four categories ``food and drink'', heating (``Central and district heating'' plus ``Gas and other heating fuels''), ``private transport'' (with the main component of gasoline and diesel consumption), and ``electronic equipment''.
+For households in decile groups of higher affluence, the emissions from these categories tend to increase.
+It can be noted that emissions from food, heating, and electronic equipment correlate less strongly with income than does private transport.
+For categories of consumption other than the four above mentioned, emissions make up a minuscule part in the first decile group but increase to relevant size for the more affluent decile groups.
+These consumption categories include goods that pertain to restauration and lodging, clothing and footwear, furniture and household equipment, hobbies, holidays, and education.
+
+I note that a (costly) reduction of the emissions from the latter group of goods would not impact the lowest-income decile groups much but would on its own also not come close to reaching a net-zero emissions target.
+Without avoiding the emissions from ``necessary'' consumption goods like food and drink, heating, private transport, and electronic equipment, a net zero emissions world seems impossible.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_cat.pdf}
+  % If this shall be included, need to discuss (and explain!) it.
+  % This seems unnecessary, it was more interesting with deciles of deciles:
+  % \includegraphics{../figures/gwp_cat_high.pdf}
+  \caption[\ac{gwp} per decile]{
+    Annual per capita \ac{gwp} from consumption across expenditure decile groups.
+  }
+  \label{fig:gwp_cat}
+\end{figure}
+
+Figure~\ref{fig:gwp_cat_hhtype} shows per-capita \ac{gwp} from consumption related emissions for different household compositions in the top panel.
+Household composition is determined by the number of household members, their age, and their family status.
+The results show two main trends:
+First, households with elderly people are (on average) responsible for fewer emissions mainly because they use less transport, but their emissions from heating are somewhat higher.
+Second, the bigger the household, the lower are the per-capita emissions.
+They exhibit economies of scale for both transport and heating:
+Household members can share both cars and heated homes in order to enjoy a given level of energy services at lower per-capita expenses and emissions.
+An exemption is transport with the elderly.
+Elderly couples cause more per-capita emissions through transport than do elderly singles.
+The bottom panel of Figure~\ref{fig:gwp_cat_hhtype} confirms that in per-household terms, big households do emit more for both transport and heating (compare ``Single'' with ``Couple'' households and ``Elderly single'' with ``Elderly couple'' households).
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_cat_hhtype.pdf}
+  \includegraphics{../figures/gwp_cat_hhtype_hhmeans.pdf}
+  \caption[\ac{gwp} per decile]{
+    Annual \ac{gwp} from consumption across different household types.
+    Per-capita \ac{gwp} is given in the top panel and per-household \ac{gwp} in the lower panel.
+    Elderly singles are aged 65 or older, elderly couples are couples where at least one person is aged 65 or older.
+  }
+  \label{fig:gwp_cat_hhtype}
+\end{figure}
+
+Figure~\ref{fig:gwp_cat_other} shows how per-capita \ac{gwp} across categories depends on home ownership (top panel) and degree of urbanization (bottom panel).
+As seen in Figure~\ref{fig:types} before, home owners, on average, emit more per capita than do people who rent their dwelling.
+While other consumption categories contribute to the difference as well, a big part of it is coming from emissions in heating.
+Home owners heat less with district and central heating and create more emissions through heating overall.
+Note that the \ac{habe} data does not allow for a conclusive answer about what causes these higher emissions because heating demand depends, among others, on the floor area that requires heating and on the quality of insulation, factors that are not captured by \ac{habe}.
+
+The degree of urbanization is also predicting per-capita emissions in different households to a visible degree (lower panel of Figure~\ref{fig:gwp_cat_other}).
+Here, it is transport that is the main driver of these differences.
+Households living in peri-urban settings have the highest per-capita emissions from transport, while households living in urban areas have the lowest.
+The same holds for overall per-capita \ac{gwp}.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_cat_homeownership.pdf}
+  \includegraphics{../figures/gwp_cat_urbanization.pdf}
+  \caption[\ac{gwp} per decile]{
+    Annual per capita \ac{gwp} from consumption across different household types.
+    Households are differentiated by ownership of dwelling (top panel) or by degree of urbanization (bottom panel).
+  }
+  \label{fig:gwp_cat_other}
+\end{figure}
+
+\clearpage
+
+\subsection{Transport and heating}
+\label{sec:heat_tran}
+
+Transport and heating are two of the most important categories of consumption in terms of \ac{gwp} and their emissions arise mostly within the borders of Switzerland.
+They are thus central to Swiss climate policy targets and deserve closer examination.
+Figures~\ref{fig:gwp_cat_mob} and~\ref{fig:gwp_cat_res} in their top panels show excerpts of Figure~\ref{fig:gwp_cat} for the two broad consumption categories transport and heating and subdivide the two into the most disaggregated categories that \ac{habe} provides.
+Two things become apparent.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_cat_mob.pdf}
+  \includegraphics{../figures/gwp_intcat_mob.pdf}
+  \caption[\ac{gwp} per decile]{
+    \ac{gwp} related to transport across expenditure decile groups.
+    The top panel shows annual per capita \ac{gwp}, the bottom panel shows transport related \ac{gwp} intensity of household expenditure.
+  }
+  \label{fig:gwp_cat_mob}
+\end{figure}
+
+First, different categories of transport contribute to overall \ac{gwp} to different degrees.
+The fine-grained differentiation of transport modes and fuels (see Figure \ref{fig:gwp_cat_mob}) reveals that \ac{ghg} emissions from transport activities are dominated by fuel use for private transport.
+Other categories that matter are air transport and emissions from package holidays (but note that, besides transport, this category also includes emissions from heating hotels, etc.).
+The different modes of public transport account for a much smaller share of \ac{ghg} emissions in Switzerland, since they are mostly driven by low-emissions electric power.
+The expenditure data from \ac{habe} does not allow for a very fine grained analysis of different heating fuels but much rather groups heating expenditures into direct payments for heating fuels (mostly by owners of dwellings) and payments for central and district heating (mostly by households who rent).
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_cat_res.pdf}
+  \includegraphics{../figures/gwp_intcat_res.pdf}
+  \caption[\ac{gwp} per decile]{
+    \ac{gwp} related to heating across expenditure decile groups.
+    The top panel shows annual per capita \ac{gwp}, the bottom panel shows heating related \ac{gwp} intensity of household expenditure.
+  }
+  \label{fig:gwp_cat_res}
+\end{figure}
+
+Second, emissions (and thus exposure to policies requiring costly emissions reduction) rise much slower with income for heating than they do for transport.
+The bottom panels of Figures~\ref{fig:gwp_cat_mob} and~\ref{fig:gwp_cat_res} emphasize this point by displaying \ac{gwp}-intensity (emissions relative to overall household spending) for different decile groups.
+For both categories, low-income households emit more \acp{ghg} per CHF (and are thus likely to incur higher costs from reducing emissions relative to their overall consumption budget) than do high-income households.
+But the trend is much stronger for heating than it is for transport and is even more extreme for air transport and package holidays.
+
+% Not considered at the moment:
+
+% MOBILITY
+% ----------------------------------------------------------------------------------------
+% Mobility shows a clear trend 'proportional' to epxenditure
+% \includegraphics{../figures/gwp_cat_mob.pdf}
+% Periurban travel most; urban fly most; urban have least diesel
+% \includegraphics{../figures/gwp_cat_urb_mob.pdf}
+% Owners travel more than renters
+% \includegraphics{../figures/gwp_cat_rent_mob.pdf}
+% The old drive a lot less; single parent HHs drive less per person than parent couple HHs
+% Old people travel more if in company (old couples travel more p.c. than old singles)
+% \includegraphics{../figures/gwp_cat_hhtype_mob.pdf}
+% Both for singles and couples: mobility emissions go down a lot if old
+% and up a bit with kids.
+% \includegraphics{../figures/gwp_cat_hhtype_hhmeans_mob.pdf}
+
+% HEATING
+% ----------------------------------------------------------------------------------------
+% heating looks /relatively/ flat across income (but still clearly rises)
+% \includegraphics{../figures/gwp_cat_res.pdf}
+% Total heating looks very similar across urbanization types
+% (but 'urban' uses more district and central heating)
+% \includegraphics{../figures/gwp_cat_urb_res.pdf}
+% Home owners heat more, and use less central and district heat
+% \includegraphics{../figures/gwp_cat_rent_res.pdf}
+% Old heat more than young; big households heat less per person
+% \includegraphics{../figures/gwp_cat_hhtype_res.pdf}
+% Old heat more than young; age is similarly bad as kids
+% \includegraphics{../figures/gwp_cat_hhtype_hhmeans_res.pdf}
+
+\clearpage
+
+\subsection{Sensitivity with respect to aviation emissions and other uncertainties}
+\label{sec:aviation}
+
+% I would love to include sth. on uncertainty, but the STDs on
+% https://github.com/OASES-project/CCL-results/blob/main/data-gwp/nfp73-ccl-preliminary-results-ipcc-gwp-april-2023.csv
+% do not look cool. I don't know what they represent.
+
+The \ac{gwp} estimates by \citet{jakobs_nfp73_2023} use information about \ac{ghg} emissions caused by the consumption of different consumption goods and compares their ``effectiveness in causing radiative forcing'' to that of emitting \ac{co2}.
+This comes with two drawbacks.
+First, consumption goods are related to emissions of different \acp{ghg} in a way that is specific to Switzerland but does not differentiate further according to household types, place of residence or income.
+This works well for consumption goods like single food items where quantities are given in terms of kilograms or litres by \ac{habe}.
+But with broader consumption categories like meals in \emph{restaurants} where consumption is given in terms of CHF by \ac{habe}, we have little information about how the consumption of different households is composed.
+Both the amount of calories consumed per CHF as well as the composition of such meals in terms of meat or vegetarian options may well depend on the income level of the consumers.
+I have similar reservations against \emph{clothing and footwear}, where spending in CHF does neither reveal what quantities of textiles have been purchased nor their quality (leather, cotton, synthetic textiles).
+For both \emph{restaurant} visits and \emph{clothing and footwear}, my analysis suggest a distinctive increase in \ac{gwp} from per-capita consumption across income levels.
+To the extent that high income individuals purchase more expensive versions of the commodities (and thus smaller amounts of physical quantities per CHF), this effect may be more attenuated in reality.
+Without more detailed data about what specific quantities are purchased by different households within these consumption categories little can be done to alleviate this data problem.
+
+Second, the \ac{gwp} methodology treats given \acp{ghg} the same, independently from the circumstances in which they have been emitted.
+Yet in aviation, the consequences of aeroplanes' emissions for the climate depend crucially on flight altitude, geography, atmospheric conditions and time of day \citep{fromming_influence_2021}.
+Thus, conditions along flight routes result in radiative forcing/global warming that is higher than \ac{gwp} would suggest.
+It is a commonly applied method to multiply the \ac{gwp} with a \ac{rfi} factor to account
+ for this difference for \emph{average} flights.
+\citet{jungbluth_recommendations_2019} summarize the literature and find that different studies use \ac{rfi} factors of 1 to 2.7 and recommend a factor of 2.
+
+To see how my results change if I take these insights into account, I multiply the aviation-related \ac{gwp} of \citet{jakobs_nfp73_2023} by the recommended \ac{rfi} factor of 2 in Figure~\ref{fig:avi_cat_gwp_pc}.
+Since plane tickets are not only booked directly but also as part of package holidays, I give the same treatment to the consumption category \emph{package holidays}.
+This assumes that the majority of \ac{gwp} in package holidays is caused by flight travel and the revised \ac{gwp} for \emph{package holidays} thus constitutes an upper bound.
+It becomes apparent (Figure~\ref{fig:avi_cat_gwp_pc}), that the two consumption categories, the expenditures for which are distributed progressively (see bottom panel of Fig.~\ref{fig:gwp_cat_mob}) are more important for overall \ac{gwp} from consumption than my previous analysis (Fig.~\ref{fig:gwp_cat}) suggested.
+This emphasizes the importance of addressing emissions in aviation in climate policy.
+
+When I consider how exposed different households are to costly climate policy in the following section \ref{sec:climpol}, I do not include this \ac{rfi} factor.
+I assume that the effects of non-\ac{co2} emissions on radiative forcing can be reduced cost effectively by re-routing plane routes and that pricing emissions will increase the cost of of flying commensurate to the \ac{gwp} displayed in Figures~\ref{fig:gwp_cat}--\ref{fig:gwp_cat_mob}, i.e. as derived from the \ac{gwp} estimates given by \citet{jakobs_nfp73_2023}.
+
+% I want to smarten up about short vs long-term.
+% If emissions are x2 due to vapor based current radiative forcing only, do we not have to worry about them in the long term?
+% Or are there longer lasting consequences of high altitude co2 that remain?
+% Can we really disregard the x2 for well-regulated flight emissions, then?
+% Conclusion:
+% It depends on the specific non-CO2 GHG in question:
+% - Contrails and their climate effect are quite short-lived
+% - Other are H20, Ozone (caused by NOX), Methane, primary mode ozone (PMO)
+%   (is PMO influenced by nox, methane?)
+% Important factors not captured by GWP:
+% - contrails: short term
+% - NOx interacts with ozone (++ and -) and methane (-) (both GHGs) interactions happen within weeks and months, but resulting GHGs persist longer
+% - particulate matter: soot warms, sulfur oxide cools (presumably stays around for longer if high up)
+
+% https://acp.copernicus.org/articles/21/9151/2021/:
+% "Emissions of aviation include CO2, H2O, NOx, sulfur oxides, and soot."
+
+
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics{../figures/gwp_boxed_high.pdf}
+%   \caption{\ac{gwp} per capita if emissions from aviation are multiplied by a factor of two.}
+%   \label{fig:avi_gwp_pc}
+% \end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_high_cat.pdf}
+  \caption{Categorization of \ac{gwp} per capita if emissions from aviation are multiplied by an \ac{rfi} factor of 2.
+  The \emph{additional} \ac{gwp} from this adjustment is highlighted by a chequered pattern.}
+  \label{fig:avi_cat_gwp_pc}
+\end{figure}
+
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics{../figures/gwp_high_cat_mob.pdf}
+%   \caption{Categorization of mobility related \ac{gwp} per capita if emissions from aviation are multiplied by a factor of two.}
+%   \label{fig:avi_cat_gwp_pc_mot}
+% \end{figure}
+
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics{../figures/gwp_high_intcat_mob.pdf}
+%   \caption{Categorization of mobility related \ac{gwp} per CHF spent if emissions from aviation are multiplied by a factor of two.}
+%   \label{fig:avi_intcat_gwp_pc_mot}
+% \end{figure}
+
+% \subsection{Comparison with other studies}
+% My findings by and large reflect those of other studies but also differ in some respects.
+% Compared with \citet{chancel_climate_2023}, the share of responsibility for global warming of the richest part of the Swiss population is smaller.
+% Several methodological differences may be the source of this.
+% The academic literature has discussed the influence of using tax-records based data (the data base used by the World Inequality Lab) rather than survey data (used here) for assessing inequality.
+% The comparisons tell us that the findings made by using the two types of data are mostly similar \citep[see, e.g.,][]{burkhauser_recent_2012}.
+% Another, probably more important difference is that the World Inequality Lab does not only consider responsibility for \ac{ghg} emissions through consumption but also through investing.
+% Since particularly the rich invest some of their income as part of their savings decision, they have additional \ac{ghg} emissions to answer for and this accounts for yet more responsibility for global warming with the wealthy.
+
+% Compared to Sotomo's study \citep{stuckelberger_helion_2024} I use more detailed information about consumption patterns and their related \ac{gwp}.
+% While \citeauthor{stuckelberger_helion_2024} identify transport and heating as the main driver of differences in consumption-related \ac{gwp} within the population, their study treats the remaining consumption with a rather coarse resolution and miss some differences that occur particularly when comparing different income levels.
+% When discussing the emissions of the richest they observe a noticeable increase in emissions from flying which I cannot reproduce with the \ac{habe} data.
+% However, in their discussion of this group of the richest, they deviate from the literature's ``{convention}'' of comparing the richest 1 percent with the rest of the population and single out individuals with equivalent income greater than CHF 16'000 per month.
+% there are 48 observations that make up 0.51 percent of the Swiss population
+% In \ac{habe} there are less than 50 observations with an equivalent income of CHF 16'000 per month or higher and according to \ac{habe}'s statistical weights, those observations represent roughly 0.5 percent of the Swiss population.
+
+\clearpage
+
+\section{Climate policy design}
+\label{sec:climpol}
+
+The analysis above shows that different households have different responsibilities for con\-sump\-tion-based \ac{ghg} emissions, and that emissions from some consumption categories such as airborne passenger transport are mostly generated by the more affluent.
+Yet, the most important consumption categories for overall emissions are food, heating, transport and electronics, which make up significant shares in overall spending for low-income households in particular.
+This highlights the fact that we cannot get around increasing the cost of consumption for low-income households if Switzerland's net-zero emissions target is to be met (I assume that emission free technologies for producing different consumption goods are more expensive than their polluting counterparts at least in the short and medium run and that the state will not fully take over these additional costs).
+
+In the following, I explore some options for design of climate policy that allow protecting low-income households from disproportionate policy cost and make sure that high-income households do their fair share.
+The reasoning is that low-income spend their income mostly on necessities and are hurt more than high-income households by increasing costs of consumption and that low-income households may be credit-constrained and have difficulties to pay high up-front costs of investments for green (that is, non--\ac{ghg}-emitting) technologies that may be even cost-saving in the long-run.
+Another reason for ``letting the rich go first'' is that technology costs may decrease over time, and that if those who can better afford it invest first, the cost of investments in green technologies may be lower when other, less affluent households make these investments later on.
+
+\subsection{Regulating for emissions reduction by high-income households}
+\label{sec:rvp}
+
+The analysis of emissions by consumption category and income decile group lets me identify several consumption goods the emissions of which could be regulated without affecting the consumption of low-income households too much.
+Examples for these appear to be air transport, lodging in hotels, and restaurant visits.\footnote{%
+  % My data base does not allow for differentiated emissions intensities across income decile groups within given consumption goods.
+  In the case of restauration, where consumption is measured in CHF it is implausible that high-income households consume the same amount of calories per CHF as do low-income households.
+  We have to expect that -- contrary to my modelling assumptions -- emissions per CHF spent in restaurants may be higher for low-income households than for high-income ones.
+  My findings for how emissions from eating out in restaurants are distributed across income may therefore be biased towards overstating emissions for high-income and/or understating emissions for low-income households.
+}
+Policies that target such consumption goods specifically are almost certainly costing low-income households very little.
+But at the same time, emissions related to these consumption goods make up only a limited share of overall emissions that Swiss consumers are responsible for, and it is imperative that emissions from other, less conveniently distributed consumption goods be reduced.
+% \footnote{%
+  % It has to be noted that the effects of Swiss air travel on global warming are more significant than what the statistics presented in, e.g., Figure \ref{fig:gwp_cat} suggest.
+  % On the one hand, \ac{habe} data only includes private travel, thus not directly accounting for business flights.
+  % On the other hand, the newest methodology for accounting for the warming potential of emissions in air travel suggests that \ac{co2} emissions in air travel have more serious consequences than elsewhere.
+  % All in all, air travel accounts for 27 percent of the global warming potential of Swiss domestic emissions (see, e.g.,
+  % \url{https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20214259})}
+
+When regulating emissions from consumption categories that also make up a comparably big share in expenditures of low-income households (such as food, transport, heating, and electronics), policy makers can still try to design policies such that high-income households are incentivized to invest first, while green technologies are still expensive, and low-income households profit from lower cost established green technologies later.
+In markets where low-emission technologies are seen as a luxury good, this may to some extent be the natural market outcome.
+For \acp{bev} it is argued that the market introduction worked smoothest, when Tesla initially catered to a niche market with a highly specialized sports car and only later reduced cost and provided more affordable cars to a wider audience.
+But policy may push this tendency even further by identifying \emph{luxury} versions of given goods and regulating these more stringently than the non-luxury versions.
+This works best if the luxury version of a good is also more emissions-intensive.
+To remain with the example of cars, climate policy could aim to make non-\ac{co2}-emitting technologies mandatory for large cars such as \acp{suv} or two seated sports cars.
+Alternatively, fleet standards for \ac{co2} emissions per kilometre could be complemented by a maximum amount of \ac{co2} per kilometre \emph{any} model within the fleet may emit (with potential exemptions for family cars with more than five seats).
+
+But, admittedly, if we move away from transport the identification of luxury versions of goods becomes more difficult and regulating them may become more controversial.
+If we take the size of a dwelling (divided by the number of occupants, e.g.) as a measure of luxuriousness in the context of heating systems, and a retired couple lives in a spacious house they own, should they be forced to invest in renewable heating system even if they have difficulty affording the necessary investment from their savings?
+Or do we only demand a renewable energy heating system when the property changes hands?
+
+To summarize, singling out luxury goods and focusing emissions reduction efforts on them may be possible in some cases but these make up a limited share of overall emissions and if Switzerland wants to reach net-zero emissions, \ac{ghg} emissions reduction efforts will also have to include  transport and heating which will necessarily affect low-income households as well.
+The following section discusses to what extent low-income households may be impacted disproportionally by policy costs and makes some suggestions for policy designs to avoid this.
+
+\subsection{Protecting low-income households from disproportionate policy costs}
+\label{sec:ptp}
+
+\subsubsection*{Pricing \ac{co2} emissions in Switzerland}
+\label{sec:ch_co2}
+
+Climate policies at our disposal can generally be categorized in three types:
+carbon pricing, mandates for clean technologies, and subsidies for investments (or research) into clean technologies.
+Carbon pricing is appreciated by many economists as a cost-efficient measure since all economic actors and markets see the carbon price and can use the information at their disposal for finding low-cost options to reduce emissions \citep{boyce_carbon_2018}.
+Government mandates and subsidies on the other hand rely on the government to identify the best way for reducing emissions and run the risk of being much more expensive since the state does not have all the information about options for emissions reduction that the different actors in the different markets have.
+\citet{landis_efficient_2019}, e.g., show that for policy design similar to the current Swiss policy framework, carbon pricing policies can be expected to keep overall costs of achieving emissions reduction significantly lower than policy packages that focus on mandating and subsidizing specific technologies alone.
+This efficiency argument and the fact that carbon pricing is an established policy instrument in climate policy (see, e.g., the emissions trading systems for energy-intensive industries in Switzerland and the EU, the \ac{co2}-levy on heating fuels in Switzerland, and the recent expansion of emissions trading to transport and heating fuels [termed ETS 2] in the EU) makes it plausible that it will remain one of the corner stones of Swiss climate policy.
+
+At the same time it is the policy that creates the highest direct policy cost to consumers even in the short term:
+Not only are consumers paying for more expensive green technologies if they reduce emissions, but they also pay the \ac{co2}-levy on the emissions they have not yet avoided through such measures.
+And, again, the observation that the consumption of low-income households is on average associated with the highest emission intensity of consumption (their consumption causes more emissions on a per CHF-spent basis than higher-income ones, see Figure~\ref{fig:gwp_chf}) suggests that the direct costs incurred from carbon pricing tends to impact low-income households most relative to their consumption budget.
+
+This observation about direct policy cost has to be qualified by the expected effects of two additional mechanisms (indirect effects).
+One is driven by what happens in industries and markets when climate policy makes producers reduce emissions themselves.
+The consequence of costly emissions reduction in productive sectors is that real wages and capital rents decrease and this affects high-income households more than it does low-income ones.
+The second mechanism is part of carbon pricing itself and is subject to policy design choices:
+Carbon pricing generates revenues that can be employed in different ways and one way or another these revenues are recycled back to the economy, which can have its own distributional consequences.
+
+For existing policies, the two mechanisms have been discussed in the academic literature at some length.
+For the indirect policy cost via reductions in wages and capital rents, the findings generally indicate that the regressivity\footnote{%
+  A policy or an aspect of policy design is called regressive, if its cost to low-income households compared to their expenditure budget is higher than the cost to high-income households \emph{on average}.
+}
+of the direct effects of carbon pricing on consumer prices is much reduced if not neutralized by the indirect effects.
+\citet{rausch_distributional_2011} provide a transparent analysis and compare the direct (uses side) and indirect (sources side) effects on the distributional outcome of carbon pricing in the case of the US.
+But while the regressive effects on consumer prices are (mostly) neutralized \emph{on average}, the wide heterogeneity in effects on low-income households\footnote{%
+  The wide heterogeneity of emission intensity in Figure~\ref{fig:gwp_chf} shows main the source of this heterogeneity of outcomes.}
+means that the most gravely impacted households are still among the low-income decile group \citep{landis_cost_2019, landis_efficient_2019}.
+This highlights the necessity to further think about the distributional effects of how the revenue from carbon pricing is recycled.
+When I compare different ways of recycling carbon pricing revenue in a previous study \citep{landis_cost_2019}, I find that lump-sum per-capita recycling (i.e., giving each Swiss resident the same amount of money; this is what is currently being done with two thirds of the revenue from the \ac{co2}-levy) gives good results.
+This finding can by and large be explained by the fact that for low-income households, the lump-sum transfer is on average larger than their outlays on the \ac{co2}-levy, while the direct costs of the \ac{co2}-levy exceed the lump-sum transfer in the case of high-income households.
+Figure~\ref{fig:fig3_landis_2019} shows the resulting impacts of carbon price based Swiss climate policy on consumer utility in 2035 and 2050 and their distribution across households in income quintile groups.
+It becomes evident that relative consumption utility impacts on low-income households, \emph{on average}, are smaller than those on high-income households.
+Yet, the households with the worst utility impacts are {still} to be found in the lower-income quintile groups, even with revenue recycling in place.
+
+\begin{figure}[htp]
+  \centering
+  % \includegraphics[trim=0 1150 600 0, clip, height=5cm]{./Fig3_landis_cost_2019.png}
+  \includegraphics[trim=0 1150 0 0, clip, height=6cm]{./Fig3_landis_cost_2019.png}
+  \caption[Welfare impacts of carbon pricing]{Welfare costs of carbon price based climate policy for Switzerland in 2035 (panel A, left) and 2050 (panel B, right) according to \citet{landis_cost_2019}.
+    Two thirds of carbon pricing revenue is recycled back to households in a per-capita lump-sum fashion.
+    ``Welfare impacts'' of climate policy reflect how much more or less consumption utility households are able to achieve relative to the consumption budget in the baseline (equivalent variation relative to baseline expenditure budget).
+
+    Source: \citet{landis_cost_2019}
+  }
+  \label{fig:fig3_landis_2019}
+\end{figure}
+
+\subsubsection*{Pricing \ac{ghg} emissions globally}
+\label{sec:all_ghg}
+
+The findings above are for pricing of \ac{co2} emissions in Switzerland.
+But as time goes by, the scope of climate policy should expand (to other \acp{ghg} as well as to other regions).
+In the following, the findings in Section~\ref{sec:gwp} shall be used for illustrating that similar patterns can be expected to apply if climate policy encompasses all \acp{ghg} from all around the globe.
+From the point of view of Swiss consumers, this may occur, e.g., if all \ac{ghg} emissions in Switzerland are regulated using the same or similar emissions prices and imports are taxed at the borders for their embodied emissions.\footnote{%
+  European climate policy is currently moving into that direction.
+  Recently, the EU has decided to regulate emissions of motor and heating fuels with a second emissions trading system, thus moving closer to price based regulation of all domestic \ac{ghg} emissions.
+  And the \ac{cbam} that is currently being put into place acts as a pricing of embodied \ac{ghg} emissions at the border.
+  For Switzerland, National Council member Gerhard Pfister proposed a policy package similar to what I consider here (\url{https://www.parlament.ch/de/ratsbetrieb/suche-curia-vista/geschaeft?AffairId=20220451}).
+  It was not met with enthusiasm by the Council of States, but may resurface when the discussion turns to climate policy beyond the year 2030 (\url{https://www.tagesanzeiger.ch/klimaabgabe-abgelehnt-gerhard-pfisters-plan-geht-nicht-auf-543686918783)}.
+}
+
+% The exploration of the distributional patterns follows the following logic.
+% Costs of (\ac{ghg}) emissions pricing is proportional to the emissions content of consumption. %
+I restrict my analysis to the short term.
+That means after introduction of emissions pricing, firms do not adjust production processes, and all they can do is increase prices according to the emissions associated with their production.
+Equally, households do not adjust consumption patterns but just face higher costs with constant expenditure budgets.\footnote{%
+  As previously mentioned, this neglects medium to long term adjustments in both production and markets for labour and capital services.
+  Similarly to the analysis of national \ac{co2} pricing, an analysis that allows for medium to long term adjustments to global \ac{ghg} pricing would probably yield results that are skewed to slightly higher progressivity compared to what I find here, but similar heterogeneity within income groups \citep[compare to findings by][]{rausch_distributional_2011, landis_cost_2019}.
+}
+Without such adjustments, the additional costs of consumption goods from emissions pricing is the product of the consumption goods' emissions content and the emissions price.
+For exploring the qualitative distribution of impacts of a price on global \ac{ghg} for Swiss consumption, I assume that emissions are priced at CHF 100 per t\ac{co2e}.
+
+The upper panel of Figure~\ref{fig:carbonP} shows the mean direct cost of such an emissions price on households in the ten decile groups (blue solid line).
+As low-income households have smaller expenditure budgets the amount of emissions related to their consumption is small as is their direct cost from emissions pricing compared to high-income households.
+I assume that the revenue from this is collected by the government and fully redistributed to households in a per-capita lump-sum fashion.
+The resulting additional refunds for households are shown in Figure~\ref{fig:carbonP} as the dashed red line.
+(The fact that this line is not perfectly horizontal is due to the fact that it show the averages of \emph{per-household} revenues and that average household size varies slightly across decile groups.)
+It becomes apparent that low-income households pay less for carbon pricing than they are refunded and vice-versa for high-income households.
+This shows that -- in analogy to national \ac{co2} pricing -- global \ac{ghg} pricing can be turned into an overall progressive policy if emissions pricing revenue is redistributed in an appropriate way.
+
+While the upper panel shows averages only and absolute numbers in CHF, the lower panel of Figure~\ref{fig:carbonP} shows the distribution of net impacts (refunds minus direct costs) across households within decile groups and measures them relative to the baseline expenditure budget.
+This rendering shows that, in terms of averages (depicted by circles in the figure), the net benefits relative to household spending are larger for low-income households than the net costs for high-income households.
+It also shows that, due to large heterogeneity within income decile groups, the households with the highest relative net cost are still situated in the lowest income decile group.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/generic_lineplot.pdf}
+  \includegraphics{../figures/rel_impacts_income.pdf}
+  \caption[Effects of global \ac{ghg} pricing]{Short term effects of global \ac{ghg} pricing for Swiss consumers.
+    Top: Direct cost of \ac{ghg} pricing (blue solid) and per-capita lump-sum recycling (dashed orange).
+    The lines represent averages across households within decile groups.
+
+    Bottom: Net cost (direct cost minus lump-sum recycling) relative to baseline household expenditures.
+    Box plots describe the distributions of net cost within the ten decile groups, the circles denote mean net cost within the groups.
+  }
+  \label{fig:carbonP}
+\end{figure}
+
+The findings can be summarized similarly for pricing of global \ac{ghg} emissions as they do for national \ac{co2} emissions.
+The visible direct cost of emissions pricing to households look regressive (this assessment is for the short term; in the medium to long term, indirect effects on markets for labour and capital services may neutralize the regressivity).
+Recycling of the revenues from emissions pricing can counteract the (perception of) regressivity in direct costs if properly designed.
+Per-capita lump-sum recycling makes overall policy distinctly progressive, but heterogeneity in low-income deciles means that hardship cases among the group of lowest-income households may still occur.
+
+% \begin{figure}[htp]
+%   \centering
+%   \includegraphics{../figures/impacts_income.pdf}
+%   \includegraphics{../figures/rel_impacts_income.pdf}
+%   \caption[]{}
+%   \label{fig:impacts}
+% \end{figure}
+
+% First, from a political perspective, the direct policy impacts on the cost of consumption are much more salient than the indirect effects on wages and capital rents.
+% Thus climate policy may be more acceptable for voters, if there is visible compensation of households for their additional cost.
+
+\subsubsection*{Additional considerations}
+\label{sec:consider}
+
+So far the analysis was based on the relation between policy cost and the baseline expenditure budget.
+Another issue often raised with less wealthy households and individuals is that they are restricted in their possibilities to invest due to credit constraints.
+In a somewhat similar vein, households who rent their dwelling have little influence over the heating technology and insulation standards employed in it.
+These two issues may hamper the ability of renters and lower-income house owners with little wealth (e.g. house owners with big mortgages) to efficiently react to the current \ac{co2} levy on heating fuels.
+
+If we do not want to risk the \ac{co2}-levy being restricted in its effectivity to (wealthy) house owners, we should make sure that everybody can react efficiently to the incentives set by the \ac{co2}-levy.
+For credit constrained house owners, marketing schemes like 'Mietkauf' may be a valid solution.\footnote{%
+  See, e.g., \url{https://www.energieheld.ch/renovation/finanzierung/mietkauf}
+}
+Under such schemes, house owners pay for the energy services over time and providers pay for the upfront investment for installations of efficient technologies.
+Information about them should be promoted and a healthy competition between providers should be ensured.
+For renters, the situation is less straight forward.
+Market rents for housing should, in principle, account for the fact that efficient but more costly heating systems reduce heating costs and should be worth more rent.
+But not everybody is convinced that landlords are sufficiently aware of these trade-offs and that they make the efficient investments if they are not directly confronted with emissions pricing.
+The empirical evidence on this question seems mixed.
+Recent research suggest that if tenants are made aware of the energy cost savings, their willingness to pay for this through increased rents is commensurate \citep{lang_energy_2021} and that market outcomes show little differences between flats that are offered for sale and those offered for rent in Germany \citep{singhal_split-incentives_2023}.
+Yet, in other contexts, financial incentives seem to have stronger effects for owner-occupied dwellings than for renter-occupied \citep{charlier_energy_2015}.
+One suggestion for addressing this potential problem is to either complement financial incentive with building standards and renovation requirements or to replace the incentives with such policies entirely \citep{charlier_energy_2015}.
+
+In view of the fact that we cannot be certain that all actors in the economy can react efficiently to a \ac{co2}-levy that focuses on heating fuels it may be regarded as suboptimal design that the \ac{co2}-levy excludes motor fuels where such split-incentives problems do not exist.
+In addition to that, the distributional properties of pricing emissions from  motor fuels are more favourable for low-income households than pricing emissions from heating fuels.
+To see this, compare bottom panels of Figures~\ref{fig:gwp_cat_res} and~\ref{fig:gwp_cat_mob}.
+A more in-depth critique of the exemption of transport from emissions pricing in Switzerland can be found in \citet{landis_differentiated_2018}.
+
+% \item CO2 levy for heating fuels is collected with the landlords (revenues could be redistributed in proportion to floor area of dwellings).
+%   Pro: incentive to invest is strengthened; con: incentive to heat less is weakened.
+% \item \ac{co2}-levy on motor fuels could make more sense than on heating fuels.
+%   (Criticize that \ac{co2}-levy is on heating fuels only.)
+
+\section{Concluding remarks}
+\label{sec:conclusion}
+
+The analysis of how consumption based responsibility for \ac{ghg} emissions, or \ac{gwp}, is distributed across households allows for the following observations.
+First, where luxury goods are emissions-intensive, climate policy that focuses on these goods can ensure that high-income households make a relatively bigger effort to reduce emissions than low-income ones.
+Yet, if we were to restrict ourselves to regulating emissions related to luxury goods, the scope for significantly reducing emissions towards a net-zero target would be severely limited.
+Second, when emissions across the board are reduced, and if policy induced emissions reduction is costly, this will cost low-income households more (relative to expenditure budget) than high-income ones (regressive direct effects).
+Third, emissions pricing provides revenue for counteracting these regressive direct effects.
+The current design of the \ac{co2}-levy recycles two thirds of the revenue to households in a per-capita lump-sum fashion.
+This makes the \ac{co2}-levy overall progressive.
+Fourth, high heterogeneity in consumption patterns may result in hardship cases (even though their number can be kept in check by good policy design).
+Swiss society should be prepared to recognize hardship cases and support them.
+Fifth, the distributional properties of policies leading to costly emissions reduction are more favourable for emissions reduction in private transport compared to heating.
+The observation that there are split incentives between investors and users of clean technologies in the case of heating but not for private transport would make transport even more attractive for carbon pricing.
+The current \ac{co2}-levy, however, only prices heating fuels and exempts motor fuels.
+
+% \item We should make sure that renting and credit constrained households have all possibilities for reducing emissions available to them.
+  % \begin{itemize}
+  % \item Should renters be able to influence the choice of heating systems?
+  % \item Pay for energy services from firms that make the investments
+  % \end{itemize}
+
+While the method used here for deriving \acp{gwp} from expenditure data and \ac{lca} is state-of-the-art, a few limitations have to be noted.
+Since the \ac{lca} that I used here does not differentiate consumption goods' quality levels by households of different income, there are possible differences in emissions per unit of consumption that may not be captured.
+In the case of public transport, I try to take this into consideration by denominating the \ac{lca} with \ac{pkm} and finding income dependent numbers of how far people ride per CHF spent on travel cards.
+For goods categories like restauration and clothing, the same was not done.
+Yet it is plausible that high-income household consume less per CHF spent in terms of physical units for both eating out and clothing than do low-income households.
+This may bias my analysis towards attributing too many emissions to high-income households and too few to low-income ones.
+Another drawback of my data sources is that the survey data contained in \ac{habe} are a few years old.
+No newer survey data are made available by the \ac{fso}, since the COVID-19 epidemic created irregularities in consumption patterns, and these are deemed to make the data unreliable.
+As a third caveat, it has to be noted that some observations about household expenditure patterns do not seem to represent ``normal'' monthly household expenditures.
+The \ac{habe} makes an effort to account for the fact that not all consumption goods are consumed every month of the year and asks households to give their \emph{average} monthly expenditures based on annual bills for such consumption goods.
+Still some observed household patterns look ``irregular''.
+This may be due to strong deviations from normal monthly values for consumption goods that are not reported as monthly averages based on annual bills or to  the yearly values deviating from normal values.
+This means that some of the most extreme values in Figures \ref{fig:exp}--\ref{fig:types} and \ref{fig:carbonP} may represent atypical situations of the concerned households.
+
+% I am confident that the qualitiative conclusions drawn in this study would be the same if newer data were employed.
+
+Finally, the observations made about the usefulness of revenue from emissions pricing for controlling the overall distributional impact of climate policy has to be qualified by the observation that such revenue may be abundant in the short term, when emissions are still high, but may dwindle even with rising emissions prices as emissions themselves go to zero in the longer term.
+%But under most policy designs consumers will still be paying through their consumption for continued investment in green technologies.
+
+\clearpage
+
+\printbibliography
+
+\clearpage
+
+% \section*{Appendix}
+% \label{sec:app}
+\appendix
+\renewcommand{\thesection}{Appendix~\Alph{section}}
+
+\section{Additional detail for the data processing routine}
+\label{app:hhdata}
+
+The combination of the \ac{lca} and household survey data in the \ac{habe} as described in Section \ref{sec:dat_meth} can mostly rely on harmonized units in the two data sets.
+That is, if \ac{gwp} in the \ac{lca} is given in kg \ac{co2e} per CHF spent or per kg or litre consumed, \ac{habe} provides consumption measured in the respective units.
+But some exceptions exist.
+These include heating, electricity, and public transport, where \ac{habe} gives expenditure in CHF but the \ac{lca} insists on physical units like \ac{mj} or \ac{pkm} travelled by mode of transport.\footnote{%
+  My routine for combining \ac{lca} and expenditure data is driven to a large extent by the units used to denominate \ac{gwp} in the \ac{lca} given by \citet{jakobs_nfp73_2023}.
+  Other consumption categories such as restauration and fashion probably have varying \ac{ghg} emissions per CHF spent for different household types.
+  Yet, since the \ac{lca} gives \ac{gwp} in kg \ac{co2e} per CHF, I use this constant value across all differently household types.
+}
+The following gives more detail on how these consumption categories are treated in my data processing routine.
+
+{\bfseries Mobility:}
+In the case of public transport modes (bus, tram, train), \ac{habe} gives households' expenditure for travel cards.
+Due to the fact that travel cards can allow for unlimited use of transport on certain lines or in certain areas over a given amount of time, it depends on the intensity of use of such travel cards how much \ac{pkm} of transport services corresponds to the purchase price.
+This matters to the extent that different types of households may display different behaviours in terms of how intensively the travel cards are being used.
+Thus, the strategy is to find additional information about how far different household groups travel per CHF spent on different modes of transport.
+Within the groups, \ac{pkm} travelled is taken to be proportional to spending.
+
+The summary statistics of the Mobility and Transport Microcensus  \citep{biedermann_verkehrsverhalten_2017} provide information to this effect.
+Table ``Tagesdistanz'' in the ``Ver\-kehrs\-ver\-hal\-ten der Be\-völ\-ke\-rung, Synthesetabellen''\footnote{Retrieved as file \texttt{su-d-11.04.03-MZ-2015-T01.xls} from \url{https://www.bfs.admin.ch/asset/de/2503927} on 27 February 2024.} contains daily distances for respondents in different household types.
+\ac{habe} can be used to obtain the expenditure on tickets and travel cards for different household types.
+The resulting ratios of \ac{pkm} and expenditures then gives appropriate conversion ratios from CHF into \ac{pkm} for different household types.
+
+But which household types to differentiate?
+Table ``Tagesdistanz'' allows for taking subgroups of the Swiss population according to geographical region, language region, degree of urbanization, household composition, sex, age, household income, and status of employment.
+For combining with expenditure data from \ac{habe}, I consider the dimensions geographical regions, language, household composition, and income.
+For deciding which dimension of household typification to focus on, I take averages of spending (in \ac{habe}) and the numbers for \ac{pkm} (from the micro-census) and look at the correlation of the two along the dimensions.
+The dimension that gives the lowest correlation gives the most additional information complementary to estimating \ac{pkm} as proportional to spending.
+I find the correlation to be the lowest along the dimension household composition and I conclude that household composition is the household property that provides the most additional information.
+I therefore consider household composition--specific ratios of \ac{pkm} travelled per CHF spent as the conversion factors of expenditure to travel distance.
+% This is a bit of an oversimplification... travel cards make the calculation a bit hairy.
+% Use formulas for more precision? describing in words becomes very complicated.
+Expenditure on multi-mode travel card expenditure is divided into distance travelled on different transport modes taking household composition--specific mode shares into account.
+
+{\bfseries Heating and electricity:}
+For housing related utility expenditures, households differ in their reporting detail.
+Some households can report all expenditures explicitly, others report expenditure for general utility expenditures that may include fees for waste disposal, waste water, fresh water, heating fuels, heat (from district or central heating), electricity, and ``other''.
+My strategy is to split this general utility expenditure into the different subcategories according to the (average) expenditure shares of those households that report explicitly.
+For establishing the shares, I differentiate households that own their dwelling and those who rent.
+
+For spending on waste disposal and energy, I make the following additional considerations.
+Waste is only taken out of general utility bills for those households that have no explicit expenditure for waste already.
+In the case of energy, I take heating and electricity out of the general utility bills if explicit energy expenditures is half the size of spending on general utility bills, taking this low ratio as an indicator, that explicit energy spending does not cover everything.
+
+For heating, even after splitting up general utility costs, approximately one third of households does not have any expenditures for heating.
+I fill in missing numbers in proportion to households' overall housing expenditures (rent or mortgage payments plus utilities) such that their average agrees to the averages of households that do report heating expenditures.
+
+After these adjustments to spending records, I need to convert expenditures into physical quantities where the \ac{lca} units require it for assessment of embodied \ac{ghg} emissions.
+This is the case for energy carriers like heating fuels, electricity and heat from district and central heating (in \ac{mj}), but also for waste (number of waste bags; cubic metres of waste water) and water (in cubic metres).
+For waste, waste water, and water, I use the price estimates used by \citet{froemelt_using_2018} that were kindly provided by \citeauthor{jakobs_nfp73_2023}.
+These price estimates are differentiated by region (eight cantons plus rest of Switzerland) and household size.
+
+For energy, I take different reasons for differing prices into account.
+On the one hand, energy prices may vary over time, on the other hand, non-linear price plans make the average electricity price dependent on the volume consumed.
+For electricity, I use ElCom electricity tariffs per canton, year, and user profile (annual energy consumption).\footnote{Available at, e.g., \url{https://www.visualize.admin.ch}}
+For heating, rather than using time dependent price data, I use aggregate Swiss heating demand for the years 2015--2017 in \ac{mj} and distribute that across households were surveyed in the respective years in proportion to their expenditures for heat.
+% This ignores the fact that effective average prices for heating fuels are also dependent on volumes consumed, but I leave this for future work.
+
+% Second homes -> too bad
+
+% Printers: I leave printers out of the discussion since one can approach durable goods either way and the one chosen by Froemelt et al. is a valid way.
+
+\clearpage
+
+\section{Income and other household types}
+\label{app:cross}
+
+I find that lifetime income (viz. expenditures) is an important determinant of how much \ac{gwp} different household types are responsible for.
+When I differentiate Swiss households along other socio-economic dimensions, I can create further groups of households with differing \acp{gwp} but this may be confounded by the fact that these new groups themselves have different lifetime income on average.
+In the following I try to make sure that the \ac{gwp} patterns across different household types are not merely due to the different household types having different lifetime incomes, but that they reflect genuinely different consumption behaviour of the household types.
+
+Figures~\ref{fig:increnting}--\ref{fig:incurban} show the separation of households into the two statuses of house ownership, into different household compositions, and into different degrees of urbanization -- but this time within each decile group.
+Since the differentiation within decile groups yields the similar trends as does the differentiation within the whole population of surveyed households, I conclude that the differences in \ac{gwp} across household types are not mainly driven by correlation between household types and lifetime income, but there is one exception to this.
+
+Households living in a peri-urban setting, in the total of surveyed households, are responsible for the highest level of \ac{gwp} (Figure~\ref{fig:types}).
+But within single decile groups (so somewhat controlled for income), we see that it's actually the households living in rural areas that have the highest level of \ac{gwp} caused by their consumption (Figure~\ref{fig:incurban}).
+
+The remaining trends observed across all surveyed households (Figure~\ref{fig:types}) remain true when controlling for income:
+Households living in urban areas are responsible for the least amount of \ac{gwp} (Figure~\ref{fig:incurban}), households who rent are responsible for smaller amounts of \ac{gwp} than those who own their residence (Figure~\ref{fig:increnting}), and larger households, on a per-capita basis, cause less \ac{gwp} with their consumption than do smaller ones (Figure~\ref{fig:inctype}).
+This rather clear trend, observed when controlling for income, is attenuated a somewhat in Figure~\ref{fig:types}, however, indicating that bigger households tend to be of higher lifetime income which additionally increases their \ac{gwp} when not comparing for income.
+
+% \begin{sidewaysfigure}[htp]
+%   \centering
+%   \includegraphics{../figures/gwp_boxed_incpension.pdf}
+%   \caption[Working age by decile]{\ac{gwp} grouped by working age -- pensioner and by decile of lifetime income.}
+%   \label{fig:incpension}
+% \end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_boxed_increnting.pdf}
+  \caption[House ownership by decile]{\ac{gwp} grouped by house ownership and by decile group of lifetime income.}
+  \label{fig:increnting}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_boxed_inctype.pdf}
+  \caption[Household type by decile]{\ac{gwp} grouped by household composition and by decile group of lifetime income.}
+  \label{fig:inctype}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[htp]
+  \centering
+  \includegraphics{../figures/gwp_boxed_incurbanization.pdf}
+  \caption[Urbanization by decile]{\ac{gwp} grouped by degree of urbanization and by decile group of lifetime income.}
+  \label{fig:incurban}
+\end{sidewaysfigure}
+
+\clearpage
+
+\section{Confidence in found trends -- comparing trends across decile groups and across 2-percentile-groups}
+\label{app:cis}
+
+Several trends for the means of per-capita \ac{gwp} and \ac{gwp} intensity have been observed in Section~\ref{sec:gwp}.
+The confidence with which I can say that these trends are real and not just due to a peculiar set of observations depends on the confidence intervals that I attach to these means and thus on the number of observations that are available for a given part of the population in \ac{habe}.
+With around 10'000 observations in the whole sample, I have around 1000 observations per decile group, whereas for 2-percentile-groups the number is approximately 200.
+I therefore have to expect tighter confidence intervals around decile group means and wider ones around 2-percentile-group means, giving us higher confidence in trends that we observe across decile groups than in trends across 2-percentile-groups.\footnote{%
+  Confidence intervals around the mean $m$ are determined as
+  $m \pm 1.96 \cdot s/\sqrt{n-1}$, where $s$ is the (weighted) sample standard deviation and $n$ the number of observations in said sample.
+}
+
+This intuition about the size of confidence intervals is by and large met by the results in Figures~\ref{fig:ci_gwp_chf} and~\ref{fig:ci_gwp}, which show the confidence intervals for the means in Figures~\ref{fig:gwp_chf} and~\ref{fig:gwp}, respectively.
+Figure~\ref{fig:ci_gwp_chf} shows the situation for \ac{gwp} intensity in kg \ac{co2e} per CHF.
+Here, the trend across decile groups is clear in the sense that we observe a strictly monotone decrease in lifetime income.
+The confidence in the trend is not perfect but still distinct:
+The confidence intervals for means in neighbouring decile groups overlap, but at least confidence intervals between one decile group and its second-nearest neighbours are disjoint.
+For 2-percentile groups, no monotone trend can be affirmed, most confidence intervals overlap with several others, but we can say with confidence, that the mean \ac{gwp} intensities of the two lowest income 2-percentile-group are higher than the those of the other 2-percentile-groups.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/errorbars_gwp_chf}
+
+  \rule{1.05cm}{0pt}\includegraphics{../figures/errorbars_gwp_chf_poor.pdf}
+  \hfill
+  \includegraphics{../figures/errorbars_gwp_chf_rich.pdf}\rule{1.05cm}{0pt}
+  \caption[CI for mean \ac{gwp} intensity]{95 percent confidence intervals for decile group means of \ac{gwp} intensity of consumption (top panel) and for 2-percentile-group means (bottom panels).}
+  \label{fig:ci_gwp_chf}
+\end{figure}
+
+The trend for per-capita \ac{gwp} across decile groups in the top panel of Figure~\ref{fig:ci_gwp} is also clear:
+Mean per-capita \ac{gwp} increases with income and we are highly confident in our observation since the confidence intervals of the ten means never overlap.
+For the 2-percentile-group numbers in the bottom-panel the situation is less clear.
+Even though we can suspect a monotone trend, the confidence intervals of numerous pairs of means overlap and I cannot be confident of the trend.
+What I can say with some confidence, however, is that the last 2-percentile-group (the one with the highest lifetime income) has the highest per-capita \ac{gwp}.
+
+These considerations are based on variation in consumption patterns alone.
+They do not include uncertainties about the \ac{gwp} associated with consumption categories or about variation of this per-unit \ac{gwp} across different household types.
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{../figures/errorbars_gwp}
+
+  \rule{1.05cm}{0pt}\includegraphics{../figures/errorbars_gwp_poor.pdf}
+  \hfill
+  \includegraphics{../figures/errorbars_gwp_rich.pdf}\rule{1.05cm}{0pt}
+  \caption[CI for mean \ac{gwp}]{95 percent confidence intervals for decile group means of per-capita \ac{gwp} (top panel) and for 2-percentile-group means (bottom panels).}
+  \label{fig:ci_gwp}
+\end{figure}
+
+
+
+% Textwidth in cm: \printinunitsof{cm}\prntlen{\textwidth};
+% planned publication: \href{https://digitalcollection.zhaw.ch}{ZHAW digitalcollection} as a «Working Paper -- Gutachten -- Studie»
+
+\end{document}
+
+% \begin{itemize}
+% \item carbon pricing (costs proportional to emissions, but revenue recycling)
+% \item regulation such as technology mandates (costs may be lower than carbon pricing but proportional to emissions)
+% \item subsidies (pessimistic/realistic case: very costly; optimistic case: in the beginning not too costly and cheap in the long run since technologies with steep learning curves had been promoted) (cite own work to found pessimism)
+% \end{itemize}
+
+% Comparison to other literature
+% \begin{itemize}
+% \item \cite{burkhauser_recent_2012} discuss
+%   \begin{itemize}
+%   \item top-coding
+%   \item different measures of income (pre-transfer (à la Piketty, makes inequality bigger) or post-transfer; mostly pre-tax)
+%   \item unit that receives income (household v. tax unit; per-capita v. per unit)
+%   \end{itemize}
+%   they find tax and survey to yield similar conclusions if correcting for top-coding
+
+%   But is this relevant for us?: need to know what Paris people did for carbon inequality report/data base. That's hard to say for the climate inequality report 2023 (\cite{chancel_climate_2023}) specifically, but the Piketty people usually do (i) tax record based analysis with (ii) pre-transfer income (iii) per tax unit.
+% \item emissions from investments (Climate Inequality Report 2023) vs. only consumption based.
+% \item Sotomo/Helion survey of Swiss residents shows similar order of magnitude, but
+%   \begin{itemize}
+%   \item more flying with rich folks (do they include business trips?)
+%   \item additional questions about solar and heat-pump installations show that
+%     \begin{itemize}
+%     \item for solar, renters have less PV on the roof than owners; thus cities have less of their PV potentials tapped, since more rent
+%     \item for heat-pumps, new homes have more and are owned by rich types. But HP are also much more prevalent in rural areas, which is interesting since it does not show in our expenditure data. (Check if rural/urban was used for infering heating expenses from utilities).
+%     \end{itemize}
+%     I conclude that policy should make sure that RENTED homes should not be left behind when it comes to PV. Old homes are probably taken care of when new heating systems cannot be replaced by atmospher-carbonating ones.e
+%   \item \cite{meier_determinants_2010} (UK) and \cite{rehdanz_determinants_2007} (Germany) find that owners and renters react differently to price changes. In the UK owners react more strongly to price signals, in Germany, owners do. The UK study finds, that owners tend to occupy different types of dwellings the occupants of which react more strongly. The study of the German case shows that (controlling for dwelling type) owners have lower expenditures for energy than renters which may be explained by better energy efficiency.
+%   \end{itemize}
+% \end{itemize}
+
+
+% Weber et al. use SHEDS and say that CO2 levy lacks salience and that tenants and flat-dwellers face the short end of split incentives.
+% ----------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------
+% ----------------------------------------------------------------------------------------
+
+\section{Exposure to policies}
+\label{policies}
+If policies make utility bills more expensive\ldots
+For a discussion about \acp{cbam} in CH (\ac{co2}-Grenzausgleich), see \href{https://www.seco.admin.ch/seco/de/home/wirtschaftslage---wirtschaftspolitik/wirtschaftspolitik/Wachstumpolitik/cbam_co2_grenzausgleichsmechanismus.html}{SECO}\footnote{%
+  \url{https://www.seco.admin.ch/seco/de/home/wirtschaftslage---wirtschaftspolitik/wirtschaftspolitik/Wachstumpolitik/cbam_co2_grenzausgleichsmechanismus.html}
+}:
+EU does CBAM since October 2023, but Switzerland, for the time being, does not.
+
+\section{Caveats}
+\label{sec:caveats}
+
+\begin{itemize}
+\item I do not conduct a general equilibrium analysis and thus, our estimates of policy impacts only cover potential effects from more expensive consumer goods and their distributional effects, but not effects on income from labour, capital, or government transfers.
+\end{itemize}

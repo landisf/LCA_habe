@@ -1,0 +1,112 @@
+The contents of this project and their sources are listed by directory.
+
+Where no licensing modalities are given, copyright holders should be
+consulted if further use or distribution of the files is considered.
+
+* ./
+** All files directly in the top folder
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+Licence: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution, see
+<project_root>/licenses/legal_code_cc_by_4.txt
+* ./config-aggregation
+** aggregations_git.xlsx
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+Licence: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution, see
+<project_root>/licenses/legal_code_cc_by_4.txt
+
+* ./data-HABE151617/
+Description: HABE survey data. This is confidential data! Apply for it
+with habe@bfs.admin.ch
+
+Place data in files:
+- HABE151617_Ausgaben.txt
+- HABE151617_Konsumgueter.txt
+- HABE151617_Mengen.txt
+- HABE151617_Standard.txt
+
+Note: The data processing scripts in this repository may generate
+output that is not suitable for publication under the confidentiality
+agreement with BFS. It is the user's responsibility to make sure that
+the confidentiality agreement is followed.
+
+* ./data-MZMV/
+** su-d-11.04.03-MZ-2015-T01.xls
+Description: Tables from Microcensus mobility and traffic
+Source: BFS, ARE - Mikrozensus Mobilität und Verkehr (MZMV)
+Copyright: with BFS 2017
+License: [[https://www.bfs.admin.ch/bfs/en/home/fso/swiss-federal-statistical-office/terms-of-use.html][OPEN-BY-ASK]]
+Further info: mobilita2015@bfs.admin.ch
+Retreived from: https://www.bfs.admin.ch/asset/de/2503927 (Date: 11. January 2024)
+** read_MZMV.xlsx
+Own compilation and rearrangment of “su-d-11.04.03-MZ-2015-T01.xls”
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+
+License: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution, see
+<project_root>/licenses/legal_code_cc_by_4.txt
+
+* ./data-elcom-froemelt/
+** Median Strompreis per Kanton-full.xlsx
+Description: median electricity prices per canton
+Processing: Sort by (i) Kanton, (ii) Periode, and (iii)
+Verbrauchsprofile
+Source: ElCom via [[https://opendata.swiss/de/dataset/median-strompreis-per-kanton][opendata.swiss]] and [[https://visualize.admin.ch/browse?dataSource=Prod][visualize.admin.ch]]
+Copyright: Federal Electricity Commission (ElCom), licensed [[https://opendata.swiss/de/terms-of-use#terms_open][open use]]
+
+** Electricity_prices_per_canton_2015-2017.xlsx
+Own compilation and rearrangment of “Median Strompreis per
+Kanton-full.xlsx”
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+License: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution, see
+<project_root>/licenses/legal_code_cc_by_4.txt
+
+** Froemelt_et_al_2018_tables.xlsx
+Source: The file contains a compilation of tables presented in the
+[[https://pubs.acs.org/doi/suppl/10.1021/acs.est.8b01452/suppl_file/es8b01452_si_001.pdf][supplementary material]] to the paper by [[https://pubs.acs.org/doi/abs/10.1021/acs.est.8b01452][Froemelt, Dürrenmatt, and
+Hellweg (2018)]] which was kindly provided by [[https://orcid.org/0000-0003-0825-2184][Arthur Jakobs]]. I
+complemented it with unit conversions.  Terms of use of the
+original publication are given on [[https://pubs.acs.org/page/policy/authorchoice_termsofuse.html][https://pubs.acs.org]] and allow for
+non-commercial uses such as redistribution and adaptiation.
+Copyright: With [[https://orcid.org/0000-0003-0825-2184][Arthur Jakobs]] and [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+Licence: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution, see
+<project_root>/licenses/legal_code_cc_by_4.txt
+
+** es8b01452_si_002.xlsx
+Description: Supplementary material to [[https://pubs.acs.org/doi/10.1021/acs.est.8b01452][Froemelt at al. 2018]]
+Source: https://pubs.acs.org/doi/10.1021/acs.est.8b01452
+        (open access paper)
+Copyright: 2018 American Chemical Society
+Terms of use: https://pubs.acs.org/page/policy/authorchoice_termsofuse.html
+
+* ./data-gwp/
+** nfp73-ccl-preliminary-results-ipcc-gwp-april-2023.csv
+Description: GWP estimates per HABE consumption category by Jakobs and Mutel (2023)
+Source: https://github.com/OASES-project/CCL-results
+Copyright: [[https://orcid.org/0000-0003-0825-2184][Arthur Jakobs]] and Chris Mutel
+License: Open Database License (ODbL), see <project_root>/licenses/license_odbl.txt
+
+* ./doc/
+** Fig3_landis_cost_2019.png
+Description: Part of Figure 3 of [[https://doi.org/10.1186/s41937-019-0038-2][Landis (2019)]]
+Copyright: [[https://www.springeropen.com/get-published/copyright][Florian Landis]]
+Licensed: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution
+** diverse .tex and .bib files
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+Licence: [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative Commons 4.0 Attribution, see
+<project_root>/licenses/legal_code_cc_by_4.txt
+* ./python
+All python scripts are licensed as [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the Creative
+Commons 4.0 Attribution, see <project_root>/licenses/legal_code_cc_by_4.txt
+** 1_Calculate_demand_per_household.py
+This script heavily draws on the script [[https://github.com/OASES-project/CCL-results/blob/main/notebooks/2_Calculate%20demand%20per%20household.ipynb][2_Calculate demand per
+household.ipynb]] from https://github.com/OASES-project/CCL-results by
+Jakobs, A., & Mutel, C. itself licensed as [[http://creativecommons.org/licenses/by/4.0/][Open access]] under the
+Creative Commons 4.0 Attribution
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]], [[https://orcid.org/0000-0003-0825-2184][Arthur Jakobs]] and Chris Mutel
+** 1bis_Integrate_HABE_MZMV.py
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+** 2_Link_HABE_LCA.py
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+** 3_Lookat_HABE_LCA.py
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
+** 4_Assess_CPrice.py
+Copyright: [[https://orcid.org/0000-0002-4548-0429][Florian Landis]]
