@@ -1,0 +1,414 @@
+#+TITLE: Response to First Round of Referee Reports
+#+DATE: February 2025
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: num:nil
+
+* Editor
+/Your manuscript, "Consumption Based Responsibility for Global Warming/
+/and the Distribution of Impacts of SwissClimate Policy", has now been/
+/assessed./
+
+/I have now received two reports on your paper by two very good/
+/referees. The reports of the referees are just great. There is a lot/
+/in them. I agree with the referees and I am therefore offering to/
+/you the opportunity of revising the paper./
+
+/You should follow very closely their requests and in particular you/
+/should focus on fleshing out the statistical analysis of the/
+/determinants of the GHG footprints (if possible). I also agree with/
+/the suggestion of referee 1 to simulate more sophisticated climate/
+/policies. One additional suggestion is to use a simple index (such as,/
+/for example, the Suits index as in Andersson, Julius J., and Giles/
+/Atkinson. The Distributional Effects of a Carbon Tax on Gasoline: The/
+/Role of Income Inequality) to compare the degree of regressivity of/
+/the different climate policies you simulate./
+
+/If you decide to go ahead with the revision, needless to say, please/
+/submit the short text describing the main changes made and also the/
+/point-by-point replies to all the feedback together with the/
+/revision./
+
+* Reviewer 1
+/Referee report on Florian Landis, "Consumption based responsibility/
+/for global warming and the distribution of impacts of Swiss climate/
+/policy" The author combines the Swiss Household budget survey data of/
+/2015-2017, the last full set available today, with third-party data/
+/associating a greenhouse gas footprint to every spending item in that/
+/dataset to compute the greenhouse gas footprint of households. This is/
+/the "consumption based responsibility for global warming" of the/
+/title. Next, he looks for regularities in these data, in particular/
+/for a relationship between GHG footprint and income. Third, he/
+/examines how existing Swiss climate policy could burden the households/
+/by income class through its impact on the prices of the spending/
+/items. This is "the distribution of impacts of Swiss climate policy"/
+/of the title. Last, he simulates a uniform tax on all GHG emissions/
+/and checks again how this burden the households by income class,/
+/taking into account the uniform refunding of the revenues of the tax./
+
+/What is interesting in this paper:/
+- /At least since the yellow vest movement and the rise in energy/
+  /poverty, policy makers have become aware that they need to know who/
+  /is most affected by climate policies. To the extent that policies/
+  /can be fine-tuned, even a carbon or GHG tax, such information can/
+  /guide the design of complex climate policy. Furthermore, this/
+  /information can guide the design of social-cushioning measures./
+- /Even though it is not the first study relating consumption-based GHG/
+  /footprint with household type, in particular income class, it does/
+  /it with better data and much greater rigour than earlier/
+  /studies. One learns a lot on this from this analysis./
+- /The idea of relating elements of a complex climate policy with/
+  /expenditure items – how each policy feature could make these items/
+  /more expensive – and then showing how this affects different/
+  /household types is very attractive./
+
+/From a scientific point of view, this is not an excellent paper:
+- /The introduction is relatively poor in references. It cites as a/
+  /general result that lower-income households spend a larger share of/
+  /their income on energy- and emission-intensive goods than higher/
+  /income households, but provides only a single reference for this,/
+  /and it is specific to transport fuels (lines 88-92). I suppose/
+  /papers derived from the SHEDS survey could be cited. The/
+  /introduction also claims that "It has been well established that if/
+  /climate policy is revenue raising, however, revenue can be/
+  /redistributed to households (in a lump-sum per-capita fashion, e.g.)/
+  /and that this revenue recycling is more than enough to compensate/
+  /the regressive direct effects of carbon pricing and produce overall/
+  /progressive effects" (lines 96-101), but again only one reference in/
+  /a special case is provided./
+- /After computing per capita GHG footprints, the author relates them/
+  /to possible determinants. This is done in a graphical manner,/
+  /possible determinant by possible determinant. I wonder whether a/
+  /more systematic multivariate (regression) analysis would not be/
+  /possible./
+- /There seems to be an implicit understanding that climate policies/
+  /aiming at reducing emissions are price policies, or at least that/
+  /they burden households with the cost of mitigation or the cost of a/
+  /penalty (tax). For instance, when reporting a key finding of the/
+  /paper: "Policies that cause emissions reductions for these [luxury]/
+  /goods (and luxury versions of those goods in particular) can help/
+  /ensure that high-income households participate in the emissions/
+  /reduction effort to an appropriate degree." (lines 210-215). In/
+  /effect, Swiss climate policy also uses a lot of subsidies to/
+  /encourage GHG emission reduction, in particular for reducing/
+  /emissions from heating energy or for switching to electric/
+  /cars. Such policies might benefit high-income households/
+  /disproportionally./
+- /The whole discussion in the first part of section 4.2 ("Pricing CO 2/
+  /emissions in Switzerland") of the possible distributional impacts of/
+  /existing Swiss climate policy refers to CO2, while the households'/
+  /footprint was computed in GWP, i.e., related GHG emissions. This is/
+  /probably why the discussion remains qualitative or refers to other/
+  /publications, instead of using the results of the earlier chapters./
+- /The second part of section 4.2 ("Pricing ghg emissions globally")/
+  /does use the per-capita GHG footprints computed in chapter 3, but it/
+  /does so only for a uniform GHG tax, when the previous subsection on/
+  /the existing climate policy shows that there can very well be/
+  /differentiation by expenditure category. Why not imagine a GHG tax/
+  /that would leave out or treat differently some sectors or goods,/
+  /e.g., agriculture/food? In the paper, the predictable regressive/
+  /effect of the uniform GHG tax is offset through uniform per-capita/
+  /redistribution of its revenues. I think that the expenditure/
+  /patterns identified in chapter 3 could have been put to better use./
+- /The concluding remarks mention actually quite little of the lessons/
+  /learned from the GHG footprint analysis. Instead, it states results/
+  /that were not directly shown with the data in the paper and that are/
+  /not actual contributions of this paper. E.g.: "where luxury goods/
+  /are emissions-intensive, climate policy that focuses on these goods/
+  /can ensure that high- income households make a relatively bigger/
+  /effort to reduce emissions than low-income ones" (lines 1753-1758),/
+  /or "The current design of the CO 2-levy recycles two thirds of the/
+  /revenue to households in a per-capita lump-sum fashion. This makes/
+  /the CO 2-levy overall progressive."/
+
+/Minor points:/
+- /Figure 1 is strange. It compares spending per capita, which is/
+  /household spending divided by household size, with permanent income/
+  /per capita, which is measured as household spending divided by the/
+  /OECD equivalent household size. I am not sure what we learn from/
+  /this comparison./
+- /I was intrigued by the lower figures in Fig. 8 and Fig. 9, which/
+  /show the GWP intensity of different spending items per income/
+  /class. How can the GWP intensity of one CHF of heating fuel, for/
+  /instance, vary by income class? In effect, this is not GWP intensity/
+  /in the classic sense of GHG emissions per monetary unit of/
+  /spending. It is the contribution of the different spending items to/
+  /each household's total GWP or GHG footprint. In other words, it is/
+  /not GWP intensity of one CHF of heating fuel, but GWP of heating/
+  /fuel relative to total spending of a household. I wonder whether/
+  /another terminology could eliminate this confusion, one that/
+  /involves the term "share" or "contribution"./
+- /When discussing the climate impact of air travel, a RFI = 2 is used,/
+  /citing a 2019 paper (lines 1200-1203). I would suggest using the RFI/
+  /= 3 recommended by Neu, U. (2021).  The impact of emissions from/
+  /aviation on the climate – 2nd edition. Swiss Academies/
+  /Communications 16(3), https://scnat.ch/en/id/cSx4y./
+- /When referring to the appendices, the word "appendix" got/
+  /lost. E.g., "a more detailed discussion of this can be found in C"./
+
+/Recommendations for shortening the paper:/
+- /The last sub-section of 4.2 ("Additional considerations")/
+  /can be cut. It discusses the possibility of households to adjust their/
+  /consumption to a CO 2 tax, when the paper is about GHG emissions and,/
+  /by necessity, ignores consumers' response to changing relative prices./
+- /There are many figures, of which a good number can be dispensed with/
+  /because they provide little information (Figure 1) or could be/
+  /replaced by a sentence (e.g., the lower figures of Fig. 4: per/
+  /capita GWP ranges between a and b for renters, with a median of c,/
+  /while it ranges between de and e for owner-occupants with a median/
+  /of f)./
+
+** Final recommendations
+- /The paper could be improved by using a proper statistical analysis/
+  /of the determinants of personal GHG footprints, or there should be/
+  /an explanation of why such an analysis is not possible./
+- /The paper could be improved by using the detailed GHG footprint data/
+  /by income group to simulate more sophisticated climate policies than/
+  /just a uniform GHG tax./
+- /The paper could be shortened as indicated above./
+- /When this is done, I believe that it is strong and interesting/
+  /enough to be published in SJES./
+
+
+* Reviewer 2
+/With some minor adjustments, I recommend the paper for publication./
+
+/It is generally an excellent and well-written paper with relevant/
+/additions to the literature. It builds on and updates earlier work in/
+/the same area, i.e. quantification of distributional effects of/
+/climate policy based on Swiss HABE data and reflections on resulting/
+/policy implications (see e.g. Landis 2019 as cited in the references,/
+/published in the same journal)./
+
+/The focus in this particular paper is on improving the methodology for/
+/the attribution of GHG emissions through combining life-cycle/
+/assessment with household-specific consumption data. This is work that/
+/deserves merit. In contrast to previous papers, the author has chosen/
+/to simplify the analysis in other aspects, refraining from simulating/
+/distributional effects with a model that would take price-related/
+/adjustments in consumer behaviour into account.  Also, learning curves/
+/and thus the rapidly changing relative costs of technologies are/
+/neglected. These are acceptable choices, but also important/
+/caveats. When communicating the results, it must be pointed out even/
+/more clearly that the analysis is valid for a short- term horizon and/
+/that the impacts are systematically overestimated./
+
+I took Reviewer 2's reservations into account and *write: ''*
+
+/The second part of the paper reflects on climate policy design that/
+/avoids regressive effects, based on the quantitative results of the/
+/first part. The policy analysis is well-written, although most of the/
+/insights in this second part are not new. While the arguments given/
+/are correct, the policy suggestions rely excessively on the/
+/expectation that good economic arguments can lead to good/
+/solutions. However, experience from recent decades has demonstrated/
+/that solutions must be found that make sense and are at the same time/
+/able to survive the political process. This may only be the next step/
+/in policy analysis, and it may be fine that the paper chooses not to/
+/explore actual politics. Yet, it weakens the paper’s policy-relevance/
+/and should be mentioned more prominently as a caveat. As a quick/
+/remedy, the paper would profit from mentioning and acknowledging these/
+/issues more clearly. The paper’s alleged first contribution (“it gives/
+/an overview over the extent to which policy makers can make sure that/
+/high-income households do their fair share”) must be reformulated,/
+/because it cannot be achieved without a deeper analysis of Swiss/
+/politics. At the end of the paper, it would make sense to hint to/
+/necessary future research in this and other areas./
+
+It is true that the current paper focuses more on the economic
+effectiveness of political instruments than on politcial feasibility.
+*I place corresponding caveats in several places:*
+
+/In the following, please find more detailed comments section by/
+/section:/
+- /Abstract: well-written and clear/
+- /Introduction:/
+  + /Overall good, maybe slightly lengthy/
+  + /motivation well explained/
+  + /good literature overview/
+  + /Footnote 3 is more than just a footnote and would be better placed/
+    /in the main body of the text./
+  + /Line 172ff: There are more important reasons than missing/
+    /administrative borders between households to be mentioned:/
+    /Fairness is only one of many criteria that determine policy/
+    /outcomes in a political process that is marked by conflicting/
+    /interests and intensive lobbying efforts. Even for fairness, there/
+    /are important deviations between perceived fairness and fairness/
+    /rules applied in model simulations. For example, a CO2 levy on/
+    /transport fuels is not difficult to implement due to missing/
+    /administrative borders between households, but due to political/
+    /preferences and lobbying efforts, among other things./
+  + /Line 193ff: The effectiveness of measures is not proportional to/
+    /the current carbon content. Most importantly for the paper’s/
+    /topic, measures that target the rich will be less effective,/
+    /because their demand reaction to a given price change will/
+    /typically be lower./
+  + /Footnote 5 is more than a footnote, but the principal caveat of/
+    /the paper, which needs to be mentioned more prominently. There is/
+    /no realistic prospect for a uniform global GHG tax. Even then, the/
+    /analysis would not be precise due to heterogeneous price/
+    /elasticities. The neglect of demand reactions becomes the more/
+    /problematic, the more ambitious the emission reductions become on/
+    /the way to net zero. Neglecting demand reactions is an/
+    /understandable choice for this paper, but the consequences of this/
+    /choice must be clearly communicated, especially that impacts on/
+    /household budgets are systematically overstimated./
+  + /Line 203ff: The first contribution must be reformulated, because/
+    /the paper does not achieve this. This contribution cannot be/
+    /achieved without a deeper analysis of Swiss politics, which is not/
+    /within the scope of the current paper, as somewhat acknowledged/
+    /just below under “second”./
+  + /Line 217ff: Recommended to first say what you do (“provide an/
+    /outlook …”)  before acknowledging the lack of rigor and realistic/
+    /policy detail./
+  + /Line 224ff: We are in times of technological disruption, and at/
+    /least currently the rich adopt the new low-carbon technologies/
+    /faster than the poor (electric cars, heat pumps). Under these/
+    /circumstances, distributional patterns will certainly change. It/
+    /might be difficult to assess how. It is even impossible when/
+    /demand changes are neglected. The upcoming change is so sweeping/
+    /that any static analysis can only provide short-term/
+    /insights. This is fine, but must be acknowledged rather than/
+    /reinterpreting variables as constants./
+- /Data and method: This looks like intensive and thorough data/
+  /work. No suggestions./
+- /Responsibility for global warming:/
+  + /The presentation of the introductory parts could be more concise/
+    /as much of this seems fairly self-evident./
+  + /Line 466ff: This explanation could be improved. It is hard to/
+    /grasp for anyone who doesn’t know anyway what is represented./
+  + /Line 469ff: This could be moved to a footnote./
+  + /Line 481ff: Annual per capita expenditure was chosen as the/
+    /criterion for constructing income deciles. It is thus no surprise/
+    /that annual per-capita expenditure increases as we move through/
+    /the income deciles. What is more interesting is not only that the/
+    /10th decile shows a much higher expenditure, but also that the/
+    /first decile has a much lower expenditure than could be expected/
+    /from the trend of deciles 2 to 8. The boxes overlap/
+    /considerably. If the construction of the deciles is correctly/
+    /described in line 404f, this can only be explained with the/
+    /division by the equivalence scale. Overall, figure 1 needs more/
+    /explanation than that expenditure increases and that there is some/
+    /heterogeneity. What do we really learn (and not learn) from this/
+    /figure?  Given the construction of the deciles, we don’t learn/
+    /anything about the relation between expenditure and income, other/
+    /than the labeling suggests.  The labeling is correct, but readers/
+    /may have to be reminded of the construction of the deciles not to/
+    /misinterpret the figure. What does the overlap between boxes tell/
+    /us?/
+  + /Line 659f: Can the reason for this be identified?/
+  + /Figure 4:/
+    - /“Ownership of dwelling” would be a more appropriate title for/
+      /the second box chart than “Renting”./
+    - /In the urbanization box chart, there are hardly any differences/
+      /between the three groups, which is worth to be commented in the/
+      /text./
+  + /Figure 5: It is diffcult to see the differences in this/
+    /figure. This would be easier if shares were shown, which could be/
+    /done given that differences in totals are already shown in/
+    /figure 1./
+  + /Line 854: Not exemption, but exception./
+  + /Line 871: The term “central heating” is oddly used here. Later in/
+    /the paper (line 1042) the unusual definition for central heating/
+    /is roughly provided (“mostly by households who rent”). It should/
+    /already be provided here, so readers can understand./
+  + /Line 928: peri-urban and rural settings/
+  + /Line 1030: An addition to the sentence like “especially gasoline/
+    /and Diesel” would help with seeing this in the graph./
+  + /Line 1037: “low-emission electric power”: Are imported (grey)/
+    /emissions taken into account?/
+  + /Sensitivity analysis:/
+    - /Caveats are well explained./
+    - /Line 1214ff: The comparisons between graphs from different/
+      /sections are tedious for the reader. Could this be presented in/
+      /an alternative way?/
+    - /Line 1222ff (whole paragraph): Please check once more whether/
+      /this justification is convincing and reformulate when necessary./
+- /Climate policy design:/
+  + /Line 1303ff: That emission free technologies are more expensive/
+    /than their polluting counterparts becomes increasingly incorrect/
+    /both in heating and transport. Extent and pace depend on the/
+    /discount rate, among other things.  What is clear is that in the/
+    /medium run electromobility will be cheaper for private households/
+    /than riding ICE vehicles, at least in the moment when a new/
+    /vehicle is purchased. Thus, stating that this assumption is true/
+    /at least in the short and medium run is stretching it too far. I/
+    /wouldn’t want to demand redoing the analysis because of this, but/
+    /instead of trying to justify a partially questionable assumption,/
+    /this should be fully presented as an important uncertainty of the/
+    /analysis, acknowledging that the analysis is short-term in nature,/
+    /because of a lack of dynamics in the approach. Note that the/
+    /potential overestimation of specific costs adds to the/
+    /overestimation of impacts on household budgets due to the neglect/
+    /of demand changes./
+  + /Line 1344: Although this is correct in an accounting sense, it/
+    /should be considered that these (especially air transport) could/
+    /be precisely the consumption categories that low-income households/
+    /feel excluded from when they become more expensive. This can make/
+    /it difficult to find political majorities for the respective/
+    /measures, although they are progressive in nature./
+  + /Line 1381ff and 1384ff: These suggestions make sense. It could be/
+    /stated that this is about the opposite of the usual policy/
+    /approaches which have made sure that large and expensive ICE/
+    /vehicles can stay on the market. The discussion about synthetic/
+    /fuels has a similar spin. The suggested policies are thus/
+    /difficult to accomplish politically, and it would be interesting/
+    /to analyze what it would take to change this. Although this seems/
+    /to be beyond the scope of this paper, it could be mentioned that/
+    /the suggestions represent a radical change compared to current/
+    /polices./
+  + /Line 1475ff: This has indeed been shown in the international/
+    /literature. Has it also been shown for Switzerland, which doesn’t/
+    /have noteworthy extraction industries? Can we be confident that it/
+    /applies to Switzerland? If so, why?/
+  + /Figure 11: It would be helpful to state in the main text that this/
+    /figure is from another study (Landis 2019). Among other things,/
+    /this might keep readers from trying to decipher the meaning of/
+    /“10TPC LS”./
+  + /Line 1580: It might be good to roughly explain how this assumption/
+    /of a uniform tax including grey emissions deviates from current/
+    /policies. How are transport fuels treated? I.e.: Are emission/
+    /taxes levied on top of the mineral oil tax?/
+  + /Footnote 21: When the caveat of neglected demand changes is/
+    /discussed more prominently, this footnote could be moved to the/
+    /main body of the text to emphasize the similarities between the/
+    /results./
+  + /Are CO2 tax revenues fully redistributed? If so, I am failing to/
+    /understand how the costs of climate policy are accounted/
+    /for. Assuming no costs would be a serious issue. I rather assume I/
+    /missed something, which may mean that additional explanations/
+    /could help./
+  + /Line 1636ff: Successful recycling is not only a design issue, but/
+    /also requires that the redistribution is properly communicated, so/
+    /recipients become aware of the money they receive. Currently, only/
+    /a minority in Switzerland is aware that a part of the CO2 levy is/
+    /redistributed to households./
+  + /Line 1706ff: The key and problematic role of utilities could be/
+    /elaborated a bit./
+  + /Line 1728ff: Isn’t this current policy?/
+  + /Line 1740: I suggest to replace “favourable for low-income/
+    /households” with “progressive”, because the latter is clearly/
+    /defined./
+- /Concluding remarks:/
+  + /Well-written summary of results. Some of these results are not/
+    /new, of course./
+  + /Line 1775: It is not clear on what basis the word “should” is/
+    /placed in this sentence. It is not necessarily a general principle/
+    /for social policies to fully neutralize adverse distributional/
+    /effects of any given policy package. There is nothing wrong with/
+    /recognizing hardship cases. The circumstances under which they/
+    /call for support are more debatable. The need for support will/
+    /usually be measured on the basis of the individual household’s/
+    /economic circumstances, not relative to a situation without a/
+    /particular policy package. Maybe this is even what is meant. In/
+    /any case, a normative statement like this will profit from more/
+    /precision. If preferred, avoiding normative statements is a quick/
+    /solution./
+  + /Line 1813: I suggest to replace “normal” with “regular”./
+  + /An outlook on possible future research could be provided. For/
+    /example, for the suggestions to become policy-relevant, some/
+    /additional policy analysis will be necessary./
+- /Appendix B:/
+  + /First paragraph: This is difficult to grasp. Does it require one/
+    /more introductory sentence to easily understand the goal of the/
+    /exercise?/
