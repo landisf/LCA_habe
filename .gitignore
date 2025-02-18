@@ -30,3 +30,5 @@ setup.cfg
 /doc/*.bcf
 /doc/*.tex.bak
 /doc/*.run.xml
+/doc/submission_to_journal/submit_this/
+/doc/submission_to_journal/test_this/

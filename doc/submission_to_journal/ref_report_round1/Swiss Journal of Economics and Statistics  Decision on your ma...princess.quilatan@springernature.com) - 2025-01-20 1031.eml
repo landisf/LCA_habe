@@ -1,0 +1,191 @@
+Received: from GVAP278MB0104.CHEP278.PROD.OUTLOOK.COM (2603:10a6:710:22::10)
+ by ZR0P278MB0569.CHEP278.PROD.OUTLOOK.COM with HTTPS; Mon, 20 Jan 2025
+ 09:31:53 +0000
+Received: from DUZPR01CA0183.eurprd01.prod.exchangelabs.com
+ (2603:10a6:10:4b3::21) by GVAP278MB0104.CHEP278.PROD.OUTLOOK.COM
+ (2603:10a6:710:22::10) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8356.21; Mon, 20 Jan
+ 2025 09:31:51 +0000
+Received: from DB1PEPF0003922D.eurprd03.prod.outlook.com
+ (2603:10a6:10:4b3:cafe::57) by DUZPR01CA0183.outlook.office365.com
+ (2603:10a6:10:4b3::21) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8356.21 via Frontend Transport; Mon,
+ 20 Jan 2025 09:31:51 +0000
+Authentication-Results: spf=pass (sender IP is 192.174.90.91)
+ smtp.mailfrom=sn-bounce.springernature.com; dkim=pass (signature was
+ verified) header.d=springernature.com;dmarc=pass action=none
+ header.from=springernature.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ sn-bounce.springernature.com designates 192.174.90.91 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.174.90.91;
+ helo=mta-90-91.sparkpostmail.com; pr=E
+Received: from mta-90-91.sparkpostmail.com (192.174.90.91) by
+ DB1PEPF0003922D.mail.protection.outlook.com (10.167.8.100) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8377.8 via Frontend Transport; Mon, 20 Jan 2025 09:31:50 +0000
+X-MSFBL: ZwuBMUxCbHxZQQnIc8rSdS9bcV4aNdngSUD9GYo3ljI=|eyJ0ZW5hbnRfaWQiOiJ
+	zcGMiLCJzdWJhY2NvdW50X2lkIjoiMTgxMyIsImN1c3RvbWVyX2lkIjoiMTc2Mzg
+	iLCJyIjoiZmxvcmlhbi5sYW5kaXNAemhhdy5jaCIsIm1lc3NhZ2VfaWQiOiI2Nzd
+	mMDQxODhlNjdlYmNlMTRlMCJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=springernature.com;
+	s=scph1116; t=1737365508; i=@springernature.com;
+	bh=ECr7f3DEp8yOzrnT6+8Qs2lz4RuKlX+qv/5AKLlT8/w=;
+	h=Content-Type:To:Message-ID:Date:Subject:From:From:To:Cc:Subject;
+	b=DQNll7XMUxbVjKnGvZ8DXydMRuGXf3omRVS7GhiwYrMDQJvoXNNHOkw9w0+ofsHHX
+	 jHYNnFmeDo5ldeHZwZFbRgbxXWm3ifGFeTe/e4eWTWOEC8ETkSqcnKM6pv0HiijplS
+	 hxRMt8TvvOwIYH2JpadMu5vPp29Uki1KgIvShiEU=
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+To: florian.landis@zhaw.ch
+Message-ID: <0E.41.05785.4081E876@i-0afae24b0bf160851.mta1vrest.sd.prd.sparkpost>
+Date: Mon, 20 Jan 2025 09:31:48 +0000
+Subject: Swiss Journal of Economics and Statistics: Decision on your manuscript
+From: "Swiss Journal of Economics and Statistics" <princess.quilatan@springernature.com>
+Return-Path: msprvs1=20115ibNMEMxy=bounces-17638-1813@sn-bounce.springernature.com
+X-MS-Exchange-Organization-ExpirationStartTime: 20 Jan 2025 09:31:50.8555
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: 4fd64587-277e-489a-9269-08dd393544e7
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 5d1a9f9d-201f-4a10-b983-451cf65cbc1e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: DB1PEPF0003922D:EE_|GVAP278MB0104:EE_|ZR0P278MB0569:EE_
+X-MS-Exchange-Organization-AuthSource: DB1PEPF0003922D.eurprd03.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: 4fd64587-277e-489a-9269-08dd393544e7
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: 1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|29132699027;
+X-Forefront-Antispam-Report: CIP:192.174.90.91;CTRY:US;LANG:en;SCL:1;SRV:;IPV:NLI;SFV:NSPM;H:mta-90-91.sparkpostmail.com;PTR:mta-90-91.sparkpostmail.com;CAT:NONE;SFS:(13230040)(29132699027);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 20 Jan 2025 09:31:50.3867
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4fd64587-277e-489a-9269-08dd393544e7
+X-MS-Exchange-CrossTenant-Id: 5d1a9f9d-201f-4a10-b983-451cf65cbc1e
+X-MS-Exchange-CrossTenant-AuthSource: DB1PEPF0003922D.eurprd03.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: GVAP278MB0104
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:03.0869198
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8356.017
+X-Microsoft-Antispam-Mailbox-Delivery:
+	ucf:0;jmr:0;auth:0;dest:I;ENG:(910001)(944506478)(944626604)(920097)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?VldhT0JHUUszVDFJNWNkY2txa1hiRjAzSS8zV01tVXZ1TnYzem52c29QK1hO?=
+ =?utf-8?B?cTlwYzFYcUVRRW5OMUE0aDZ4eUU3NkluTDBvREFYWXdBaUFSVDh4VS9LeXdB?=
+ =?utf-8?B?QWoyeTl4MGJnSCt6OGQyWDNsemxUa1BsWnp0ZHZmSUhVRGEveVJ5LzdGMWRt?=
+ =?utf-8?B?R1NkSGhlWGpxMDVnZEkzKzBtZEpTWWNEQkJkWWUvU3Z6S2F4SVlIREtJcThU?=
+ =?utf-8?B?Q2FKejZSa3NBVGFTTzRCQ0NXMmpjaUVQWGx6WEVwTnYzN2xRLzF2VUJlYVd5?=
+ =?utf-8?B?QWt0NkE5YUg5Skd5SzYyRVJSZFYwSGFIaG1YOXo4c1oyTFkxTnVFUEthWjYy?=
+ =?utf-8?B?OWRSWEdiK0VueUFWenpBaXlCSVZQTHNLZytyQ0lNWGlaRWJLYTRsRFBBTVVp?=
+ =?utf-8?B?cGVlSC9FMG9ZRTg4VFRsWldYSWJESXVaWW13OTRGY2pXK3NBTzhPRWlhOG1K?=
+ =?utf-8?B?bzh2UDBlUHQrdjQ2V1h6ZGxMdmNYVVo2Z3MrRVlEcU9za0tSS0lsMXpEWWdU?=
+ =?utf-8?B?ZWhMclU0OTgyaU03R2M3SmNIY1RwTm1PV3dtaU1mOUFpV0ZBTkFPZnhoeW1B?=
+ =?utf-8?B?bnV3YWQ3VjR4QktMRm5tUzU2MCtreW1oNnRqMXUxVGU4NXpnckNjcWJxMERu?=
+ =?utf-8?B?SUx6RU0xSFFxR3ZkMGdGRGRjampoNmthNFF1dlZwT0d5cHowcVFUUHh2Slpo?=
+ =?utf-8?B?VS94SDdidC9xWitjZzJtT2xPUlMwSHJUZGFVQTVGelhHMm4xTmxKRzN2WE9L?=
+ =?utf-8?B?MERxaGpINGpHUURXbHNtNVFuejNCVzBKRWRJNEc1TXZMUTJvQ2hYR0hXU3FY?=
+ =?utf-8?B?bTVZYVR0VjVJY0lpVFhPR2phbUpCVEdJMjVGRDdnWmc5RFVnTThYRU5UUFAy?=
+ =?utf-8?B?S1QzNXNkbXVFNjNXUUd1dzc2ZHZoYkhNM0pZd2tIRW1WR0NCVTYyQVlIYmFa?=
+ =?utf-8?B?NitFVTVyc3ZOc1ZuMlB0b2JvRU55OHdISm1pSUNNaE9jRkZvWUZyME1RYVNl?=
+ =?utf-8?B?ZlpQelpTUkp2blg4dGZxNzE3V0RFakExVzRWT25lZkUreHVIazJaTzY4NWw4?=
+ =?utf-8?B?RE5JcHR2MHYyOWRBSmNKdmVVQVEzTWtNdzJ1anU4MUYyeDhQNXAzNGNna1d4?=
+ =?utf-8?B?K3ZWTEtZQUhkOVRiQ3VQUXpGUTN0QWxnTWl2REp2aDZyOE1JUVF0Rk4rTS9Y?=
+ =?utf-8?B?ZE1mNE1DQXRyZVFoWW9SQmhNK3BSK2FlV3hVZ1c5VVppaksxajRLcG5iV0E4?=
+ =?utf-8?B?NU5kdlhSN2ZxcDNtd2l4TlNybnpwd09oeW56elFhdS9ueGo2Y2IxcDE0c08v?=
+ =?utf-8?B?bVg1V2xJcEQ1QVJ0TWFGMy9VSXhqTy9ONEFHVWs3WjBWOGpUR2o1UGtuV0pV?=
+ =?utf-8?B?dTVwYi9nd1ZHRWFRVHJsbjRZRlZmb3F4ckJPWkNUOXBra3BJWDVucG9ndmhD?=
+ =?utf-8?B?em10TGtiWkJuVG44S2VGVTVtK0tJSmk0OENKb1liak9kQnNGbVd0VEVWWHZj?=
+ =?utf-8?B?SGJJeUhEKzU0UkQ1Sys3aWZpSWZCd3IyMnZNSWM1WXIzR3JqSFVCdll2M09D?=
+ =?utf-8?B?Q0JPVnBlY2M1cytCZzRzekNrOGludjdIRjJ4L0doZjF2Y0wzTGhDYjBHQVBX?=
+ =?utf-8?B?OGlzU3JlbVZiT2dZOUhmaG5yODdVb3JNUTc3K3pTUG1MTm56VXNQWXNSYnNJ?=
+ =?utf-8?B?RjdKa3VEVHM2THZ3cWpCMnZ6Z3Q1Qnd6UW85UUVrUWx3RmR4ZmsxT3JOcVNx?=
+ =?utf-8?B?eXV6ZElOcjRSY2gzK2VpZldjRERkcXg3Vy8xemhUV2M1VThaMFBMT1hYSHpW?=
+ =?utf-8?B?Y2pyU1VtRitQcVpSQVhiaFQ4amFIeFozSGcwZWFESGhCYjZ0LzE3TWd0NGRV?=
+ =?utf-8?B?d3Q1WExsdkkxZ3l0MlAydTY5MFd5dllhZlhnUU9XMnJ1dkVUVVViOTBMWDFU?=
+ =?utf-8?B?aGRGWUhUaEpadVh2cmpuWk9YMy9zRGlMbGpOUHNwQjFIaGhreE9RTE5yQ2Uv?=
+ =?utf-8?B?WCtHNkQ5OVd3RmlsMnhnbjJ5SWpxOHM4bDNBazJQZ3VoTmJNLzRRRzRNb2tK?=
+ =?utf-8?B?TTloaUZ0QkZZL2JVNWhOME9ua0RCRlMrUHdwTzhNTDVSTFc0YW9XTm9uNHYz?=
+ =?utf-8?B?SnJFTVJISlZxQUpqU0hlWnpqa2VLQ29ONkVNUXlrRlZyU3dueko4VTA3MElP?=
+ =?utf-8?B?cWhlNGVVR3pQUFJFeDRyWVJ5bG0wYnZ1MGw3cGRCWUl0MlJTcVBkSHZSSFZn?=
+ =?utf-8?B?WTVIa1d4d1g2cU1DNFl5M2hoWCtpZ2tKUCtaRHdnOWNSYmFrcSsrQllZNjVp?=
+ =?utf-8?B?OWFiL1RqSWRqcEZNQWcxZ2lRQStNOERqc2ZSOUNRVGZNVjVYWFVnd2dFd21q?=
+ =?utf-8?B?Y3NlTitZMzRrLzNNeEdBZVRGa3lrWlRJZzVDTHZyS1NGTGNUMXhMdHIvUnR5?=
+ =?utf-8?B?YWFGRWRRalRLUWpLZkQyVXNLcURGbHpxdm14a2oxUTVtbWd5Mko2TWw0WmhU?=
+ =?utf-8?B?bGtja3hhaUp0RjVjajV2b2dKQTlmemg1QnNzM25oRWdFenhPYXJYNlJ3dDZx?=
+ =?utf-8?B?ckthQVQweGRkL2c2cGpqNEgvYzMwNnRzaTJGTTczRUJmREFMZURMOVEwWERF?=
+ =?utf-8?B?Y1djNWhRaDRXNGlBQ0UzaFd0RGxrYUY2dmZOVVA0Wi9PRjlJQWlkbk92bjJv?=
+ =?utf-8?B?RTZuWHpGV29zNndUcW55WTgwdGNuR01JTFJaQituTGNxSUFtY0VQdlpUQndO?=
+ =?utf-8?B?ZEJOZFVrSStJSnFVUlJ2OHFod1lpckRNV0pMUXV2NU9OTWlVZS91U3ZlT01a?=
+ =?utf-8?Q?Yteqfd2b9YWswsyHXLzPmveB9FgJZTJ4hT9r13Mwvu?=
+MIME-Version: 1.0
+
+Ref: Submission ID 2aa6e159-cc57-43fb-9e5c-7a08fb755322=0A=
+=0A=
+Decision: major revision=0A=
+=0A=
+Dear Dr Landis,
+
+Your manuscript, "Consumption Based Responsibility for Global Warming and t=
+he Distribution of Impacts of SwissClimate Policy", has now been assessed.
+
+I have now received two reports on your paper by two very good referees. Th=
+e reports of the referees are just great. There is a lot in them. I agree w=
+ith the referees and I am therefore offering to you the opportunity of revi=
+sing the paper.=20
+
+You should follow very closely their requests and in particular you should =
+focus on fleshing out the statistical analysis of the determinants of the G=
+HG footprints (if possible). I also agree with the suggestion of referee 1 =
+to simulate more sophisticated climate policies. One additional suggestion =
+is to use a simple index (such as, for example, the Suits index as in Ander=
+sson, Julius J., and Giles Atkinson. The Distributional Effects of a Carbon=
+ Tax on Gasoline: The Role of Income Inequality) to compare the degree of r=
+egressivity of the different climate policies you simulate.=20
+
+If you decide to go ahead with the revision, needless to say, please submit=
+ the short text describing the main changes made and also the point-by-poin=
+t replies to all the feedback together with the revision. Good luck!
+
+If you need more time, please contact us and include your submission ID.
+
+Kind regards,
+
+J=C3=A9r=C3=A9my Laurent-Lucchetti
+Editor
+Swiss Journal of Economics and Statistics=0A=
+=0A=
+INSTRUCTIONS=0A=
+=0A=
+TO SUBMIT YOUR REVISION=C2=A0=0A=
+=0A=
+The original submitting author, Florian Landis, must upload a point-by-poin=
+t response to reviewer comments as a PDF file.=E2=80=AF This must include a=
+ description of any additional experiments that were carried out and a deta=
+iled rebuttal of any criticisms or requested revisions that you disagreed w=
+ith.=C2=A0=0A=
+=0A=
+Any files (including the manuscript) that have changed based on reviewer co=
+mments will also need to be uploaded again. Do not include tracked changes =
+in your manuscript file. If you need to upload a marked-up version of the r=
+evised manuscript with the changes highlighted, you can upload it on the re=
+lated file section.=0A=
+=0A=
+Please note the original submitting author may be different from the corres=
+ponding author.=E2=80=AF=C2=A0=0A=
+=0A=
+Ensure you also follow our authorship policies:=0A=
+=0A=
+https://sjes.springeropen.com/=0A=
+=0A=
+WHEN DO YOU NEED TO SUBMIT YOUR REVISION BY?=0A=
+=0A=
+Unless the editor has recommended another deadline, we recommend submitting=
+ all revisions within 14 days of the corresponding author receiving a revis=
+ion request email.=0A=
+=0A=
+If you need more time, please contact us and include your submission ID. Th=
+is ID can be found in the revision request message.=0A=
+=0A=
