@@ -228,6 +228,13 @@ effectiveness of political instruments than on politcial feasibility.
   + /good literature overview/
   + /Footnote 3 is more than just a footnote and would be better placed/
     /in the main body of the text./
+
+    I moved to comply with this request but then decided against
+    it. Just moving the text of the footnote into the main text
+    interrupts the flow of argumentation. And I do not see the
+    necessity of re-ordering my argumentation to incorporate this
+    information in the main text.
+
   + /Line 172ff: There are more important reasons than missing/
     /administrative borders between households to be mentioned:/
     /Fairness is only one of many criteria that determine policy/
@@ -238,11 +245,38 @@ effectiveness of political instruments than on politcial feasibility.
     /transport fuels is not difficult to implement due to missing/
     /administrative borders between households, but due to political/
     /preferences and lobbying efforts, among other things./
+
+    My argument is that, for the example of the CO2 levy on transport
+    fuels, such a levy will not be differentiated by household
+    type. To make this clearer, I now write ``Without administrative
+    “borders” between households of different income levels, it seems
+    unlikely that policies will be differentiated by house- hold
+    income (such as, for example, different CO2 prices for households
+    of different income) and the scope of designing national climate
+    policies to target households of different income levels may be
+    limited.''
+
   + /Line 193ff: The effectiveness of measures is not proportional to/
     /the current carbon content. Most importantly for the paper’s/
     /topic, measures that target the rich will be less effective,/
     /because their demand reaction to a given price change will/
     /typically be lower./
+
+    Is there any good evidence for this? I find findings to be rather
+    mixed
+    (https://www.sciencedirect.com/science/article/pii/S0140988320302772
+    https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4924764) but
+    it tends to agree with Reviewer 2's prediciton. In terms of
+    theoretical argumentation, there are arguments /for/ high price
+    elasticities at high incomes (non-necessary use is more easily
+    reduced, investments into energy efficiency are easier for high
+    income households with easy access to credits) and /against/
+    (lower share in overall expenditure makes high income households
+    pay less attention to energy expenditures).
+
+    I don't think I rely heavily on this argument in that section and
+    I *edit other parts of the paper?*
+
   + /Footnote 5 is more than a footnote, but the principal caveat of/
     /the paper, which needs to be mentioned more prominently. There is/
     /no realistic prospect for a uniform global GHG tax. Even then, the/
@@ -258,9 +292,21 @@ effectiveness of political instruments than on politcial feasibility.
     /achieved without a deeper analysis of Swiss politics, which is not/
     /within the scope of the current paper, as somewhat acknowledged/
     /just below under “second”./
+
+    I understand this comment of Reviewer 2 to mean that, even though
+    I identify /consumption goods/ for which high income households
+    spend more than lower income households, I fail to list
+    politically realistic /policy instruments/ that make sure that
+    their consumption is actually reduced. Fair enough. I try to
+    *reformulate my claims but also state (elsewhere?) that*
+    *differentiation of CO2 levy and CBAM could do the trick*
+
   + /Line 217ff: Recommended to first say what you do (“provide an/
     /outlook …”)  before acknowledging the lack of rigor and realistic/
     /policy detail./
+
+    Thank you. I now *write* ``''.
+
   + /Line 224ff: We are in times of technological disruption, and at/
     /least currently the rich adopt the new low-carbon technologies/
     /faster than the poor (electric cars, heat pumps). Under these/
@@ -270,6 +316,11 @@ effectiveness of political instruments than on politcial feasibility.
     /that any static analysis can only provide short-term/
     /insights. This is fine, but must be acknowledged rather than/
     /reinterpreting variables as constants./
+
+    *Reread paper and think about the possibility of emphasising or*
+    *explaining how welfare impacts depend on expenditure share,*
+    *not elasticities*
+
 - /Data and method: This looks like intensive and thorough data/
   /work. No suggestions./
 - /Responsibility for global warming:/
@@ -277,7 +328,19 @@ effectiveness of political instruments than on politcial feasibility.
     /as much of this seems fairly self-evident./
   + /Line 466ff: This explanation could be improved. It is hard to/
     /grasp for anyone who doesn’t know anyway what is represented./
+
+    If find my explanation of whiskers in boxplots concise and
+    precise. It was my experience that I initially did not grasp it
+    immediately either, but now I find it hard to formulate it more
+    accessibly without resorting to quite verbose prose.  I find the
+    presenatation in Krzywinski and Altman (2014) more accessible and
+    I hope to do the reader a service in moving its mention from the
+    footnote to the main text.
+
   + /Line 469ff: This could be moved to a footnote./
+
+    Done.
+
   + /Line 481ff: Annual per capita expenditure was chosen as the/
     /criterion for constructing income deciles. It is thus no surprise/
     /that annual per-capita expenditure increases as we move through/
@@ -296,10 +359,33 @@ effectiveness of political instruments than on politcial feasibility.
     /may have to be reminded of the construction of the deciles not to/
     /misinterpret the figure. What does the overlap between boxes tell/
     /us?/
+
+    *THIS TAKES SOME WORK. DO IT.*
+
   + /Line 659f: Can the reason for this be identified?/
+
+    Reviewer 2 refers to ``Similarly, in Figure 3, no clear trend is
+    visible across 2-percentile groups within the first decile group,
+    and a positive correlation between lifetime income and
+    per-capita gwp suggests itself within the tenth decile group, with
+    the highest-income 2-percentile-group showing significantly more
+    per-capita gwp than the preceding four.''
+
+    I think the underlying trend is too weak and, as layed out in
+    Appendix C, the number of observations is low and thus confidence
+    intervals big. With low number of observations, the observed
+    sample means are subject to large random deviations from
+    population means and thus the weak trends are obfuscated.
+
+    I do not further expand on this in the paper.
+
   + /Figure 4:/
     - /“Ownership of dwelling” would be a more appropriate title for/
       /the second box chart than “Renting”./
+
+      Right! I forgot to change this in Figures 4 and B1. I now
+      use the label ``Home ownership'', like in Figure 7.
+
     - /In the urbanization box chart, there are hardly any differences/
       /between the three groups, which is worth to be commented in the/
       /text./
@@ -307,7 +393,18 @@ effectiveness of political instruments than on politcial feasibility.
     /figure. This would be easier if shares were shown, which could be/
     /done given that differences in totals are already shown in/
     /figure 1./
+
+    Shares and absolute numbers carry different information and I want
+    the absolute GWP to be in Figure 5. Note that I focus on shares in
+    Figures 8 and 9. I recognize that some information is hard to
+    discern visually, and I tried to manage this to a certain extent
+    by aggregating COICOP goods of HABE. I decided on this way of
+    displaying information and I want to keep it at this point.
+
   + /Line 854: Not exemption, but exception./
+
+    Thanks. I made the correction.
+
   + /Line 871: The term “central heating” is oddly used here. Later in/
     /the paper (line 1042) the unusual definition for central heating/
     /is roughly provided (“mostly by households who rent”). It should/

@@ -57,7 +57,13 @@
 \usepackage{listings}%
 
 % My own:
-\usepackage[upgrade=true]{acro}
+\usepackage{acro}[=v2]
+\acsetup{display-foreign = false}
+\acsetup{foreign-format = {\scshape} }
+\ExplSyntaxOn
+\prop_new:N \l__acro_foreign_format_prop
+\ExplSyntaxOff
+\acsetup{single=true}
 \usepackage{url}
 
 \usepackage{caption}
@@ -486,7 +492,8 @@ But when differences in responsibility for global emissions are analysed for hou
 The fact that also within countries, high-income households are responsible for more global \ac{ghg} emissions than are households with low incomes has earned some media attention and the general sentiment is that it must be ensured that rich households do their fair share when it comes to emissions reductions.
 But do they do that already under typical proposals for climate policy?
 And if not, what are policy instruments to mend that?
-Without administrative borders between households of different income levels, it seems unlikely that policies will be differentiated by household income and the scope of designing national climate policies to target households of different income levels may be limited.
+Without administrative ``borders'' between households of different income levels, it seems unlikely that policies will be differentiated by household income (such as, for example, different \ac{co2} prices for households of different income) and the scope of designing national climate policies to target households of different income levels may be limited.
+
 
 In this paper I shed light on both these distributional aspects by analysing the \ac{gwp} associated with the \ac{ghg} emissions embodied in the consumption of different categories of goods across households of Switzerland.
 I exploit a data base of \ac{gwp} estimates for consumption goods used in \ac{habe}\footnote{%
@@ -599,11 +606,11 @@ To this end, I show in the following how both \ac{gwp} per person and \ac{gwp} p
 
 For establishing the responsibility for global warming on a per-person basis, the \ac{gwp} from different consumption categories for a household are added up and divided by the number of persons in that household.
 By grouping households according to their socio-economic properties, averages for different household groups can be established and the typical \ac{gwp} can be compared across the groups.
-At the same time, heterogeneity within such groups turns out to be large, and therefore, this paper shows not only mean \ac{gwp} per population group but summarizes the distribution of observations within those groups using box plots.\footnote{%
-  See \citet{krzywinski_visualizing_2014} for a more in-depth discussion of box plots.}
+At the same time, heterogeneity within such groups turns out to be large, and therefore, this paper shows not only mean \ac{gwp} per population group but summarizes the distribution of observations within those groups using box plots.
 The boxes drawn in these plots are characterized by three horizontal lines: the y-axis values for the observations at the first, the second, and the third quartile.
-The boxes are complemented by whiskers that reach out to the last observation that lies less than 1.5 times the interquartile range (the distance between the first and the third quartile) beyond the box.
-It is customary to plot outliers beyond the whiskers as explicit dots, but I abstain from showing them here, directing the attention to the main bulk of the `observations rather than to single observations.
+The boxes are complemented by whiskers that reach out to the last observation that lies less than 1.5 times the interquartile range (the distance between the first and the third quartile) beyond the box.\footnote{%
+  It is customary to plot outliers beyond the whiskers as explicit dots, but I abstain from showing them here, directing the attention to the main bulk of the `observations rather than to single observations.}
+\citet{krzywinski_visualizing_2014} give a more in-depth discussion of box plots and whiskers and how they relate to underlying distributions of observations.
 Superimposed on the box plots are the weighted means of the y-axis values within the respective household groups (depicted by an empty circle).
 
 I find (equivalent) lifetime income to be the most important criterion for determining \ac{gwp}.
@@ -671,7 +678,7 @@ At the same time, within--decile group variation in results is bigger for per-ca
 While we can identify clear trends of the means across decile groups of the population in the top panels of Figures~\ref{fig:gwp_chf} and~\ref{fig:gwp}, further subdividing decile groups into 2-percentile-groups (or quintile groups within decile groups; see bottom panels) does not add as much additional insight.
 In Figure~\ref{fig:gwp_chf} there is no clear and significant trend visible for \ac{gwp} intensity within the tenth decile group.
 The figure for the first decile group suggests that the negative correlation between lifetime income and \ac{gwp} intensity may also be at play within the decile group but the numbers of observations within decile sub-groups is not high enough to say this with confidence.
-(A more detailed discussion of this can be found in~\ref{app:cis}).
+(A more detailed discussion of this can be found in Appendix~\ref{app:cis}).
 What we can say, is that the first 2-percentile-group has a higher mean \ac{gwp} intensity than the following four.
 Similarly, in Figure~\ref{fig:gwp}, no clear trend is visible across 2-percentile groups within the first decile group, and a positive correlation between lifetime income and per-capita \ac{gwp} suggests itself within the tenth decile group, with the highest-income 2-percentile-group showing significantly more per-capita \ac{gwp} than the preceding four.
 
@@ -732,7 +739,7 @@ First, households with elderly people are (on average) responsible for fewer emi
 Second, the bigger the household, the lower are the per-capita emissions.
 They exhibit economies of scale for both transport and heating:
 Household members can share both cars and heated homes in order to enjoy a given level of energy services at lower per-capita expenses and emissions.
-An exemption is transport with the elderly.
+An exception is transport with the elderly.
 Elderly couples cause more per-capita emissions through transport than do elderly singles.
 The bottom panel of Figure~\ref{fig:gwp_cat_hhtype} confirms that in per-household terms, big households do emit more for both transport and heating (compare ``Single'' with ``Couple'' households and ``Elderly single'' with ``Elderly couple'' households).
 
