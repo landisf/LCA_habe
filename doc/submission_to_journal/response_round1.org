@@ -76,11 +76,43 @@
   /the regressive direct effects of carbon pricing and produce overall/
   /progressive effects" (lines 96-101), but again only one reference in/
   /a special case is provided./
+
+  *I should improve this by adding references*
+
 - /After computing per capita GHG footprints, the author relates them/
   /to possible determinants. This is done in a graphical manner,/
   /possible determinant by possible determinant. I wonder whether a/
   /more systematic multivariate (regression) analysis would not be/
   /possible./
+
+  Multivariate regression analysis looks to be an extremely wide field
+  and I would need to get concrete suggestions about what to analyse
+  in order to even fathom if it would be worth my effort (in a
+  different paper; maybe in a bigger group of co-authors: I'm not not
+  very adept in applying statistical methods).
+
+  The one questions that struck me while working on my analysis was
+  the one I mention in Section 3.1 on page *16* and treat with my
+  analysis in Appendix B: can income differences alone explain the
+  different outcomes for household categorizations like "Home
+  ownership", "Urbanization", or "Household type" or do these
+  categories have any extra explanatory power within income deciles.
+  The answer suggested from results in Appendix B is "they do have
+  additional explanatory power", even though I have so far been
+  missing the confidence intervals to prove that any pairing of
+  variable levels yields statistically significantly different
+  results.
+
+  A regression analysis with several variables would, indeed, offer
+  additional insights into the question if all variables in the model
+  are statistically significantly contributing to explaining the
+  variation in household GWP across the whole sample. But the
+  political relevance of this insight seems limited to me and the
+  additional effort not manageable within the revision cycles of the
+  Swiss Journal of Economics and Statistics.
+
+  *Do show CIs for Appendix B?*
+
 - /There seems to be an implicit understanding that climate policies/
   /aiming at reducing emissions are price policies, or at least that/
   /they burden households with the cost of mitigation or the cost of a/
@@ -94,12 +126,19 @@
   /emissions from heating energy or for switching to electric/
   /cars. Such policies might benefit high-income households/
   /disproportionally./
-- /The whole discussion in the first part of section 4.2 ("Pricing CO 2/
+
+  Yes. *That subsidies benefit the rich is a good point. I should
+  write about this.*
+
+- /The whole discussion in the first part of section 4.2 ("Pricing CO2/
   /emissions in Switzerland") of the possible distributional impacts of/
   /existing Swiss climate policy refers to CO2, while the households'/
   /footprint was computed in GWP, i.e., related GHG emissions. This is/
   /probably why the discussion remains qualitative or refers to other/
   /publications, instead of using the results of the earlier chapters./
+
+  Exactly.
+
 - /The second part of section 4.2 ("Pricing ghg emissions globally")/
   /does use the per-capita GHG footprints computed in chapter 3, but it/
   /does so only for a uniform GHG tax, when the previous subsection on/
@@ -110,16 +149,28 @@
   /effect of the uniform GHG tax is offset through uniform per-capita/
   /redistribution of its revenues. I think that the expenditure/
   /patterns identified in chapter 3 could have been put to better use./
+
+  I understand this comment as a suggestion to go through different
+  ways of differentiating prices of GWP across consumption goods.  I
+  find this a good suggestion even though it makes the paper somewhat
+  longer. *Redo analysis in Figure 12 for pricing in transport only*
+  *(see fig. 8) and for heating only (see fig.9) and for restaurants*
+  *as well as clothing (new)*
+
 - /The concluding remarks mention actually quite little of the lessons/
   /learned from the GHG footprint analysis. Instead, it states results/
   /that were not directly shown with the data in the paper and that are/
   /not actual contributions of this paper. E.g.: "where luxury goods/
   /are emissions-intensive, climate policy that focuses on these goods/
-  /can ensure that high- income households make a relatively bigger/
+  /can ensure that high-income households make a relatively bigger/
   /effort to reduce emissions than low-income ones" (lines 1753-1758),/
-  /or "The current design of the CO 2-levy recycles two thirds of the/
+  /or "The current design of the CO2-levy recycles two thirds of the/
   /revenue to households in a per-capita lump-sum fashion. This makes/
-  /the CO 2-levy overall progressive."/
+  /the CO2-levy overall progressive."/
+
+  *Clarify in the paper where stuff was shown and where I'm just*
+  *conjecturing.*
+  *Expand discussion of my actual findings!*
 
 /Minor points:/
 - /Figure 1 is strange. It compares spending per capita, which is/
@@ -127,6 +178,9 @@
   /per capita, which is measured as household spending divided by the/
   /OECD equivalent household size. I am not sure what we learn from/
   /this comparison./
+
+  *I should consider dropping the figure or explain more*
+
 - /I was intrigued by the lower figures in Fig. 8 and Fig. 9, which/
   /show the GWP intensity of different spending items per income/
   /class. How can the GWP intensity of one CHF of heating fuel, for/
@@ -138,18 +192,44 @@
   /fuel relative to total spending of a household. I wonder whether/
   /another terminology could eliminate this confusion, one that/
   /involves the term "share" or "contribution"./
+
+  The Figure captions state that the figures show "GWP intensity of
+  household expenditure", not "energy expenditure". I now say
+  *"Different consumption goods' contribution to GWP intensity*
+  *of total household expenditure" to make this clearer.*
+  Similarly, when I discuss Figures 8 and 9 on page *23*,
+  I replace the old phrase "[...] by displaying GWP-intensity (emissions relative to
+  overall household spending)" by
+  *"by displaying different energy goods' constributions to GWP*
+  *intensity of total household expenditure"*.
+
 - /When discussing the climate impact of air travel, a RFI = 2 is used,/
   /citing a 2019 paper (lines 1200-1203). I would suggest using the RFI/
   /= 3 recommended by Neu, U. (2021).  The impact of emissions from/
   /aviation on the climate – 2nd edition. Swiss Academies/
   /Communications 16(3), https://scnat.ch/en/id/cSx4y./
+
+  Thank you for this suggestion. I was aware of the RFI factor of 3
+  being widespread in political discourse but could not find a good
+  source for it. I adopted this now.
+
+  *This is complex. GWP vs GWP**
+  *Currently, I think I want GWP, which would be 1.7 according to Lee et al. 2021*
+  *Neu cites Lee et al. 2021, too.*
+  *See Table 5 of* https://www.sciencedirect.com/science/article/pii/S1352231020305689#sec6
+
+
 - /When referring to the appendices, the word "appendix" got/
   /lost. E.g., "a more detailed discussion of this can be found in C"./
+
+  Yes, I realized this only now. This and some other issues
+  (capitalization of GHG in sectino headings, e.g.) has been fixed.
+  *check if I missed sth.!*
 
 /Recommendations for shortening the paper:/
 - /The last sub-section of 4.2 ("Additional considerations")/
   /can be cut. It discusses the possibility of households to adjust their/
-  /consumption to a CO 2 tax, when the paper is about GHG emissions and,/
+  /consumption to a CO2 tax, when the paper is about GHG emissions and,/
   /by necessity, ignores consumers' response to changing relative prices./
 - /There are many figures, of which a good number can be dispensed with/
   /because they provide little information (Figure 1) or could be/
@@ -414,6 +494,21 @@ effectiveness of political instruments than on politcial feasibility.
     /and Diesel” would help with seeing this in the graph./
   + /Line 1037: “low-emission electric power”: Are imported (grey)/
     /emissions taken into account?/
+
+    This is hard for me to determine on the quick. The sources from
+    Froemelt et al. tell me that ecoinvent 3.3's numbers for 'market
+    for electricity, low voltage' are used, which suggests that all
+    market inputs (this would include imports) are aggregated
+    appropriately, but I'm not familiar enough with econinvent to be
+    absolutely certain.
+
+    The resulting numbers in Jakobs and Mutel (2023) list a GWP of 46
+    gCO2e/kWh, which was used in this study.  This is in line with
+    estimates by Rüdisüli et al. (2019;
+    https://doi.org/10.3390/en12122399) but Rüdisüli et al. (2022;
+    https://doi.org/10.1016/j.enpol.2022.112794), on the other hand,
+    cite and find considerably higher values.
+
   + /Sensitivity analysis:/
     - /Caveats are well explained./
     - /Line 1214ff: The comparisons between graphs from different/
