@@ -5,7 +5,6 @@ import pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
-import warnings
 import seaborn as sns
 
 cm = 1/2.54  # centimeters in inches
