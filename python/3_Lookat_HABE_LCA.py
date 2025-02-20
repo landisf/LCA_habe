@@ -1371,6 +1371,11 @@ def aggregate_categories(means, aggregation, displayname, index):
     return means_agg
 
 
+# Radiative Forcing Index multiplication factor to account for non-CO2 effects
+# in aviation:
+RFI_FACTOR = 3
+
+
 def aggregate_categories_high(means, aggregation, displayname, index):
     means_agg = pd.DataFrame()
     means_agg[displayname] = index
@@ -1381,10 +1386,10 @@ def aggregate_categories_high(means, aggregation, displayname, index):
             if aggregation.loc[a, c] is True:
                 if (c == 'gwp622300'):
                     # gwp622300 is air transport
-                    means_agg[a] = means_agg[a] + 2*means[c]
+                    means_agg[a] = means_agg[a] + RFI_FACTOR*means[c]
                 elif (c == 'gwp665000'):
                     # gwp665000 is package holidays
-                    means_agg[a] = means_agg[a] + 2*means[c]
+                    means_agg[a] = means_agg[a] + RFI_FACTOR*means[c]
                 else:
                     means_agg[a] = means_agg[a] + means[c]
     return means_agg
@@ -1431,14 +1436,15 @@ urbmeans_agg
 rentmeans_agg
 typemeans_agg
 typehhmeans_agg
-high_agg = extremes_agg.drop('10 max GWP')
-high_agg = high_agg.reindex(['1', '1 rich', '1 high GWP', '10', '10 rich', '10 high GWP'])
-high_agg
-high_agg.index = ['1', '1: richest',
-                  '1: highest GWP',
-                  '10', '10: richest',
-                  '10: highest GWP']
-high_agg['Decile group of lifetime income'] = high_agg.index
+highinc_agg = extremes_agg.drop('10 max GWP')
+highinc_agg = highinc_agg.reindex(['1', '1 rich', '1 high GWP',
+                                   '10', '10 rich', '10 high GWP'])
+highinc_agg
+highinc_agg.index = ['1', '1: richest',
+                     '1: highest GWP',
+                     '10', '10: richest',
+                     '10: highest GWP']
+highinc_agg['Decile group of lifetime income'] = highinc_agg.index
 sotomo_agg = sotomo_agg.drop('10 max GWP')
 sotomo_agg = sotomo_agg.reindex(['10', '10 rich', '10 high GWP', '10 sotomo rich'])
 sotomo_agg.index = ['10', '10: richest',
@@ -1567,7 +1573,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
                     hscale=1,
                     colorpalette=mycolororder, rotate=None,
                     placelegend=True,
-                    halfhatch=False):
+                    nco2hatch=False):
     sns.set(font_scale=0.8)
     sns.set(style='darkgrid')
     if plotdata.columns[0] != xvar:
@@ -1580,7 +1586,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
                   title=figtitle, figsize=(12.5*cm, 9.3*cm*hscale),
                   ylabel=y_label, ax=ax, linewidth=0.1, edgecolor='black',
                   rot=rotate)
-    if halfhatch:
+    if nco2hatch:
         bottom_air = (
             plotdata[plotdata.columns[1]]
             + plotdata['Restaurants']
@@ -1620,7 +1626,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
             + plotdata[plotdata.columns[16]]
         )
         ax.bar(plotdata[xvar]-1,
-               plotdata['Transport services - Air']/2,
+               (RFI_FACTOR-1)*plotdata['Transport services - Air']/RFI_FACTOR,
                bottom=bottom_air,
                hatch='xxxxxxx',
                edgecolor='black',
@@ -1630,7 +1636,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
                color=mycolororder[11]
                )
         ax.bar(plotdata[xvar]-1,
-               plotdata['Package holidays']/2,
+               (RFI_FACTOR-1)*plotdata['Package holidays']/RFI_FACTOR,
                bottom=bottom_package,
                hatch='xxxxxxx',
                edgecolor='black',
@@ -1695,12 +1701,12 @@ plot_categories(plotdata=expmeans_agg,
                 xvar='Decile group of lifetime income', rotate=0)
 plot_categories(plotdata=expmeans_agg_high,
                 filename='gwp_high_cat',
-                y_max=21,
-                xvar='Decile group of lifetime income', rotate=0, halfhatch=True)
+                y_max=25,
+                xvar='Decile group of lifetime income', rotate=0, nco2hatch=True)
 plot_categories(plotdata=expmeans_agg_ch,
                 filename='gwp_cat_ch',
                 xvar='Country', rotate=0)
-plot_categories(plotdata=high_agg,
+plot_categories(plotdata=highinc_agg,
                 filename='gwp_cat_high',
                 xvar='Decile group of lifetime income',
                 y_max=35)

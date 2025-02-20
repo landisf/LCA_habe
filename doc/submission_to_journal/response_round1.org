@@ -213,12 +213,6 @@
   being widespread in political discourse but could not find a good
   source for it. I adopted this now.
 
-  *This is complex. GWP vs GWP**
-  *Currently, I think I want GWP, which would be 1.7 according to Lee et al. 2021*
-  *Neu cites Lee et al. 2021, too.*
-  *See Table 5 of* https://www.sciencedirect.com/science/article/pii/S1352231020305689#sec6
-
-
 - /When referring to the appendices, the word "appendix" got/
   /lost. E.g., "a more detailed discussion of this can be found in C"./
 
