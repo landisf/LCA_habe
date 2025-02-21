@@ -22,6 +22,8 @@ in_dir = os.path.join(repo_root, 'intermediate_files')
 habe_lca_file = os.path.join(in_dir,
                              'habe_lca.csv')
 
+agg_file = os.path.join(repo_root, agg_dir, 'aggregations.xlsx')
+
 habe_standard_file = os.path.join(habe_2017_dir,
                                   'HABE151617_Standard.txt')
 habe_urbanization_file = os.path.join(habe_2017_dir,
@@ -162,36 +164,247 @@ for c in habe_lca.columns:
 
 # -https://zenodo.org/records/8296864-
 
-habe_lca['tot_gwp']
-carbon = pd.DataFrame()
-carbon['gwp'] = habe_lca['tot_gwp']*12/1000  # tonnes per year
-carbon['cost_at_100chf'] = carbon['gwp']*100  # chf per year spent on tax
-c_rev_vol = sum(hh_data['statweights']*carbon['cost_at_100chf'])
-print('Volume of carbon pricing revenue (million CHF): ', c_rev_vol/1e6)
-population = sum(hh_data['popweights'])
-print('Population (million): ', population/1e6)
-pc_refund = c_rev_vol/population
-carbon['refund_at_100chf'] = pc_refund*hh_data['npers']
-carbon['Net effect [CHF]'] = carbon['refund_at_100chf']-carbon['cost_at_100chf']
-carbon['Net effect [% of spending]'] = \
-    carbon['Net effect [CHF]']/(hh_data['Spending']*12)*100
-carbon['Decile group of lifetime income'] = hh_data['ExpDecile']
-carbon['popweights'] = hh_data['popweights'].round().astype('int')
-carbon['statweights'] = hh_data['statweights'].round().astype('int')
-carbon['size'] = hh_data['npers'].round().astype('int')
-carbon['Spending'] = hh_data['Spending']*12
-carbon['Urbanization'] = habe_urban
-carbon['Renting'] = hh_data['Mieterhaushalt05']
-carbon['Pensioner'] = hh_data['Rentnerhaushalt05']
-carbon['Female_head'] = hh_data['FrauAlsReferenzperson05']
-carbon['Region'] = hh_data['Grossregion01']
-carbon['Canton'] = hh_data['Kanton08']
-carbon['Quintile group'] = hh_data['Einkommensklasse08_151617']
-carbon['Household type'] = hh_data['Haushaltstyp14']
-carbon['Household type / HABE income quintile group'] = \
-    hh_data['HaushaltstypEinkommen14_151617']
+# ----------------------------------------------------------------------------------------
+# Aggregate the consumption categories to a reasonable number of commodities
+# ----------------------------------------------------------------------------------------
 
-carbon
+# This is simlar to what I did in 3_Lookat_HABE_LCA.py, but there I did it for
+# Decile means, while I keep the whole household heterogeneity here.
+
+aggregation = pd.read_excel(agg_file,
+                            sheet_name='overview',
+                            index_col=0)
+aggregation_cprice = pd.read_excel(agg_file,
+                                   sheet_name='cprice_versions',
+                                   index_col=0)
+# aggregation_mobility = pd.read_excel(agg_file,
+#                                      sheet_name='mobility',
+#                                      index_col=0)
+# aggregation_residential = pd.read_excel(agg_file,
+#                                         sheet_name='heating',
+#                                         index_col=0)
+aggregation
+aggregation_cprice
+
+hhindex = habe_lca.index
+
+
+def aggregate_categories(means=habe_lca, aggregation=aggregation,
+                         displayname="HH-ID", index=hhindex):
+    means_agg = pd.DataFrame()
+    means_agg[displayname] = index
+    means_agg.index = means.index
+    for a in aggregation.index:
+        means_agg[a] = [0]*len(index)
+        for c in aggregation.columns:
+            if aggregation.loc[a, c] is True:
+                # print(a, c)
+                means_agg[a] = means_agg[a] + means[c]
+    return means_agg
+
+
+aggregate_categories(habe_lca)
+
+gwp_sums = aggregate_categories(habe_lca, aggregation=aggregation_cprice)
+
+gwp_sums.columns
+
+habe_lca['tot_gwp']
+
+hh_description = pd.DataFrame()
+hh_description['Decile group of lifetime income'] = hh_data['ExpDecile']
+hh_description['popweights'] = hh_data['popweights'].round().astype('int')
+hh_description['statweights'] = hh_data['statweights'].round().astype('int')
+hh_description['size'] = hh_data['npers'].round().astype('int')
+hh_description['Spending'] = hh_data['Spending']*12
+hh_description['Urbanization'] = habe_urban
+hh_description['Renting'] = hh_data['Mieterhaushalt05']
+hh_description['Pensioner'] = hh_data['Rentnerhaushalt05']
+hh_description['Female_head'] = hh_data['FrauAlsReferenzperson05']
+hh_description['Region'] = hh_data['Grossregion01']
+hh_description['Canton'] = hh_data['Kanton08']
+hh_description['Quintile group'] = hh_data['Einkommensklasse08_151617']
+hh_description['Household type'] = hh_data['Haushaltstyp14']
+hh_description['Household type / HABE income quintile group'] = \
+    hh_data['HaushaltstypEinkommen14_151617']
+hh_description['Urbanization'] = hh_description['Urbanization'].astype('category')
+hh_description['Renting'] = hh_description[
+    'Renting'
+].astype('category').cat.rename_categories({0: 'Owner', 1: 'Renter'})
+hh_description['Pensioner'] = hh_description['Pensioner'].astype('category').\
+    cat.rename_categories({0: 'Working', 1: 'Pensioner'})
+
+hh_description['Female_head'] = hh_description['Female_head'].astype('category').\
+    cat.rename_categories({0: 'Male_head', 1: 'Female_head'})
+
+hh_description['Region'] = hh_description['Region'].astype('category').\
+    cat.rename_categories({1: 'Genferseeregion',
+                           2: 'Espace Mittelland',
+                           3: 'Nordwestschweiz',
+                           4: 'Zürich',
+                           5: 'Ostschweiz',
+                           6: 'Zentralschweiz',
+                           7: 'Tessin'})
+
+hh_description['Canton'] = hh_description['Canton'].astype('category').\
+    cat.rename_categories({1: 'Kt. Zürich',
+                           2: 'Kt. Bern',
+                           3: 'Kt. Luzern',
+                           17: 'Kt. St. Gallen',
+                           19: 'Kt. Aargau',
+                           21: 'Kt. Tessin',
+                           22: 'Kt. Waadt',
+                           25: 'Kt. Genf',
+                           99: 'Other Kantons'})
+
+hh_description['Household type / HABE income quintile group'] = \
+    hh_description['Household type / HABE income quintile group'].astype('category').\
+    cat.rename_categories({111: 'Single Q1',
+                           112: 'Single Q2',
+                           113: 'Single Q3',
+                           114: 'Single Q4',
+                           115: 'Single Q5',
+                           131: 'Elderly single Q1',
+                           132: 'Elderly single Q2',
+                           133: 'Elderly single Q3',
+                           134: 'Elderly single Q4',
+                           135: 'Elderly single Q5',
+                           211: 'Couple Q1',
+                           212: 'Couple Q2',
+                           213: 'Couple Q3',
+                           214: 'Couple Q4',
+                           215: 'Couple Q5',
+                           231: 'Elderly couple Q1',
+                           232: 'Elderly couple Q2',
+                           233: 'Elderly couple Q3',
+                           234: 'Elderly couple Q4',
+                           235: 'Elderly couple Q5',
+                           401: 'Parent couple Q1',
+                           402: 'Parent couple Q2',
+                           403: 'Parent couple Q3',
+                           404: 'Parent couple Q4',
+                           405: 'Parent couple Q5',
+                           900: 'Others'})
+
+# Household type is 110, 130, 210, 230, 300, 400, or 900
+# 'Quintile of lifetime income' is quintiles in overall population
+# I want to have quintiles within hh_types, not overall quintiles! -> hhtype_quintile
+hh_description['Household type / Quintile group of lifetime income'] = \
+    hh_description['Household type'] + hh_data['hhtype_quintile']
+
+hh_description['Household type / Quintile group of lifetime income'] = \
+    hh_description['Household type / Quintile group of lifetime income'].replace(
+        [301, 302, 303, 304, 305, 901, 902, 903, 904, 905], 900).\
+    astype('category').\
+    cat.rename_categories({111: 'Single Q1',
+                           112: 'Single Q2',
+                           113: 'Single Q3',
+                           114: 'Single Q4',
+                           115: 'Single Q5',
+                           131: 'Elderly single Q1',
+                           132: 'Elderly single Q2',
+                           133: 'Elderly single Q3',
+                           134: 'Elderly single Q4',
+                           135: 'Elderly single Q5',
+                           211: 'Couple Q1',
+                           212: 'Couple Q2',
+                           213: 'Couple Q3',
+                           214: 'Couple Q4',
+                           215: 'Couple Q5',
+                           231: 'Elderly couple Q1',
+                           232: 'Elderly couple Q2',
+                           233: 'Elderly couple Q3',
+                           234: 'Elderly couple Q4',
+                           235: 'Elderly couple Q5',
+                           401: 'Parent couple Q1',
+                           402: 'Parent couple Q2',
+                           403: 'Parent couple Q3',
+                           404: 'Parent couple Q4',
+                           405: 'Parent couple Q5',
+                           900: 'Others'
+                           })
+
+# Do this one last: we need 'Household type' to be numerical above
+hh_description['Household type'] = hh_description['Household type'].astype('category').\
+    cat.rename_categories({110: 'Single',
+                           130: 'Elderly single',
+                           210: 'Couple',
+                           230: 'Elderly couple',
+                           300: 'Single parent',
+                           400: 'Parent couple',
+                           900: 'Others'})
+
+hh_description['Decile group / HH type'] = \
+    hh_description['Decile group of lifetime income'].astype('str') + ' - ' +\
+    hh_description['Household type'].astype('str')
+# dectypeorder = []
+# for decile in range(10):
+#     for cat in hh_description['Household type'].cat.categories:
+#         dectypeorder.append(str(decile+1)+' - '+cat)
+hh_description['Decile group / Pensioner'] = \
+    hh_description['Decile group of lifetime income'].astype('str') + ' - ' + \
+    hh_description['Pensioner'].astype('str')
+# decpensionerorder = []
+# for decile in range(10):
+#     for cat in hh_description['Pensioner'].cat.categories:
+#         decpensionerorder.append(str(decile+1)+' - '+cat)
+hh_description['Decile group / Renting'] = \
+    hh_description['Decile group of lifetime income'].astype('str') + ' - ' + \
+    hh_description['Renting'].astype('str')
+# decrentingorder = []
+# for decile in range(10):
+#     for cat in hh_description['Renting'].cat.categories:
+#         decrentingorder.append(str(decile+1)+' - '+cat)
+hh_description['Decile group / Urbanization'] = \
+    hh_description['Decile group of lifetime income'].astype('str') + ' - ' + \
+    hh_description['Urbanization'].astype('str')
+
+# decurbanizationorder = []
+# for decile in range(10):
+#     for cat in hh_description['Urbanization'].cat.categories:
+#         decurbanizationorder.append(str(decile+1)+' - '+cat)
+
+# obscount_deciles = hh_description['Decile group of lifetime income'].value_counts()
+
+
+def reindex_df(df, weight_col):
+    """expand the dataframe to prepare for resampling
+    result is 1 row per count per sample"""
+    df = df.reindex(df.index.repeat(df[weight_col]))
+    df.reset_index(drop=True, inplace=True)
+    return (df)
+
+
+# Dictionary of carbon arrays inspired by
+# https://stackoverflow.com/questions/33907776/create-an-array-of-dataframes-in-python
+carbon_collection = {}
+boxcarbon_collection = {}
+for v in gwp_sums.columns:
+    carbon = pd.DataFrame()
+    carbon['gwp'] = gwp_sums[v]*12/1000  # tonnes per year
+    carbon['cost_at_100chf'] = carbon['gwp']*100  # chf per year spent on tax
+    c_rev_vol = sum(hh_data['statweights']*carbon['cost_at_100chf'])
+    print('GWP_sum: ', v)
+    print('Volume of carbon pricing revenue (million CHF): ', c_rev_vol/1e6)
+    population = sum(hh_data['popweights'])
+    print('Population (million): ', population/1e6)
+    pc_refund = c_rev_vol/population
+    carbon['refund_at_100chf'] = pc_refund*hh_data['npers']
+    carbon['Net effect [CHF]'] = carbon['refund_at_100chf']-carbon['cost_at_100chf']
+    carbon['Net effect [% of spending]'] = \
+        carbon['Net effect [CHF]']/(hh_data['Spending']*12)*100
+    carbon = carbon.join(hh_description)
+    # Take per-person perspective in these graphs
+    boxcarbon = reindex_df(carbon, 'popweights')
+    # Take household perspective in these graphs
+    boxcarbon = reindex_df(carbon, 'statweights')
+    carbon_collection[v] = carbon
+    boxcarbon_collection[v] = boxcarbon
+
+# Sample this:
+carbon_collection['Total']
+boxcarbon_collection['Total']
+
 
 # forplotting = pd.concat([12*habe_lca['tot_gwp']/1000,
 #                          12*habe_lca['tot_gwp']/habe_lca['npers']/1000,
@@ -228,156 +441,6 @@ carbon
 #                        'Quintile group', 'Household type',
 #                        'Household type / HABE income quintile group']
 
-carbon['Urbanization'] = carbon['Urbanization'].astype('category')
-carbon['Renting'] = carbon['Renting'].astype('category').cat.rename_categories(
-    {0: 'Owner', 1: 'Renter'}
-)
-carbon['Pensioner'] = carbon['Pensioner'].astype('category').\
-    cat.rename_categories({0: 'Working', 1: 'Pensioner'})
-
-carbon['Female_head'] = carbon['Female_head'].astype('category').\
-    cat.rename_categories({0: 'Male_head', 1: 'Female_head'})
-
-carbon['Region'] = carbon['Region'].astype('category').\
-    cat.rename_categories({1: 'Genferseeregion',
-                           2: 'Espace Mittelland',
-                           3: 'Nordwestschweiz',
-                           4: 'Zürich',
-                           5: 'Ostschweiz',
-                           6: 'Zentralschweiz',
-                           7: 'Tessin'})
-
-carbon['Canton'] = carbon['Canton'].astype('category').\
-    cat.rename_categories({1: 'Kt. Zürich',
-                           2: 'Kt. Bern',
-                           3: 'Kt. Luzern',
-                           17: 'Kt. St. Gallen',
-                           19: 'Kt. Aargau',
-                           21: 'Kt. Tessin',
-                           22: 'Kt. Waadt',
-                           25: 'Kt. Genf',
-                           99: 'Other Kantons'})
-
-carbon['Household type / HABE income quintile group'] = \
-    carbon['Household type / HABE income quintile group'].astype('category').\
-    cat.rename_categories({111: 'Single Q1',
-                           112: 'Single Q2',
-                           113: 'Single Q3',
-                           114: 'Single Q4',
-                           115: 'Single Q5',
-                           131: 'Elderly single Q1',
-                           132: 'Elderly single Q2',
-                           133: 'Elderly single Q3',
-                           134: 'Elderly single Q4',
-                           135: 'Elderly single Q5',
-                           211: 'Couple Q1',
-                           212: 'Couple Q2',
-                           213: 'Couple Q3',
-                           214: 'Couple Q4',
-                           215: 'Couple Q5',
-                           231: 'Elderly couple Q1',
-                           232: 'Elderly couple Q2',
-                           233: 'Elderly couple Q3',
-                           234: 'Elderly couple Q4',
-                           235: 'Elderly couple Q5',
-                           401: 'Parent couple Q1',
-                           402: 'Parent couple Q2',
-                           403: 'Parent couple Q3',
-                           404: 'Parent couple Q4',
-                           405: 'Parent couple Q5',
-                           900: 'Others'})
-
-# Household type is 110, 130, 210, 230, 300, 400, or 900
-# 'Quintile of lifetime income' is quintiles in overall population
-# I want to have quintiles within hh_types, not overall quintiles! -> hhtype_quintile
-carbon['Household type / Quintile group of lifetime income'] = \
-    carbon['Household type'] + hh_data['hhtype_quintile']
-
-carbon['Household type / Quintile group of lifetime income'] = \
-    carbon['Household type / Quintile group of lifetime income'].replace(
-        [301, 302, 303, 304, 305, 901, 902, 903, 904, 905], 900).\
-    astype('category').\
-    cat.rename_categories({111: 'Single Q1',
-                           112: 'Single Q2',
-                           113: 'Single Q3',
-                           114: 'Single Q4',
-                           115: 'Single Q5',
-                           131: 'Elderly single Q1',
-                           132: 'Elderly single Q2',
-                           133: 'Elderly single Q3',
-                           134: 'Elderly single Q4',
-                           135: 'Elderly single Q5',
-                           211: 'Couple Q1',
-                           212: 'Couple Q2',
-                           213: 'Couple Q3',
-                           214: 'Couple Q4',
-                           215: 'Couple Q5',
-                           231: 'Elderly couple Q1',
-                           232: 'Elderly couple Q2',
-                           233: 'Elderly couple Q3',
-                           234: 'Elderly couple Q4',
-                           235: 'Elderly couple Q5',
-                           401: 'Parent couple Q1',
-                           402: 'Parent couple Q2',
-                           403: 'Parent couple Q3',
-                           404: 'Parent couple Q4',
-                           405: 'Parent couple Q5',
-                           900: 'Others'
-                           })
-
-# Do this one last: we need 'Household type' to be numerical above
-carbon['Household type'] = carbon['Household type'].astype('category').\
-    cat.rename_categories({110: 'Single',
-                           130: 'Elderly single',
-                           210: 'Couple',
-                           230: 'Elderly couple',
-                           300: 'Single parent',
-                           400: 'Parent couple',
-                           900: 'Others'})
-
-carbon['Decile group / HH type'] = \
-    carbon['Decile group of lifetime income'].astype('str') + ' - ' +\
-    carbon['Household type'].astype('str')
-dectypeorder = []
-for decile in range(10):
-    for cat in carbon['Household type'].cat.categories:
-        dectypeorder.append(str(decile+1)+' - '+cat)
-carbon['Decile group / Pensioner'] = \
-    carbon['Decile group of lifetime income'].astype('str') + ' - ' + \
-    carbon['Pensioner'].astype('str')
-decpensionerorder = []
-for decile in range(10):
-    for cat in carbon['Pensioner'].cat.categories:
-        decpensionerorder.append(str(decile+1)+' - '+cat)
-carbon['Decile group / Renting'] = \
-    carbon['Decile group of lifetime income'].astype('str') + ' - ' + \
-    carbon['Renting'].astype('str')
-decrentingorder = []
-for decile in range(10):
-    for cat in carbon['Renting'].cat.categories:
-        decrentingorder.append(str(decile+1)+' - '+cat)
-carbon['Decile group / Urbanization'] = \
-    carbon['Decile group of lifetime income'].astype('str') + ' - ' + \
-    carbon['Urbanization'].astype('str')
-decurbanizationorder = []
-for decile in range(10):
-    for cat in carbon['Urbanization'].cat.categories:
-        decurbanizationorder.append(str(decile+1)+' - '+cat)
-
-obscount_deciles = carbon['Decile group of lifetime income'].value_counts()
-
-def reindex_df(df, weight_col):
-    """expand the dataframe to prepare for resampling
-    result is 1 row per count per sample"""
-    df = df.reindex(df.index.repeat(df[weight_col]))
-    df.reset_index(drop=True, inplace=True)
-    return (df)
-
-
-# Take per-person perspective in these graphs
-boxcarbon = reindex_df(carbon, 'popweights')
-# Take household perspective in these graphs
-boxcarbon = reindex_df(carbon, 'statweights')
 
 # Since all deciles have similar household size, per capita GWP and GWP look
 # distributionally similar
@@ -393,59 +456,12 @@ boxcarbon = reindex_df(carbon, 'statweights')
 # gwp_plt.get_figure()
 
 
-def plot_differentiation(xname, filename, ymax=50, yname='Net effect [CHF]',
-                         dset=boxcarbon, size=(12.5*cm, 6*cm), givenorder=None,
-                         clr_plt=10, rotate=False, saturation=0.75):
-    sns.set(font_scale=0.8)
-    sns.set(style='darkgrid')
-    if type(clr_plt) is int:
-        cp = sns.color_palette('hls', clr_plt)
-    elif type(clr_plt) is sns.palettes._ColorPalette:
-        cp = clr_plt
-    elif type(clr_plt) is list:
-        cp = clr_plt
-    else:
-        return ValueError('clr_plt must be an integer, a list, or a color palette')
-    # cp = sns.color_palette('husl', 1)
-    fig, ax = plt.subplots(figsize=size, tight_layout=True)
-    if rotate:
-        ax.tick_params(axis='x', rotation=90)
-    boxplt = sns.boxplot(data=dset,
-                         notch=True,
-                         x=xname,
-                         y=yname,
-                         palette=cp,
-                         showmeans=True,
-                         saturation=saturation,
-                         ax=ax,
-                         # If you want to show 'fliers'
-                         # (extreme values beyond caps/whiskers)
-                         # of basic HABE data, you need permission of the FSO.
-                         # But this should be ok with GWP numbers (processed data), right?
-                         showfliers=False,
-                         meanprops={'marker': 'o',
-                                    'markerfacecolor': 'white',
-                                    'markeredgecolor': 'black',
-                                    'markersize': '3'},
-                         order=givenorder)
-    boxplt.set(ylim=(-ymax, ymax))
-    fs = 9
-    ax.set_xlabel(xname, fontsize=fs)
-    ax.set_ylabel(yname, fontsize=fs)
-    plt.yticks(fontsize=fs)
-    plt.xticks(fontsize=fs)
-    # plt.show()
-    pngname = filename+'.png'
-    pdfname = filename+'.pdf'
-    epsname = filename+'.eps'
-    boxplt.get_figure().savefig(os.path.join(fig_dir, pngname), dpi=600)
-    boxplt.get_figure().savefig(os.path.join(fig_dir, epsname))
-    boxplt.get_figure().savefig(os.path.join(fig_dir, pdfname))
-    print('Writing figure: '+filename)
-    plt.close()
+# ---------------------------------------------------------------------------------------
+# Lineplots for average income and expenditure of households of GHG pricing versions
+# ---------------------------------------------------------------------------------------
 
 
-def plot_meanlines(dset=boxcarbon,
+def plot_meanlines(dset=boxcarbon_collection['Total'],
                    xname='Decile group of lifetime income',
                    # yname='Per capita GWP [t CO2e]',
                    ymax=50,
@@ -500,6 +516,19 @@ def plot_meanlines(dset=boxcarbon,
     return mean_costs, mean_refunds, mean_size, mean_spending
 
 
+# Generate figures for the different GHG pricing versions
+for v in gwp_sums.columns:
+    filename = v+'_lineplot'
+    linedata = boxcarbon_collection[v]
+    ym = 1000
+    figsize = (6*cm, 5*cm)
+    if v == 'Total':
+        ym = 5000
+        figsize = (12.5*cm, 6*cm)
+    if not v == 'HH-ID':
+        plot_meanlines(dset=linedata, ymax=ym, filename=filename, size=figsize)
+
+# Generate the generic_lineplot for getting means for illustrative results table
 (direct_cost, ls_recycling, size, spending) = plot_meanlines(ymax=5000)
 type(direct_cost), type(ls_recycling)
 with pd.ExcelWriter("Dezil_Beispiele.xlsx",
@@ -510,29 +539,102 @@ with pd.ExcelWriter("Dezil_Beispiele.xlsx",
     size.to_excel(writer, sheet_name='Haushaltsgroesse')
     spending.to_excel(writer, sheet_name='Ausgaben')
 
-# Whole population
+# ---------------------------------------------------------------------------------------
+# Whisker plots of overall outcomes of GHG pricing versions
+# ---------------------------------------------------------------------------------------
+
+
+def plot_differentiation(xname, filename, ymax=50, yname='Net effect [CHF]',
+                         dset=boxcarbon_collection['Total'], size=(12.5*cm, 6*cm),
+                         givenorder=None,
+                         clr_plt=10, rotate=False, saturation=0.75):
+    sns.set(font_scale=0.8)
+    sns.set(style='darkgrid')
+    if type(clr_plt) is int:
+        cp = sns.color_palette('hls', clr_plt)
+    elif type(clr_plt) is sns.palettes._ColorPalette:
+        cp = clr_plt
+    elif type(clr_plt) is list:
+        cp = clr_plt
+    else:
+        return ValueError('clr_plt must be an integer, a list, or a color palette')
+    # cp = sns.color_palette('husl', 1)
+    fig, ax = plt.subplots(figsize=size, tight_layout=True)
+    if rotate:
+        ax.tick_params(axis='x', rotation=90)
+    boxplt = sns.boxplot(data=dset,
+                         notch=True,
+                         x=xname,
+                         y=yname,
+                         palette=cp,
+                         hue=xname,
+                         legend=False,
+                         showmeans=True,
+                         saturation=saturation,
+                         ax=ax,
+                         # If you want to show 'fliers'
+                         # (extreme values beyond caps/whiskers)
+                         # of basic HABE data, you need permission of the FSO.
+                         # But this should be ok with GWP numbers (processed data), right?
+                         showfliers=False,
+                         meanprops={'marker': 'o',
+                                    'markerfacecolor': 'white',
+                                    'markeredgecolor': 'black',
+                                    'markersize': '3'},
+                         order=givenorder)
+    boxplt.set(ylim=(-ymax, ymax))
+    fs = 9
+    ax.set_xlabel(xname, fontsize=fs)
+    ax.set_ylabel(yname, fontsize=fs)
+    plt.yticks(fontsize=fs)
+    plt.xticks(fontsize=fs)
+    # plt.show()
+    pngname = filename+'.png'
+    pdfname = filename+'.pdf'
+    epsname = filename+'.eps'
+    boxplt.get_figure().savefig(os.path.join(fig_dir, pngname), dpi=600)
+    boxplt.get_figure().savefig(os.path.join(fig_dir, epsname))
+    boxplt.get_figure().savefig(os.path.join(fig_dir, pdfname))
+    print('Writing figure: '+filename)
+    plt.close()
+
+
+# Whole population (one single whisker-box)
 plot_differentiation(xname=None,
                      yname='Net effect [CHF]',
                      filename='impacts_CH',
                      ymax=5000, size=(6*cm, 6*cm))
-# Absolute net effect by income
+
+# ABSOLUTE net effect by INCOME
 plot_differentiation(xname='Decile group of lifetime income',
                      yname='Net effect [CHF]',
                      filename='impacts_income',
                      ymax=5000, size=(12.5*cm, 6*cm))
-# Relative net effect by income
-plot_differentiation(xname='Decile group of lifetime income',
-                     yname='Net effect [% of spending]',
-                     filename='rel_impacts_income',
-                     ymax=15, size=(12.5*cm, 6*cm),
-                     saturation=0
-)
 
+# Systematically go through all versions for RELATIVE net effect by INCOME
+# ---------------------------------------------------------------------------------------
+
+for v in gwp_sums.columns:
+    filename = 'v_'+v+'_rel_impacts_income'
+    boxdata = boxcarbon_collection[v]
+    ym = 5
+    figsize = (6*cm, 5*cm)
+    if v == 'Total':
+        ym = 15
+        figsize = (12.5*cm, 6*cm)
+    if not v == 'HH-ID':
+        plot_differentiation(xname='Decile group of lifetime income',
+                             yname='Net effect [% of spending]',
+                             filename=filename,
+                             ymax=ym,
+                             dset=boxdata,
+                             size=figsize,
+                             saturation=0
+                             )
+
+# Some additional illustrative analyses
+# ---------------------------------------------------------------------------------------
 # Not so interesting?
-# def plot_differentiation(xname, filename, ymax=50, yname='Net effect [CHF]',
-#                          dset=boxcarbon, size=(12.5*cm, 6*cm), givenorder=None,
-#                          clr_plt=10):
-
 plot_differentiation(xname='Female_head', filename='Female_carbonbox',
                      yname='Net effect [% of spending]', ymax=15,
                      size=(6*cm, 12*cm),
@@ -548,36 +650,6 @@ plot_differentiation(xname='Region', filename='Region_carbonbox',
 plot_differentiation(xname='Quintile group', filename='Quintile_carbonbox',
                      yname='Net effect [% of spending]', ymax=15,
                      size=(8*cm, 12*cm))
-
-
-# Create some color palettes to subdivide deciles
-def create_repeating_palette(numrep, numbasic=10, nummin=None):
-    palette_hls = sns.color_palette('hls', numbasic)
-    palette_out = []
-    count = 0
-    for col in palette_hls:
-        count = count + 1
-        if nummin is None:
-            for _ in range(numrep):
-                palette_out.extend([col])
-        elif count >= nummin:
-            for _ in range(numrep):
-                palette_out.extend([col])
-    return palette_out
-
-
-palette_2 = create_repeating_palette(2)
-palette_3 = create_repeating_palette(3)
-palette_4 = create_repeating_palette(4)
-palette_5 = create_repeating_palette(5)
-palette_10 = create_repeating_palette(10)
-palette_5_min10 = create_repeating_palette(5, numbasic=10, nummin=10)
-palette_10_min10 = create_repeating_palette(10, numbasic=10, nummin=10)
-palette_6 = create_repeating_palette(6)
-palette_7 = create_repeating_palette(7)
-ten_pairs = sns.color_palette('Paired', 10)
-
-
 # Rather interesting
 plot_differentiation(xname='Urbanization', filename='Urbanization_carbonbox',
                      yname='Net effect [% of spending]', ymax=15,

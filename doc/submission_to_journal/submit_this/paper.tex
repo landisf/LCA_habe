@@ -793,7 +793,7 @@ Two things become apparent.
   \includegraphics{figures/gwp_intcat_mob.pdf}
   \caption[\ac{gwp} per decile]{
     \ac{gwp} related to transport across expenditure decile groups.
-    The top panel shows annual per capita \ac{gwp}, the bottom panel shows transport related \ac{gwp} intensity of household expenditure.
+    The top panel shows annual per capita \ac{gwp}, the bottom panel shows transport related consumption goods' contributions to \ac{gwp} intensity of total household expenditure.
   }
   \label{fig:gwp_cat_mob}
 \end{figure}
@@ -809,14 +809,14 @@ The expenditure data from \ac{habe} does not allow for a very fine grained analy
   \includegraphics{figures/gwp_intcat_res.pdf}
   \caption[\ac{gwp} per decile]{
     \ac{gwp} related to heating across expenditure decile groups.
-    The top panel shows annual per capita \ac{gwp}, the bottom panel shows heating related \ac{gwp} intensity of household expenditure.
+    The top panel shows annual per capita \ac{gwp}, the bottom panel shows heating related consumption goods' contribution to \ac{gwp} intensity of total household expenditure.
   }
   \label{fig:gwp_cat_res}
 \end{figure}
 
 Second, emissions (and thus exposure to policies requiring costly emissions reduction) rise much slower with income for heating than they do for transport.
-The bottom panels of Figures~\ref{fig:gwp_cat_mob} and~\ref{fig:gwp_cat_res} emphasize this point by displaying \ac{gwp}-intensity (emissions relative to overall household spending) for different decile groups.
-For both categories, low-income households emit more \acp{ghg} per CHF (and are thus likely to incur higher costs from reducing emissions relative to their overall consumption budget) than do high-income households.
+The bottom panels of Figures~\ref{fig:gwp_cat_mob} and~\ref{fig:gwp_cat_res} emphasize this point by displaying different energy goods' contribution to \ac{gwp} intensity of total household expenditure for different decile groups.
+For both categories, low-income households emit more \acp{ghg} per CHF of total household expenditure (and are thus likely to incur higher costs from reducing emissions relative to their overall consumption budget) than do high-income households.
 But the trend is much stronger for heating than it is for transport and is even more extreme for air transport and package holidays.
 
 \clearpage
@@ -989,8 +989,8 @@ It also shows that, due to large heterogeneity within income decile groups, the 
 
 \begin{figure}[htp]
   \centering
-  \includegraphics{figures/generic_lineplot.pdf}
-  \includegraphics{figures/rel_impacts_income.pdf}
+  \includegraphics{figures/Total_lineplot.pdf}
+  \includegraphics{figures/v_Total_rel_impacts_income.pdf}
   \caption[Effects of global \ac{ghg} pricing]{Short term effects of global \ac{ghg} pricing for Swiss consumers.
     Top: Direct cost of \ac{ghg} pricing (blue solid) and per-capita lump-sum recycling (dashed orange).
     The lines represent averages across households within decile groups.
@@ -1252,6 +1252,41 @@ They do not include uncertainties about the \ac{gwp} associated with consumption
   \label{fig:ci_gwp}
 \end{figure}
 
+\clearpage
+\section{Additional GHG pricing policies in more detail}
+\label{app:versions}
+\begin{figure}[htp]
+  \centering
+  \includegraphics{figures/Heating_lineplot.pdf}
+  \includegraphics{figures/v_Heating_rel_impacts_income.pdf}
+  \includegraphics{figures/Transport (excl. Air)_lineplot.pdf}
+  \includegraphics{figures/v_Transport (excl. Air)_rel_impacts_income.pdf}
+  \includegraphics{figures/Air transport_lineplot.pdf}
+  \includegraphics{figures/v_Air transport_rel_impacts_income.pdf}
+  \caption{Diverse policy versions: GHG pricing for Heating (top), Non-air transport (middle), and Air transport (bottom).}
+  \label{fig:carbonP_v1}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{figures/Restaurants_lineplot.pdf}
+  \includegraphics{figures/v_Restaurants_rel_impacts_income.pdf}
+  \includegraphics{figures/Clothing and Footwear_lineplot.pdf}
+  \includegraphics{figures/v_Clothing and Footwear_rel_impacts_income.pdf}
+  \includegraphics{figures/Sports, recreation, holidays_lineplot.pdf}
+  \includegraphics{figures/v_Sports, recreation, holidays_rel_impacts_income.pdf}
+  \caption{Diverse policy versions (cont.): GHG pricing for Restauration (top), Fashion (middle), and Recreational activities (bottom). }
+  \label{fig:carbonP_v2}
+\end{figure}
+
+\begin{figure}[htp]
+  \centering
+  \includegraphics{figures/Jewelry and bags_lineplot.pdf}
+  \includegraphics{figures/v_Jewelry and bags_rel_impacts_income.pdf}
+  \caption{Diverse policy versions (cont.): GHG pricing for Jewelry and bags.}
+  \label{fig:carbonP_v3}
+\end{figure}
+\clearpage
 \end{appendices}
 
 \bibliography{paper}% common bib file

@@ -87,14 +87,13 @@
 
   Multivariate regression analysis looks to be an extremely wide field
   and I would need to get concrete suggestions about what to analyse
-  in order to even fathom if it would be worth my effort (in a
-  different paper; maybe in a bigger group of co-authors: I'm not not
-  very adept in applying statistical methods).
+  (most likely in a different paper; maybe in a bigger group of
+  co-authors: I'm not not very adept in applying statistical methods).
 
   The one questions that struck me while working on my analysis was
-  the one I mention in Section 3.1 on page *16* and treat with my
-  analysis in Appendix B: can income differences alone explain the
-  different outcomes for household categorizations like "Home
+  the one I mention in Section 3.1 on page *16* and the one I treat
+  with my analysis in Appendix B: can income differences alone explain
+  the different outcomes for household categorizations like "Home
   ownership", "Urbanization", or "Household type" or do these
   categories have any extra explanatory power within income deciles.
   The answer suggested from results in Appendix B is "they do have
@@ -153,9 +152,10 @@
   I understand this comment as a suggestion to go through different
   ways of differentiating prices of GWP across consumption goods.  I
   find this a good suggestion even though it makes the paper somewhat
-  longer. *Redo analysis in Figure 12 for pricing in transport only*
-  *(see fig. 8) and for heating only (see fig.9) and for restaurants*
-  *as well as clothing (new)*
+  longer. I decided to put most of the new results in a new Appendix D
+  and to *keep the discussion in section 4.2 compact*
+
+  *Add additional figure comparing 'direct cost patterns' with 'LS recycling'*
 
 - /The concluding remarks mention actually quite little of the lessons/
   /learned from the GHG footprint analysis. Instead, it states results/
@@ -193,15 +193,14 @@
   /another terminology could eliminate this confusion, one that/
   /involves the term "share" or "contribution"./
 
-  The Figure captions state that the figures show "GWP intensity of
-  household expenditure", not "energy expenditure". I now say
-  *"Different consumption goods' contribution to GWP intensity*
-  *of total household expenditure" to make this clearer.*
+  In the figure captions, I now write
+  "[...] consumption goods' contribution to GWP intensity
+  of total household expenditure" to make this clearer.
   Similarly, when I discuss Figures 8 and 9 on page *23*,
   I replace the old phrase "[...] by displaying GWP-intensity (emissions relative to
   overall household spending)" by
-  *"by displaying different energy goods' constributions to GWP*
-  *intensity of total household expenditure"*.
+  "by displaying different energy goods' constributions to GWP
+  intensity of total household expenditure".
 
 - /When discussing the climate impact of air travel, a RFI = 2 is used,/
   /citing a 2019 paper (lines 1200-1203). I would suggest using the RFI/
