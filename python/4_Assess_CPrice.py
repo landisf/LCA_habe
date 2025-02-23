@@ -539,6 +539,79 @@ with pd.ExcelWriter("Dezil_Beispiele.xlsx",
     size.to_excel(writer, sheet_name='Haushaltsgroesse')
     spending.to_excel(writer, sheet_name='Ausgaben')
 
+# One Figure with lines from all versions of GHG pricing
+# ---------------------------------------------------------------------------------------
+
+
+boxcarbon_collection['Total']
+
+def plot_manymeanlines(dsetdict=boxcarbon_collection,
+                       xname='Decile group of lifetime income',
+                       list_of_lines=gwp_sums.columns,
+                       ymax=300,
+                       filename='generic_lineplot',
+                       size=(12.5*cm, 6*cm)):
+    sns.set(font_scale=0.8)
+    fig, ax = plt.subplots(figsize=size, tight_layout=True)
+    # ax.tick_params(axis='x', rotation=90)
+
+    refunds_total = dsetdict['Total'].groupby(xname)['refund_at_100chf']
+    mean_refunds_total = refunds_total.mean()
+    mean_of_means = mean_refunds_total.mean()
+    mean_refunds_total = mean_refunds_total*100/mean_of_means
+    plot_object = pd.DataFrame(
+        {"Lump-sum\nrecycling": mean_refunds_total}
+    )
+    for v in list_of_lines:
+        dset = dsetdict[v]
+        grouped_costs = dset.groupby(xname)['cost_at_100chf']
+        grouped_refunds = dset.groupby(xname)['refund_at_100chf']
+        mean_costs = grouped_costs.mean()
+        mean_refunds = grouped_refunds.mean()
+        normalized_costs = mean_costs*mean_refunds_total/mean_refunds
+        # plot_object.concat(normalized_costs)
+        plot_object[v] = normalized_costs
+        # plot_object.columns = plot_object.columns.concat(
+        #     v
+        # )
+        # plot_object = pd.concat([mean_costs, mean_refunds], axis=1)
+
+    plot_object.rename(columns={'Clothing and Footwear':'Clothing and\nFootwear'},
+                       inplace=True)
+    sns.lineplot(data=plot_object,
+                 dashes = [(2,0), (4,2), (2,1), (2,2), (1,1), (1,1.5), (1,2)],
+                 # palette = ['b', 'tab:orange', 'r', 'r', 'r', 'r', 'r'])
+                 palette = ['b', 'xkcd:orange', 'xkcd:navy blue', 'xkcd:navy blue',
+                            'xkcd:forest green', 'xkcd:forest green', 'xkcd:forest green']
+                 )
+    sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1))
+    ylabel = 'Amounts per HH [CH avg. = 100]'
+    ax.set(ylim=(0, ymax), ylabel=ylabel,
+           xlabel=xname,
+           xticks=plot_object.index
+           )
+    fs = 9
+    ax.set_xlabel(xname, fontsize=fs)
+    ax.set_ylabel(ylabel, fontsize=fs)
+    plt.yticks(fontsize=fs)
+    plt.xticks(fontsize=fs)
+    # plt.show()
+    pngname = filename+'.png'
+    pdfname = filename+'.pdf'
+    epsname = filename+'.eps'
+    fig.get_figure().savefig(os.path.join(fig_dir, pngname), dpi=600)
+    fig.get_figure().savefig(os.path.join(fig_dir, epsname))
+    fig.get_figure().savefig(os.path.join(fig_dir, pdfname))
+    print('Writing figure: '+filename)
+    plt.close()
+    return plot_object
+
+a_lineslist = (x for x in gwp_sums.columns if not x == 'HH-ID')
+trash = ['Jewelry and bags', 'Sports, recreation, holidays', 'Transport (excl. Air)']
+the_lineslist = (x for x in a_lineslist if not x in trash)
+ploto = plot_manymeanlines(list_of_lines=the_lineslist)
+
+
 # ---------------------------------------------------------------------------------------
 # Whisker plots of overall outcomes of GHG pricing versions
 # ---------------------------------------------------------------------------------------

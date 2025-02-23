@@ -155,6 +155,7 @@
   longer. I decided to put most of the new results in a new Appendix D
   and to *keep the discussion in section 4.2 compact*
 
+  *Write text in Appendix D*
   *Add additional figure comparing 'direct cost patterns' with 'LS recycling'*
 
 - /The concluding remarks mention actually quite little of the lessons/
