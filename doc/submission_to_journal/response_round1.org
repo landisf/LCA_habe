@@ -77,7 +77,7 @@
   /progressive effects" (lines 96-101), but again only one reference in/
   /a special case is provided./
 
-  *I should improve this by adding references*
+  A fair point. I added additional references.
 
 - /After computing per capita GHG footprints, the author relates them/
   /to possible determinants. This is done in a graphical manner,/
@@ -110,8 +110,6 @@
   additional effort not manageable within the revision cycles of the
   Swiss Journal of Economics and Statistics.
 
-  *Do show CIs for Appendix B?*
-
 - /There seems to be an implicit understanding that climate policies/
   /aiming at reducing emissions are price policies, or at least that/
   /they burden households with the cost of mitigation or the cost of a/
@@ -126,8 +124,15 @@
   /cars. Such policies might benefit high-income households/
   /disproportionally./
 
-  Yes. *That subsidies benefit the rich is a good point. I should
-  write about this.*
+  Yes. I now explain that my study design and data base does not allow
+  for a good discussion of subsidies in the concluding section. I
+  would argue that my statement here still holds: even if subsidies
+  benefit high-income households, they have to /pariticipate/ in
+  emissions reductions activities to profit from them. And to the
+  extent that subsidies are paid for through income taxes, high-income
+  households also contribute to paying for it.  This argumentation may
+  be not very scientifically conclusive, but it is the reason why I do
+  not want to discuss subsidies at this point in the text.
 
 - /The whole discussion in the first part of section 4.2 ("Pricing CO2/
   /emissions in Switzerland") of the possible distributional impacts of/
@@ -149,14 +154,11 @@
   /redistribution of its revenues. I think that the expenditure/
   /patterns identified in chapter 3 could have been put to better use./
 
-  I understand this comment as a suggestion to go through different
-  ways of differentiating prices of GWP across consumption goods.  I
-  find this a good suggestion even though it makes the paper somewhat
-  longer. I decided to put most of the new results in a new Appendix D
-  and to *keep the discussion in section 4.2 compact*
-
-  *Write text in Appendix D*
-  *Add additional figure comparing 'direct cost patterns' with 'LS recycling'*
+  I welcome this suggestion to go through different ways of
+  differentiating prices of GWP across consumption goods. Trying to
+  avoid making the paper too long, I decided to put most of the new
+  results in a new Appendix D and to keep the discussion in section
+  4.2.2 compact. The findings are summarize in Figures *13* and *14*.
 
 - /The concluding remarks mention actually quite little of the lessons/
   /learned from the GHG footprint analysis. Instead, it states results/
@@ -169,9 +171,7 @@
   /revenue to households in a per-capita lump-sum fashion. This makes/
   /the CO2-levy overall progressive."/
 
-  *Clarify in the paper where stuff was shown and where I'm just*
-  *conjecturing.*
-  *Expand discussion of my actual findings!*
+  I completely rewrote the first part of that section.
 
 /Minor points:/
 - /Figure 1 is strange. It compares spending per capita, which is/
@@ -180,7 +180,10 @@
   /OECD equivalent household size. I am not sure what we learn from/
   /this comparison./
 
-  *I should consider dropping the figure or explain more*
+  I removed Figure 1 from the paper and changed the order of former
+  Figures 2 and 3.  I now directly show per-capita GWP and only then
+  GWP intensities and the discussion has been adopted to this switch
+  as well.
 
 - /I was intrigued by the lower figures in Fig. 8 and Fig. 9, which/
   /show the GWP intensity of different spending items per income/
@@ -225,6 +228,9 @@
   /can be cut. It discusses the possibility of households to adjust their/
   /consumption to a CO2 tax, when the paper is about GHG emissions and,/
   /by necessity, ignores consumers' response to changing relative prices./
+
+  Done.
+
 - /There are many figures, of which a good number can be dispensed with/
   /because they provide little information (Figure 1) or could be/
   /replaced by a sentence (e.g., the lower figures of Fig. 4: per/
@@ -236,10 +242,22 @@
 - /The paper could be improved by using a proper statistical analysis/
   /of the determinants of personal GHG footprints, or there should be/
   /an explanation of why such an analysis is not possible./
+
+  I largely ignored this request largely due to a lack of time but
+  also due a lack of conviction that this would give major new
+  insights without it being thoroughly conducted.
+
 - /The paper could be improved by using the detailed GHG footprint data/
   /by income group to simulate more sophisticated climate policies than/
   /just a uniform GHG tax./
+
+  I now analyse emissions pricing for a wider range of consumption
+  goods.
+
 - /The paper could be shortened as indicated above./
+
+  I followed Reviewer 1's suggestions for shortening the paper.
+
 - /When this is done, I believe that it is strong and interesting/
   /enough to be published in SJES./
 
@@ -264,7 +282,7 @@
 /and thus the rapidly changing relative costs of technologies are/
 /neglected. These are acceptable choices, but also important/
 /caveats. When communicating the results, it must be pointed out even/
-/more clearly that the analysis is valid for a short- term horizon and/
+/more clearly that the analysis is valid for a short-term horizon and/
 /that the impacts are systematically overestimated./
 
 I took Reviewer 2's reservations into account and *write: ''*
@@ -434,7 +452,12 @@ effectiveness of political instruments than on politcial feasibility.
     /misinterpret the figure. What does the overlap between boxes tell/
     /us?/
 
-    *THIS TAKES SOME WORK. DO IT.*
+    Referee 1 recommended I remove the figure from the paper. I
+    followed their advice.
+
+    I agree that with Figure 1 in the paper, it would have meritted
+    more explanation but without the Figure, the potential for
+    confusion is now absent.
 
   + /Line 659f: Can the reason for this be identified?/
 
@@ -463,6 +486,11 @@ effectiveness of political instruments than on politcial feasibility.
     - /In the urbanization box chart, there are hardly any differences/
       /between the three groups, which is worth to be commented in the/
       /text./
+
+      I now leave out the previous Figure 4. *I do mention 'hardly any
+      diff.'* in the context of Figure *7*.
+
+
   + /Figure 5: It is diffcult to see the differences in this/
     /figure. This would be easier if shares were shown, which could be/
     /done given that differences in totals are already shown in/

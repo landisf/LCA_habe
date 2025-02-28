@@ -543,8 +543,6 @@ with pd.ExcelWriter("Dezil_Beispiele.xlsx",
 # ---------------------------------------------------------------------------------------
 
 
-boxcarbon_collection['Total']
-
 def plot_manymeanlines(dsetdict=boxcarbon_collection,
                        xname='Decile group of lifetime income',
                        list_of_lines=gwp_sums.columns,
@@ -576,13 +574,13 @@ def plot_manymeanlines(dsetdict=boxcarbon_collection,
         # )
         # plot_object = pd.concat([mean_costs, mean_refunds], axis=1)
 
-    plot_object.rename(columns={'Clothing and Footwear':'Clothing and\nFootwear'},
+    plot_object.rename(columns={'Clothing and Footwear': 'Clothing and\nFootwear'},
                        inplace=True)
     sns.lineplot(data=plot_object,
-                 dashes = [(2,0), (4,2), (2,1), (2,2), (1,1), (1,1.5), (1,2)],
+                 dashes=[(2, 0), (4, 2), (2, 1), (2, 2), (1, 1), (1, 1.5), (1, 2)],
                  # palette = ['b', 'tab:orange', 'r', 'r', 'r', 'r', 'r'])
-                 palette = ['b', 'xkcd:orange', 'xkcd:navy blue', 'xkcd:navy blue',
-                            'xkcd:forest green', 'xkcd:forest green', 'xkcd:forest green']
+                 palette=['b', 'xkcd:orange', 'xkcd:navy blue', 'xkcd:navy blue',
+                          'xkcd:forest green', 'xkcd:forest green', 'xkcd:forest green']
                  )
     sns.move_legend(ax, "upper left", bbox_to_anchor=(1, 1))
     ylabel = 'Amounts per HH [CH avg. = 100]'
@@ -606,9 +604,10 @@ def plot_manymeanlines(dsetdict=boxcarbon_collection,
     plt.close()
     return plot_object
 
+
 a_lineslist = (x for x in gwp_sums.columns if not x == 'HH-ID')
 trash = ['Jewelry and bags', 'Sports, recreation, holidays', 'Transport (excl. Air)']
-the_lineslist = (x for x in a_lineslist if not x in trash)
+the_lineslist = (x for x in a_lineslist if x not in trash)
 ploto = plot_manymeanlines(list_of_lines=the_lineslist)
 
 
