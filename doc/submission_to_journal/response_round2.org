@@ -1,0 +1,289 @@
+#+TITLE: Response to Second Round of Referee Reports
+#+DATE: June 2025
+#+OPTIONS: toc:nil
+#+OPTIONS: date:nil
+#+OPTIONS: num:nil
+
+* Editor
+/Dear Dr. Landis,/
+
+/Thank you very much for your revised submission entitled "Consumption/
+/Based Responsibility for Global Warming and the Distribution of/
+/Impacts of Swiss Climate Policy." I am pleased to inform you that we/
+/are prepared to accept the paper for publication in the Swiss Journal/
+/of Economics and Statistics, subject to a small number of minor/
+/revisions (consider this conditional acceptance)./
+
+/Both referees agree that the manuscript is now in a publishable state/
+/and commend the improvements you have made in response to their/
+/earlier feedback. The paper presents a timely and well-executed/
+/analysis of how Swiss households differ in their greenhouse gas/
+/responsibilities, and offers important insights into the/
+/distributional consequences of climate policy. The coupling of/
+/household survey data with life-cycle assessments is methodologically/
+/sound, and the results are clearly presented and discussed with care./
+
+/Before moving to publication, however, there are a few outstanding/
+/issues that should be addressed. In particular, as Reviewer 2 notes,/
+/the paper currently refers in several places to “costly climate/
+/policy” or “costly emissions reductions,” which may give the/
+/impression that the analysis includes behavioral or abatement/
+/responses to such costs. In fact, the model assumes full recycling of/
+/revenue and does not explicitly account for investment costs or/
+/technological substitution. For clarity and consistency, we ask that/
+/you revise this language throughout the manuscript to avoid potential/
+/confusion, ensuring that your focus on distributional outcomes from/
+/direct payments is properly reflected. Relatedly, it would be helpful/
+/to clarify whether the consumer prices used in the analysis include/
+/the mineral oil tax or not, and to briefly motivate this choice, given/
+/its potential relevance for interpreting distributional effects./
+
+*See my additional insights at the bottom of R2's remarks on this issue.*
+
+*Write a paragraph or an appendix explaining how 'costly' climate policy.*
+*impacts consumer welfare (with or w/o behavioural response)?*
+*Make sure that discussion of revenue recycling is consistent:*
+*Behavioural responses can diminish carbon pricing revenue for recycling.*
+*This necessitates that I go back to no behavioral response.*
+
+*Alternatively, consider conceding to R2's request and drop the generality*
+*of 'costly' climate policy.*
+
+/There are also a few minor textual adjustments suggested by the/
+/referees. For example, in discussing distributional consequences, the/
+/phrase “without affecting the consumption of low-income households too/
+/much” could more accurately be phrased as “without substantially/
+/increasing their cost of living.” Similarly, when noting that pricing/
+/mechanisms must be “properly designed,” it may be useful to add “and/
+/communicated,” particularly given the importance of perceived/
+/regressivity in public acceptance. Additionally, some references to/
+/now-updated figures—especially Figure 3 and its role in Appendix/
+/B—should be revised to align with the current version of the/
+/manuscript. Adjusting the title of Appendix B to better reflect its/
+/analytical content (e.g., “Household Types versus Income as/
+/Determinants of GWP”) would also improve clarity. We also encourage/
+/you to correct the minor typographical errors identified in the/
+/referee reports and to consider acknowledging the referees’ valuable/
+/input in the acknowledgements section./
+
+*Yes, do all of this. Should I also acknowledge the inputs of the editor?*
+*See below not irrelevant suggestion.*
+
+/While your analysis stands well on its own, we would also like to/
+/offer an optional suggestion. If you wish to further strengthen the/
+/paper’s policy relevance, you might consider framing the analysis more/
+/explicitly around the question of who should decarbonize first, and/
+/which consumption categories offer the most equitable entry points for/
+/climate policy. Your results show that emissions related to goods such/
+/as air travel, restaurants, and clothing increase sharply with income,/
+/whereas other categories such as heating and food are more evenly/
+/distributed. This suggests a natural and politically salient route for/
+/targeting high-income emissions without imposing disproportionate/
+/burdens on low-income households—especially in contexts where/
+/income-based differentiation in pricing is infeasible. Incorporating/
+/this framing, even briefly in the introduction or conclusion, could/
+/enhance the narrative coherence and make the implications for policy/
+/design more compelling. Of course, this is a suggestion for your/
+/consideration and is not required for publication./
+
+*Yes, I should seriously consider this recommendation.*
+*I need to reread my intro/outro and see how I can emphasise these points.*
+
+/We look forward to receiving your final manuscript and a short note/
+/summarizing the changes made in response to this/
+/letter. Congratulations again on your work, and thank you for/
+/submitting it to the Swiss Journal of Economics and Statistics./
+
+/Ensure you also follow our authorship policies:/
+
+https://sjes.springeropen.com/
+
+https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e5c-7a08fb755322
+
+*Go through these and check if all is done.*
+
+* Reviewer 1
+/The author responded well to the two referees' comments. The text is/
+/quite improved, even if it is by adding many caveats. The results are/
+/interesting and deserve publication despite these caveats./
+
+/The author did not add a systematic multifactor analysis of/
+/households' characteristics explaining differences in consumption/
+/patterns and carbon footprints. Nevertheless, the two- by-two/
+/decomposition in Appendix B provides some indications. It does not/
+/warrant, however, the statement of "lifetime income to be the most/
+/important criterion for determining gwp" (line 469)./
+
+*OK. I need to think about this.*
+
+/The introduction could be streamlined, there is quite a bit of/
+/repetition, e.g., the reference to results by Chancel et al. (2023) on/
+/page 2 and 3./
+
+*I need to do some streamlining.*
+
+/Points of detail:/
+- /There are several references to Figure 3, in the text and more so in/
+  /Appendix B, which need to be revised now that Figure 3 changed. In/
+  /Appendix B, this is used to refer to the distribution of per capita/
+  /GWP by a household category but for all income groups/
+  /confounded. This would be useful alongside the distributions per/
+  /income group in figures B1 to B3. I suggest adding this to those/
+  /figures./
+
+  *Carefully do this.*
+
+- /I did not carry out a systematic spellcheck, but some typos sprung/
+  /to my attention: "I provides" on line 213, "which" in place of "who"/
+  /on line 281, "the the" on line 639, "in in" on line 950, "trasport"/
+  /on line 1289, "decisesively" on line 1629, "sqewed" on line 1735,/
+  /"or on a hypothetical levy" on line 1744, "transport" on line 1787,/
+  /"attenuated a somewhat" on line 2115./
+
+  I thank Referee 1 to point out those typos. I ran a spell check program
+  over the source file of the paper to remove some additional obvious mis-
+  spellings.
+  *DO THIS!*
+
+- /It would be fair to acknowledge the referees' input in the/
+  /acknowledgements./
+
+  Indeed, thank you. I now write in the achknowledgements ``Two
+  anonymous referees and the corresponding editor, Jérémy
+  Laurent-Lucchetti, made helpful suggestions to further improve both
+  the analysis in this paper and the political framing of its
+  findings.''
+
+* Reviewer 2
+/The author has adequately addressed many, especially the major points/
+/from the first referee report. In the author’s response, the rejection/
+/of other points is reasonably justified in some cases, less/
+/convincingly in others. Even in the latter case, this is acceptable in/
+/many instances./
+
+/Rather than further expanding on policy issues, the author has reduced/
+/the ambition for policy relevance. This sharpens the paper’s focus and/
+/makes some of the omissions more acceptable. Then again, it also makes/
+/the paper less policy relevant. It becomes apparent that the second/
+/part of the title (“the distribution of impacts of Swiss climate/
+/policy”) is only half accurate, given the stylized nature of the/
+/exercise. This stylized nature is already described. It should be made/
+/more transparent with respect to the issue of neglected abatement/
+/costs (see below)./
+
+/In the following I concentrate on the few places which I am still/
+/suggesting changes for. With these minor adjustments, I recommend the/
+/paper for publication./
+- /General parts of the 1st referee report/
+  + /The additions that point to the short-term nature of the analysis/
+    /are fine. In the introduction, line 217 is the ideal place to also/
+    /mention it./
+  + /The additions on feasibility are also fine. Indeed, the first/
+    /contribution has been wisely reformulated as well. In line 1803 I/
+    /am still stumbling over the words “desirable” and “feasible”. How/
+    /about “viable” to combine the two?/
+
+    Thanks for the suggestion. I now use the word ``viable''.
+
+- Line 193ff (now line 190ff): Considering the focus and main
+  recommendations of the paper, the difficulty in targeting the
+  emissions of the rich cannot be ignored. Not only are they less
+  sensitive to price changes. The rich are also able to lobby for
+  exemptions, and the emissions of the very rich grow faster than
+  anyone else’s. It’s not merely a fairness issue, but also concerns
+  the effectiveness of policy measures. Even if the author has chosen
+  to merely “target goods” and discuss fairness, it is a caveat to be
+  mentioned that the proposed prescriptions may partially fail to
+  effectively reduce emissions.
+
+  *Mention that the proposed prescriptions may partially fail to*
+  *effectively reduce emissions.*
+
+  *But also keep in mind that I'm not only talking about GHG pricing.*
+
+- Line 224ff (now line 220ff): That “technological change sweeps
+  through the energy sector” could be mentioned not only in the
+  response, but also in the paper.
+
+  *Check if 220ff is the right place to do this.*
+
+- Line 1344 (now line 1249f): In a chapter entitled “Climate policy
+  design” there should be space for mentioning this. It only takes
+  half a sentence. As a minimum requirement, the current sentence must
+  be modified, because “without affecting the consumption of low-
+  income households too much” is incorrect in the perception of those
+  facing the regulation. Replacing “consumption” with “cost of living”
+  would do.
+
+  *Replace 'consumption' with 'cost of living'.*
+
+- Line 1580 (now line 1488ff): It is impossible for a modeler not to
+  make “any assumptions with respect to preexisting taxes such as
+  mineral oil taxes”. The prices used are either net or gross of taxes
+  before levying the CO2 tax. With constant demands, the influence on
+  results is indeed smaller than in e.g. a CGE analysis. Given the
+  large magnitude of the mineral oil tax, the distributional results
+  are, however, not unaffected by the assumption of taking into
+  account – or not taking into account – the mineral oil tax. Hence,
+  the approach must be briefly described (i.e. do the prices net of
+  carbon taxes include the mineral oil tax or not?) and motivated.
+
+  *First, make sure that documentation informs readers that HABE*
+  *reflects consumer prices after taxes (incl. mineral oil tax).*
+  *Second, check if documentation makes clear that, in the case*
+  *of gasoline and diesel, we use physical quantities of fuels as*
+  *the basis of the LCA. Consider ammending it if not.*
+  *Third, explain to Ref2 why MOT is irrelevant to my analysis. *
+  *Consider ammending the paper?*
+
+- Full redistribution of CO2 tax revenues: This must be transparently
+  explained, and the associated caveat of neglecting the costs of
+  emission reductions must be prominently stated. So far, the paper
+  mentions costly emission reductions in many instances, giving the
+  misleading impression that this is what the paper is about. It is
+  really about distributional effects related purely to the payments
+  that directly belong to the policy instrument. Correcting this in
+  the text requires modifications in many locations. This is a
+  non-exhaustive list of locations with references to costly emission
+  reductions that will have to presented differently:
+  + Line 198: measuring “exposure to costly climate policy”
+  + Line 212f: “Second, the paper discusses exposure of different
+    income classes to costly climate policy.” -> especially important
+    to change this formulation, as it describes one of the main
+    objectives of the paper.
+  + Line 715: “costly reduction of the emissions”
+  + Line 1002f: “requiring costly emission reduction”
+  + Line 1010f: “higher costs from reducing emissions”
+  + Line 1133: “costly climate policy”
+  + Line 2011ff: “I assume that emission free technologies for
+    producing different consumption goods are more expensive than
+    their polluting counterparts at least in the short and medium run
+    and that the state will not fully take over these additonal
+    costs.” (further explained in footnote 17) This is incompatible
+    with the assumed full redistribution of revenues.
+  + Line 1337f: “overall costs of achieving emissions reduction”
+  + Line 1370: “The consequence of costly emissions reduction”
+  + Figure 10 shows welfare costs
+  + Line 1735: “costly emissions reduction efforts”
+
+  *I talked myself into a corner here. Let's see if I can get out again.*
+  *Explain in the paper what I mean by 'costly climate policy' if I*
+  *don't do this already.*
+  *Check in previous round of revision what exactly the 'cost' was*
+  *that Ref2 refers to and explain that I was getting at 'economic cost'.*
+  *Explain how 'economic cost' in general relates to the paper's notion*
+  *of costliness and its distribution.*
+
+- /Line 1636ff (now line 1546): In this case I suggest adding “and/
+  /communicated” after “properly designed”. This is necessary also/
+  /because the sentence itself refers to the “perception of/
+  /regressivity”./
+
+  Done. Thank you for the suggestion.
+
+- /Appendix B: The title should be changed to “Household types versus/
+  /income as determinants”. This helps the reader to immediately grasp/
+  /what it is about./
+
+  I agree with the suggestion. Appendix B is now entitled ``Household types
+  versus income as determinants of GWP".
