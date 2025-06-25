@@ -1,0 +1,299 @@
+Received: from ZR1P278MB1737.CHEP278.PROD.OUTLOOK.COM (2603:10a6:910:a7::9) by
+ ZRAP278MB0562.CHEP278.PROD.OUTLOOK.COM with HTTPS; Tue, 10 Jun 2025 07:18:41
+ +0000
+Received: from AM0PR10CA0068.EURPRD10.PROD.OUTLOOK.COM (2603:10a6:208:15::21)
+ by ZR1P278MB1737.CHEP278.PROD.OUTLOOK.COM (2603:10a6:910:a7::9) with
+ Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.8813.30; Tue, 10 Jun
+ 2025 07:18:37 +0000
+Received: from AMS0EPF00000195.eurprd05.prod.outlook.com
+ (2603:10a6:208:15:cafe::f1) by AM0PR10CA0068.outlook.office365.com
+ (2603:10a6:208:15::21) with Microsoft SMTP Server (version=TLS1_3,
+ cipher=TLS_AES_256_GCM_SHA384) id 15.20.8792.35 via Frontend Transport; Tue,
+ 10 Jun 2025 07:18:37 +0000
+Authentication-Results: spf=pass (sender IP is 192.174.90.91)
+ smtp.mailfrom=sn-bounce.springernature.com; dkim=pass (signature was
+ verified) header.d=springernature.com;dmarc=pass action=none
+ header.from=springernature.com;compauth=pass reason=100
+Received-SPF: Pass (protection.outlook.com: domain of
+ sn-bounce.springernature.com designates 192.174.90.91 as permitted sender)
+ receiver=protection.outlook.com; client-ip=192.174.90.91;
+ helo=mta-90-91.sparkpostmail.com; pr=E
+Received: from mta-90-91.sparkpostmail.com (192.174.90.91) by
+ AMS0EPF00000195.mail.protection.outlook.com (10.167.16.215) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.8835.15 via Frontend Transport; Tue, 10 Jun 2025 07:18:36 +0000
+Return-Path: msprvs1=20256TvLGUB0a=bounces-17638-1813@sn-bounce.springernature.com
+X-MSFBL: 5TeOC4dKGsVogFAE19GFwD0C//JgKZ3T5CL9w0lT424=|eyJzdWJhY2NvdW50X2l
+	kIjoiMTgxMyIsInRlbmFudF9pZCI6InNwYyIsIm1lc3NhZ2VfaWQiOiI2ODNkNGJ
+	kYzQ3NjhkZTVmNzlhZSIsInIiOiJmbG9yaWFuLmxhbmRpc0B6aGF3LmNoIiwiY3V
+	zdG9tZXJfaWQiOiIxNzYzOCJ9
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=springernature.com;
+	s=scph1116; t=1749539915; i=@springernature.com;
+	bh=47CDP2kig7cxr5IfcGX7N7VWE5bM+DRHOz/ct7xuEb8=;
+	h=Content-Type:To:Message-ID:Date:Subject:From:From:To:Cc:Subject;
+	b=iFmUnxwM1B+/FxGkJ8AZJE+ww4OeYAgywZe48NO22IV6seBdJI7d5dIPZ99PQj73T
+	 41zjRvueSpRLHvdsCN1yd+rptxYzhvFEcZtOD2ELjlGUg9M3bbSogiUfBmwdWby7mH
+	 W7MQRjpLLks48YBMD+TjBz/vwqPmajAe4T3P1a9Y=
+Received: from [10.90.1.243] ([10.90.1.243])
+	by i-04850a37f8fe8f3a4.mta1vrest.sd.prd.sparkpost (ecelerity 5.0.0.74447 r(msys-ecelerity:tags/5.0.0.4)) with REST
+	id EA/97-25512-B4CD7486; Tue, 10 Jun 2025 07:18:35 +0000
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="UTF-8"
+To: florian.landis@zhaw.ch
+Message-ID: <EA.97.25512.B4CD7486@i-04850a37f8fe8f3a4.mta1vrest.sd.prd.sparkpost>
+Date: Tue, 10 Jun 2025 07:18:35 +0000
+Subject: Swiss Journal of Economics and Statistics: Decision on your manuscript
+From: "Swiss Journal of Economics and Statistics" <princess.quilatan@springernature.com>
+X-MS-Exchange-Organization-ExpirationStartTime: 10 Jun 2025 07:18:36.9783
+ (UTC)
+X-MS-Exchange-Organization-ExpirationStartTimeReason: OriginalSubmit
+X-MS-Exchange-Organization-ExpirationInterval: 1:00:00:00.0000000
+X-MS-Exchange-Organization-ExpirationIntervalReason: OriginalSubmit
+X-MS-Exchange-Organization-Network-Message-Id: ee7f8544-e115-42cc-7791-08dda7ef046d
+X-EOPAttributedMessage: 0
+X-EOPTenantAttributedMessage: 5d1a9f9d-201f-4a10-b983-451cf65cbc1e:0
+X-MS-Exchange-Organization-MessageDirectionality: Incoming
+X-MS-PublicTrafficType: Email
+X-MS-TrafficTypeDiagnostic: AMS0EPF00000195:EE_|ZR1P278MB1737:EE_|ZRAP278MB0562:EE_
+X-MS-Exchange-Organization-AuthSource: AMS0EPF00000195.eurprd05.prod.outlook.com
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Office365-Filtering-Correlation-Id: ee7f8544-e115-42cc-7791-08dda7ef046d
+X-MS-Exchange-AtpMessageProperties: SA|SL
+X-MS-Exchange-Organization-SCL: -1
+X-Microsoft-Antispam: BCL:0;ARA:13230040|12012899012|29132699027|13003099007;
+X-Forefront-Antispam-Report: CIP:192.174.90.91;CTRY:US;LANG:en;SCL:-1;SRV:;IPV:NLI;SFV:SFE;H:mta-90-91.sparkpostmail.com;PTR:mta-90-91.sparkpostmail.com;CAT:NONE;SFS:(13230040)(12012899012)(29132699027)(13003099007);DIR:INB;
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 10 Jun 2025 07:18:36.4401
+ (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: ee7f8544-e115-42cc-7791-08dda7ef046d
+X-MS-Exchange-CrossTenant-Id: 5d1a9f9d-201f-4a10-b983-451cf65cbc1e
+X-MS-Exchange-CrossTenant-AuthSource: AMS0EPF00000195.eurprd05.prod.outlook.com
+X-MS-Exchange-CrossTenant-AuthAs: Anonymous
+X-MS-Exchange-CrossTenant-FromEntityHeader: Internet
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: ZR1P278MB1737
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:05.0911859
+X-MS-Exchange-Processed-By-BccFoldering: 15.20.8813.020
+X-Microsoft-Antispam-Mailbox-Delivery:
+	abwl:1;ucf:0;jmr:0;auth:0;dest:I;ENG:(910005)(944506478)(944626604)(920097)(821098)(255002)(410001)(930097)(140003);
+X-Microsoft-Antispam-Message-Info:
+	=?utf-8?B?cittRVJzQm4ySFA2bURXdmVqdnVkeDllVisrRnRkYWhEWHc0ZG9NRGxMOGVZ?=
+ =?utf-8?B?MFpWRmtWTzRxdzJ4QXhUa1FsVGttVDRLNzZkbHpiay9tbnVCcm1tZEIwYzg2?=
+ =?utf-8?B?L1psVHozVThYeVpDcFBzWXJ2aW1wWVMxVUZJWXFNUEFtV1p0a3BMd1VGTW4v?=
+ =?utf-8?B?eTQ5NElCdUNKSkYvczl2NGQrbEloc1Y3Rk1IRncwaHMyWXNEYjZIL2pyZ09T?=
+ =?utf-8?B?aG5Fb1VPOW5DZEFPL1ZwWnZkcXQwTWFvZXk3YnlwK3VmQjhHVzZnMHNwRFpT?=
+ =?utf-8?B?TmJxa21PQUJtQ3o5RkNrUG5MZjNFU29OTFgzck11RS90ekJvYmpDSzZ4bG5q?=
+ =?utf-8?B?Nktmb3VSTERmbGRVcXFUbHp5K1lJMkN3OFljbFhXc3BxZHN3VEFFOXhUenhk?=
+ =?utf-8?B?UHEzQlBZano5d0dScTUvQlAwbUI0NkwzQXZRcURVVVg0ZXhxdFAvRGkyZjhQ?=
+ =?utf-8?B?emtFS2xveDBkRnBXWFBWME8xRWxkUFc0RDR1RUlEUTNFSW1KbWI2cTF1b0g1?=
+ =?utf-8?B?R25Pc2V2NUJtY2tBK2hzR3VPU2xIL3hYZUE1WGIrQXFqMnVablM1UkloNEpj?=
+ =?utf-8?B?d1d0dDgxdGNHVDlqVjJUeVlVSWh0V2wyWDE2blRmakpqeDJIa0dScEpoend2?=
+ =?utf-8?B?ZjZsTFYzTy9XK3hURytZYWhwVDFzU1dUMlk0Y3g5TTVuSlhTQ0xBRGZ0ZGk4?=
+ =?utf-8?B?Kzc0b290Nnpqd09BVzE1SVZHSWlHL1YrU3FkQTFGYkNMdVBqQ2p5VEhYanE4?=
+ =?utf-8?B?Q3NPdHI3VmdGOFU0dXNtNFlYRlBTazVsZlB2NldhUEVLTFBCeU5tNXF4V1pE?=
+ =?utf-8?B?SDlYbFRub0xUWFBycFhrV3lXaytYYW1uRng1d0dTdEdRUlJMaUNaTk9UOTZa?=
+ =?utf-8?B?aXdZR1BVQlpaNzFFSktvUURpbUcrTUdMQzdGMEhtZ3FobitrdU5XVUFLbzg1?=
+ =?utf-8?B?WWhMakZvdTNleWZnb2FRbFdZUUxrZXVwd1ZMd2U4VzBodHhJSVdBQy8yNDVX?=
+ =?utf-8?B?dUZkTG1XbGVEanRvblFWcHpscUM0MlRUelAwVWU5VUU3c3k3cXA3RmJvQ1l6?=
+ =?utf-8?B?WGFucEM4VWUwOUJYZU92N2lDU3M3V0F5SVZNQ00xVEUvN2pwOWhhMk9RZEpu?=
+ =?utf-8?B?RUkxNzdWUTlPWVBOSmFhbk5rKzJ4K2pUWlV5MzFkSzhKMEh5L0VlTnJkMXpi?=
+ =?utf-8?B?Z0F5czdxV3ViUGxjVXhTcWRDSWRoY0JkTFVwalR0RDd0NXdLbFZNczBISmZv?=
+ =?utf-8?B?ZkZCUXc1NVN2U1JLcC9oWXUyL3F1TmpIYUpmMU1ZZldxN2N6NzdZTmRWVzhi?=
+ =?utf-8?B?T1VMQjlESituWHgxMzFjOFdDY0YrR3NrM1NLb250UlVRdlZOaGxJZ2tqRXBF?=
+ =?utf-8?B?Rk5kLzA5OVZtVDJyTUtXeWJIb2JpeU45enRsQXdSLzNVL0dUWUgxVUZsZWs4?=
+ =?utf-8?B?ZFJaVEx2Q09FTTg0LzM0UU55NnpvaXVyeHhUMC9zZWRBVmhDclBxN1dUem1U?=
+ =?utf-8?B?blZPU0VQUFE0WUttaDREaE13aDdhZUJsczNtWHhWempJREUvNXFFRVBiZFQr?=
+ =?utf-8?B?MFptWDc2YThqZWtvK0R5cW4vTU5CRmFLcm9SdmVnRkhQVzlwTXJZdGgwMnZZ?=
+ =?utf-8?B?NnA4K0d4NS9vNWpjZEhsQXQxdlJQdXJRUEdaQW14RHNNYUFnMStCT096N0hh?=
+ =?utf-8?B?ekdjYXZqVU5ZMzV3bHI1dmwzcVl4Y1Q3bmM2M0pJZ3NwUTVuZUUzN1IyQnpk?=
+ =?utf-8?B?VGtaYzVjd2haamFXdkRPNmY2ZzRzVXlpS2lNYm8zSkJYSlJRaHgzVXVkRE00?=
+ =?utf-8?B?a3dnd1B0aWNDUnpIQlp3SXhyWEc1TmpTQ1lnU2l3VUpxZ0dVNjJkL2JjYzda?=
+ =?utf-8?B?V2gxNWEwRVpkc3Fncmc1bmttYU1KMnlTUDlnRTRBdmpoY0t4dlovNDhHbVY0?=
+ =?utf-8?B?STcvakZJV1ZOSDN5YXpNeEhGWXJ3b3JQeFRSWktGalZyZGxOUTMrYU1NYXls?=
+ =?utf-8?B?WjR5YVBCaVFYZGhUaVkva1ZxODJHem5yd2h6dTZqdUl2RlFYTG1vcWYvd0ZU?=
+ =?utf-8?B?ZkpJU0xuNzg0bWt2VDlJYWNHUEJRdThQcEZpczdGcDk0Unl1b05LU1Y5QkFT?=
+ =?utf-8?B?RDhmK3ZJdWV2WllnckNWbVF4WVduS1haeWNNRVpxMThEMzU1R1EwQ3VVK1NT?=
+ =?utf-8?B?K05XWkhGS29pOXNUUGh1ZUltZ0VORmY0RURSckw3Q0JLY2xmWkNrdjA1ZDB1?=
+ =?utf-8?B?dzQ5SUJxNENHZGc3NVhVQnU1MGVkbG5hK2loZnN0NHJiejNoRU1qVEtZSDVi?=
+ =?utf-8?B?by9Ncng0MUlSU0s1ZDdqdnVJOHA0TmMrSTcySm93bmRwdlU3Y3RWRkdNOExp?=
+ =?utf-8?B?VXZ3UmxMUjdqZzVlOVRyUm44SWxtbVRZMWR6NFp5RTJNSVB2WGsyd0dpSFdG?=
+ =?utf-8?B?TzZ3WXhZVkVNeWF3U1N4K2FRaWVhcFdWYjZ0MlQ2NzlmcjBiUU9WSHI4Z0k2?=
+ =?utf-8?B?MWo4VXM3c3paT1dzLzJZemFnZmdJTUs4VUJBSC9QRUZtR2VKaU11QXJoeERJ?=
+ =?utf-8?B?L05SclNkU3BRVTkyK0REVWtEaVZ5L25rd1poYVdtK1dEOWhJSUwwSFlYa3Rp?=
+ =?utf-8?B?ZkRsTTJpaCswY1BwVEdaYnpFd29zUlpmNmo5NC9uSlZGZDkvK2VEb2dKSEx4?=
+ =?utf-8?B?VTZkRDQ0dkhKOGo5QjZUM2k3anVlWTBWQWNXNmhwTjJHQVI3K05qMzh6eldI?=
+ =?utf-8?B?enJOM09NVEZJeUpmS1l2SE03alRaTHlOZW5wQ1pBaVV2MkRiek5sMVdZWXBS?=
+ =?utf-8?B?MnhLZ3d1Nkx2K1JMZzVqdWxzT0lQVUVhZ3JXN2JmMXF5MnBETDUweE9jenQ5?=
+ =?utf-8?B?QkZ2ckJZeTRpTVM3MUVITVQ0QXRjT3BlRFpHUlpkUnBXc29XZ05na3luUkN2?=
+ =?utf-8?B?NWxQWGZvNXNWbGRQQmRXaWZCdlVnNk9oSHl0VU11Q2UwbkRvNWlnaVBIM3U5?=
+ =?utf-8?Q?2MCSHdoimGZeiCYHqp7Hi+RxqlYSRBpJvAE?=
+MIME-Version: 1.0
+
+Ref: Submission ID 2aa6e159-cc57-43fb-9e5c-7a08fb755322=0A=
+=0A=
+Decision: minor revision=0A=
+=0A=
+Deadline: 08 Sep 2025=0A=
+=0A=
+Dear Dr. Landis,
+
+Thank you very much for your revised submission entitled "Consumption Based=
+ Responsibility for Global Warming and the Distribution of Impacts of Swiss=
+ Climate Policy." I am pleased to inform you that we are prepared to accept=
+ the paper for publication in the Swiss Journal of Economics and Statistics=
+, subject to a small number of minor revisions (consider this conditional a=
+cceptance).
+
+Both referees agree that the manuscript is now in a publishable state and c=
+ommend the improvements you have made in response to their earlier feedback=
+. The paper presents a timely and well-executed analysis of how Swiss house=
+holds differ in their greenhouse gas responsibilities, and offers important=
+ insights into the distributional consequences of climate policy. The coupl=
+ing of household survey data with life-cycle assessments is methodologicall=
+y sound, and the results are clearly presented and discussed with care.
+
+Before moving to publication, however, there are a few outstanding issues t=
+hat should be addressed. In particular, as Reviewer 2 notes, the paper curr=
+ently refers in several places to =E2=80=9Ccostly climate policy=E2=80=9D o=
+r =E2=80=9Ccostly emissions reductions,=E2=80=9D which may give the impress=
+ion that the analysis includes behavioral or abatement responses to such co=
+sts. In fact, the model assumes full recycling of revenue and does not expl=
+icitly account for investment costs or technological substitution. For clar=
+ity and consistency, we ask that you revise this language throughout the ma=
+nuscript to avoid potential confusion, ensuring that your focus on distribu=
+tional outcomes from direct payments is properly reflected. Relatedly, it w=
+ould be helpful to clarify whether the consumer prices used in the analysis=
+ include the mineral oil tax or not, and to briefly motivate this choice, g=
+iven its potential relevance for interpreting distributional effects.
+
+There are also a few minor textual adjustments suggested by the referees. F=
+or example, in discussing distributional consequences, the phrase =E2=80=9C=
+without affecting the consumption of low-income households too much=E2=80=
+=9D could more accurately be phrased as =E2=80=9Cwithout substantially incr=
+easing their cost of living.=E2=80=9D Similarly, when noting that pricing m=
+echanisms must be =E2=80=9Cproperly designed,=E2=80=9D it may be useful to =
+add =E2=80=9Cand communicated,=E2=80=9D particularly given the importance o=
+f perceived regressivity in public acceptance. Additionally, some reference=
+s to now-updated figures=E2=80=94especially Figure 3 and its role in Append=
+ix B=E2=80=94should be revised to align with the current version of the man=
+uscript. Adjusting the title of Appendix B to better reflect its analytical=
+ content (e.g., =E2=80=9CHousehold Types versus Income as Determinants of G=
+WP=E2=80=9D) would also improve clarity. We also encourage you to correct t=
+he minor typographical errors identified in the referee reports and to cons=
+ider acknowledging the referees=E2=80=99 valuable input in the acknowledgem=
+ents section.
+
+While your analysis stands well on its own, we would also like to offer an =
+optional suggestion. If you wish to further strengthen the paper=E2=80=99s =
+policy relevance, you might consider framing the analysis more explicitly a=
+round the question of who should decarbonize first, and which consumption c=
+ategories offer the most equitable entry points for climate policy. Your re=
+sults show that emissions related to goods such as air travel, restaurants,=
+ and clothing increase sharply with income, whereas other categories such a=
+s heating and food are more evenly distributed. This suggests a natural and=
+ politically salient route for targeting high-income emissions without impo=
+sing disproportionate burdens on low-income households=E2=80=94especially i=
+n contexts where income-based differentiation in pricing is infeasible. Inc=
+orporating this framing, even briefly in the introduction or conclusion, co=
+uld enhance the narrative coherence and make the implications for policy de=
+sign more compelling. Of course, this is a suggestion for your consideratio=
+n and is not required for publication.
+
+We look forward to receiving your final manuscript and a short note summari=
+zing the changes made in response to this letter. Congratulations again on =
+your work, and thank you for submitting it to the Swiss Journal of Economic=
+s and Statistics.
+
+Sincerely,
+J=C3=A9r=C3=A9my Laurent-Lucchetti
+Editor
+Swiss Journal of Economics and Statistics=0A=
+=0A=
+INSTRUCTIONS=0A=
+=0A=
+TO SUBMIT YOUR REVISION=C2=A0=0A=
+=0A=
+The original submitting author, Florian Landis, must upload a point-by-poin=
+t response to reviewer comments as a PDF file.=E2=80=AF This must include a=
+ description of any additional experiments that were carried out and a deta=
+iled rebuttal of any criticisms or requested revisions that you disagreed w=
+ith.=C2=A0=0A=
+=0A=
+Any files (including the manuscript) that have changed based on reviewer co=
+mments will also need to be uploaded again. Do not include tracked changes =
+in your manuscript file. If you need to upload a marked-up version of the r=
+evised manuscript with the changes highlighted, you can upload it on the re=
+lated file section.=0A=
+=0A=
+Please note the original submitting author may be different from the corres=
+ponding author.=E2=80=AF=C2=A0=0A=
+=0A=
+Ensure you also follow our authorship policies:=0A=
+=0A=
+https://sjes.springeropen.com/=0A=
+=0A=
+https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e=
+5c-7a08fb755322=0A=
+=0A=
+DO YOU NEED EDITING SUPPORT?=0A=
+=0A=
+If you have been asked to improve the language or presentation of your manu=
+script and would like the assistance of paid editing services, then Springe=
+r Nature Author Services can help. Our services include English language ed=
+iting, manuscript formatting, figure preparation, translation, and more.=0A=
+=0A=
+Find out more and get 15% off your order by visiting our Author Services:=
+=0A=
+=0A=
+https://authorservices.springernature.com/go/sn/?utm_source=3DSNAPP&utm_med=
+ium=3DRevision+Email&utm_campaign=3DSNAS+Referrals+2022&utm_id=3Dref2022=0A=
+=0A=
+Please note that use of an editing service is neither a requirement nor a g=
+uarantee of publication. Free assistance is available from our resources pa=
+ge:=0A=
+=0A=
+https://www.springernature.com/gp/researchers/campaigns/english-language-fo=
+rauthors=0A=
+=0A=
+Reviewer Comments:=0A=
+=0A=
+Reviewer 1=0A=
+Comments on revised version of Landis, "Consumption Based Responsibility fo=
+r Global Warming and the Distribution of Impacts of Swiss Climate Policy"
+
+The author responded well to the two referees' comments. The text is quite =
+improved, even if it is by adding many caveats. The results are interesting=
+ and deserve publication despite these caveats.
+The author did not add a systematic multifactor analysis of households' cha=
+racteristics explaining differences in consumption patterns and carbon foot=
+prints. Nevertheless, the two-by-two decomposition in Appendix B provides s=
+ome indications. It does not warrant, however, the statement of "lifetime i=
+ncome to be the most important criterion for determining gwp" (line 469).=20
+The introduction could be streamlined, there is quite a bit of repetition, =
+e.g., the reference to results by Chancel et al. (2023) on page 2 and 3.
+Points of detail:
+=E2=80=A2	There are several references to Figure 3, in the text and more so=
+ in Appendix B, which need to be revised now that Figure 3 changed. In Appe=
+ndix B, this is used to refer to the distribution of per capita GWP by a ho=
+usehold category but for all income groups confounded. This would be useful=
+ alongside the distributions per income group in figures B1 to B3. I sugges=
+t adding this to those figures.
+=E2=80=A2	I did not carry out a systematic spellcheck, but some typos sprun=
+g to my attention: "I provides" on line 213, "which" in place of "who" on l=
+ine 281, "the the" on line 639, "in in" on line 950, "trasport" on line 128=
+9, "decisesively" on line 1629, "sqewed" on line 1735, "or on a hypothetica=
+l levy" on line 1744, "transport" on line 1787, "attenuated a somewhat" on =
+line 2115.
+=E2=80=A2	It would be fair to acknowledge the referees' input in the acknow=
+ledgements.=0A=
+=0A=
+Attachments:=0A=
+=E2=80=A2 https://reviewer-feedback.springernature.com/download/attachment/=
+fffd975f-c8f6-4b39-be78-3926c8b4f774=0A=
+=0A=
+Reviewer 2=0A=
+=0A=
+=0A=
+Attachments:=0A=
+=E2=80=A2 https://reviewer-feedback.springernature.com/download/attachment/=
+430354f0-7f36-4580-a3d5-0c06b8572dd3
+
