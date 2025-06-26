@@ -66,8 +66,19 @@
 /referee reports and to consider acknowledging the referees’ valuable/
 /input in the acknowledgements section./
 
-*Yes, do all of this. Should I also acknowledge the inputs of the editor?*
-*See below not irrelevant suggestion.*
+I implemented all the suggested changes. Among other things, I now
+write ``without substantially increasing the cost of living of
+low-income households''.
+
+I checked for references to Figure 3 in the main text and the
+Appendix.  I found that I am able to refer to Figures 5 and 6 from the
+Appendix and thus can avoid adding previous contents of Figure 3 back
+into the Appendix.
+
+The acknowledgements now read ``Two anonymous referees and the
+corresponding editor, Jérémy Laurent-Lucchetti, made helpful
+suggestions to further improve both this paper's analysis and the
+political framing of its findings.''
 
 /While your analysis stands well on its own, we would also like to/
 /offer an optional suggestion. If you wish to further strengthen the/
@@ -114,7 +125,8 @@ https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e5c-7a
 /warrant, however, the statement of "lifetime income to be the most/
 /important criterion for determining gwp" (line 469)./
 
-*OK. I need to think about this.*
+I now write ``I find (equivalent) lifetime income to be an important
+criterion for determining GWP.''
 
 /The introduction could be streamlined, there is quite a bit of/
 /repetition, e.g., the reference to results by Chancel et al. (2023) on/
@@ -131,7 +143,21 @@ https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e5c-7a
   /income group in figures B1 to B3. I suggest adding this to those/
   /figures./
 
-  *Carefully do this.*
+  I removed the reference to Figure 3 in Section 3.2 but added (lines
+  772 ff.) the sentence ``Similarly, I find that home owners, on
+  average, emit more per capita than do residents who rent their home
+  and that residents of peri-urban areas (the ``Agglomeration'') have
+  the highest and the residents of urban areas the lowest per-capita
+  GWP among the three degrees of urbanization (even though this trend
+  is not very distinctive).'' That sentence was still within the
+  description of Figure 3 in Section 3.1 in the last version of the
+  manuscript.
+
+  Rather than adding in the Appendix the old figures with whisker
+  plots, I refer to Figures 5 and 6 in the main text. The figures show
+  the trends across household groups even if they do not include the
+  information about the distribution within groups contained in the
+  whisker plots.
 
 - /I did not carry out a systematic spellcheck, but some typos sprung/
   /to my attention: "I provides" on line 213, "which" in place of "who"/
@@ -151,8 +177,7 @@ https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e5c-7a
   Indeed, thank you. I now write in the achknowledgements ``Two
   anonymous referees and the corresponding editor, Jérémy
   Laurent-Lucchetti, made helpful suggestions to further improve both
-  the analysis in this paper and the political framing of its
-  findings.''
+  this paper's analysis and the political framing of its findings.''
 
 * Reviewer 2
 /The author has adequately addressed many, especially the major points/
@@ -215,7 +240,9 @@ https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e5c-7a
   facing the regulation. Replacing “consumption” with “cost of living”
   would do.
 
-  *Replace 'consumption' with 'cost of living'.*
+  In line with your (and the editors) suggestion, I now write ``[...]
+  without substantially increasing the cost of living of low-income
+  households.''
 
 - Line 1580 (now line 1488ff): It is impossible for a modeler not to
   make “any assumptions with respect to preexisting taxes such as
@@ -228,13 +255,47 @@ https://submission.springernature.com/submit-revision/2aa6e159-cc57-43fb-9e5c-7a
   the approach must be briefly described (i.e. do the prices net of
   carbon taxes include the mineral oil tax or not?) and motivated.
 
-  *First, make sure that documentation informs readers that HABE*
-  *reflects consumer prices after taxes (incl. mineral oil tax).*
-  *Second, check if documentation makes clear that, in the case*
-  *of gasoline and diesel, we use physical quantities of fuels as*
-  *the basis of the LCA. Consider ammending it if not.*
-  *Third, explain to Ref2 why MOT is irrelevant to my analysis. *
-  *Consider ammending the paper?*
+  I agree that Referee 2's question does have a concrete answer: HABE
+  reports spending at consumer prices and thus includes mineral oil
+  taxes.
+
+  In my previous response, I tried to evade the subject since this
+  does not affect the paper's results. When relating consumption of
+  gasoline and diesel to GWP, the LCA uses the physical amounts of
+  those fuels directly rather than relying on expenditures (lines
+  297--300 and 324--328 of the current manuscript).
+
+  For heating fuels (see lines 328--338), HABE only provides
+  expenditure data and I infer physical quantities myself. But rather
+  than using explicit consumer prices (which would have to include
+  mineral oil taxes) for this, I distribute annual heating demand in
+  MJ across households according to their energy expenditure (lines
+  2031 ff.).
+
+  When I compute per capita GWP as in Figures 1, 3, 4, 5, 6, 7, 8, and
+  9, I divide the GWP based on physical quantities consumed per
+  household by the number of persons in the household.
+
+  ``GWP intensity of expenditures'' as in Figures 2, 7, and 8, divide
+  the household based GWP numbers by total household expenditure. I
+  try to make this as clear as possible by now writing ``(i.e.,
+  households’ GWP divided by the same households’ total expenditure
+  measured in kg CO2-eq per CHF).'' (Total household expenditure
+  includes mineral oil tax payments by virtue of them being included
+  in HABE's ``spending at consumer prices''. But I don't think that
+  was what Referee 2's question was about.)
+
+  ``Direct cost'' in Figures 11 and 12 are GWP multiplied with an
+  exogenously assumed GHG price of CHF 100/tCO2-eq. (This is implied
+  by lines 1484--1500 in the current manuscript.)
+
+  ``net effects'' as in Figures 11 and 13 are the difference between
+  direct cost of GHG pricing and revenue recycling divided by total
+  household expenditures (lines 1524--1529).
+
+  None of the above is affected by considerations about mineral oil
+  taxes other than that they are (obviously) included in total
+  household expenditure.
 
 - Full redistribution of CO2 tax revenues: This must be transparently
   explained, and the associated caveat of neglecting the costs of
