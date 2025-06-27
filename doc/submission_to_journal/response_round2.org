@@ -97,8 +97,39 @@ political framing of its findings.''
 /design more compelling. Of course, this is a suggestion for your/
 /consideration and is not required for publication./
 
-*Yes, I should seriously consider this recommendation.*
-*I need to reread my intro/outro and see how I can emphasise these points.*
+Thank you for highlighting this. I now try to further sharpen the
+implications of my findings for policy making in the introduction and
+the concluding section.
+
+In the concluding section, instead of ``Policies that affect emissions
+reductions related to these consumption categories could be a way to
+make sure that the more affluent parts of society make a contribution
+to the emissions reduction effort commensurate to their financial
+ability to do so.''  I write ``To the extent that policy makers worry
+about the distribution of the emissions reduction effort and of policy
+cost, they should implement policies that focus on these consumption
+categories.'' *lines*
+I also changed the sentence ``If emissions pricing is chosen as the
+policy instrument, revenue recycling through a per-capita lump-sum
+scheme can ensure progressive outcomes. The current practice of
+applying the Swiss CO2 levy mainly on heating fuels [...]'' to ``If
+emissions pricing is chosen as the policy instrument, the current
+Swiss practice of recycling revenue through a per-capita lump-sum
+scheme ensures progressive outcomes. The practice of applying the CO2
+levy mainly on heating fuels, however, [...]'' *lines*
+Also, I give the concluding section more structure by adding
+subsection titles ``Observation for policy design'' and ``Reflections
+on the analysis''.
+
+In the now further streamlined introduction, I leave the summary of my
+findings almost as is but highlight aviation: ``I find that for some
+consumption categories such as transport (and aviation in particular),
+clothing, spare time activities, and eating out in restaurants
+high-income households consume a larger share of the national total
+than for other categories. Policies that lead to emissions reductions
+for these goods (and luxury versions of those goods in particular) can
+help ensure that high-income households participate in the emis- sions
+reduction effort to an appropriate degree.''
 
 /We look forward to receiving your final manuscript and a short note/
 /summarizing the changes made in response to this/
@@ -210,58 +241,88 @@ criterion for determining GWP.''
 
     Thanks for the suggestion. I now use the word ``viable''.
 
-- Line 193ff (now line 190ff): Considering the focus and main
-  recommendations of the paper, the difficulty in targeting the
-  emissions of the rich cannot be ignored. Not only are they less
-  sensitive to price changes. The rich are also able to lobby for
-  exemptions, and the emissions of the very rich grow faster than
-  anyone else’s. It’s not merely a fairness issue, but also concerns
-  the effectiveness of policy measures. Even if the author has chosen
-  to merely “target goods” and discuss fairness, it is a caveat to be
-  mentioned that the proposed prescriptions may partially fail to
-  effectively reduce emissions.
+- /Line 193ff (now line 190ff): Considering the focus and main/
+  /recommendations of the paper, the difficulty in targeting the/
+  /emissions of the rich cannot be ignored. Not only are they less/
+  /sensitive to price changes. The rich are also able to lobby for/
+  /exemptions, and the emissions of the very rich grow faster than/
+  /anyone else’s. It’s not merely a fairness issue, but also concerns/
+  /the effectiveness of policy measures. Even if the author has chosen/
+  /to merely “target goods” and discuss fairness, it is a caveat to be/
+  /mentioned that the proposed prescriptions may partially fail to/
+  /effectively reduce emissions./
 
-  *Mention that the proposed prescriptions may partially fail to*
-  *effectively reduce emissions.*
+  At this point in the introduction, I write ``By looking at GWP per
+  consumption good, I can assess to what extent it may be possible to
+  design climate policy to target goods that are consumed in
+  particular by high income households or avoid other goods that are
+  mainly consumed by low-income households. Comparing GWP embodied in
+  households’ consumption patterns with their expenditure budgets, on
+  the other hand, gives me a measure of their exposure to costly
+  climate policy that addresses emissions from all world regions and
+  all GHGs.'' (now lines 165 ff.)  I maintain that these are correct
+  statements and choose to expand on the issues raised by Referee 2 in
+  Section 4 of the paper.
 
-  *But also keep in mind that I'm not only talking about GHG pricing.*
+  There, I rewrote the introductiary paragraphs before subsections 4.1
+  and 4.2 to give a better overview over different aspects of the
+  policy types subsidies, standards and regulations, and emissions
+  pricing. I mention there that the effect of emissions pricing
+  depends on the level of emissions depends on the sensitivity of
+  emitters to emissions prices (lines 1221 ff.): ``While emissions
+  pricing allows the choice between (costly) emissions and reducing
+  emissions, mandates enforce the latter. To the extent that
+  individuals can afford the cost of emitting, they may sidestep
+  emissions reductions under an emissions price.  Some may say that is
+  not fair and opt for mandates (or even subsidies) to regulate ghg
+  emissions, others may be content to know that at least non-reducing
+  parties pay for their emissions, thus contributing to public
+  funds. (As I will show, these funds can be used to alleviate policy
+  impacts on low income households. This may make it possible to
+  increase emissions prices to compensate for the inaction of the
+  non-reducing parties – and thus extract more money from them.)''
 
-- Line 224ff (now line 220ff): That “technological change sweeps
-  through the energy sector” could be mentioned not only in the
-  response, but also in the paper.
+- /Line 224ff (now line 220ff): That “technological change sweeps/
+  /through the energy sector” could be mentioned not only in the/
+  /response, but also in the paper./
 
-  *Check if 220ff is the right place to do this.*
+  I now follow Referee 2's suggestion and write ``Thus, the analysis
+  does not take into account potential changes in consumption patterns
+  or efficiency improvements since the survey was conducted, let alone
+  give a outlook of how consumption patterns may look in the future
+  when technological change will have swept through the energy
+  sector.'' (lines 1828 ff.)
 
-- Line 1344 (now line 1249f): In a chapter entitled “Climate policy
-  design” there should be space for mentioning this. It only takes
-  half a sentence. As a minimum requirement, the current sentence must
-  be modified, because “without affecting the consumption of low-
-  income households too much” is incorrect in the perception of those
-  facing the regulation. Replacing “consumption” with “cost of living”
-  would do.
+- /Line 1344 (now line 1249f): In a chapter entitled “Climate policy/
+  /design” there should be space for mentioning this. It only takes/
+  /half a sentence. As a minimum requirement, the current sentence must/
+  /be modified, because “without affecting the consumption of low-/
+  /income households too much” is incorrect in the perception of those/
+  /facing the regulation. Replacing “consumption” with “cost of living”/
+  /would do./
 
   In line with your (and the editors) suggestion, I now write ``[...]
   without substantially increasing the cost of living of low-income
   households.''
 
-- Line 1580 (now line 1488ff): It is impossible for a modeler not to
-  make “any assumptions with respect to preexisting taxes such as
-  mineral oil taxes”. The prices used are either net or gross of taxes
-  before levying the CO2 tax. With constant demands, the influence on
-  results is indeed smaller than in e.g. a CGE analysis. Given the
-  large magnitude of the mineral oil tax, the distributional results
-  are, however, not unaffected by the assumption of taking into
-  account – or not taking into account – the mineral oil tax. Hence,
-  the approach must be briefly described (i.e. do the prices net of
-  carbon taxes include the mineral oil tax or not?) and motivated.
+- /Line 1580 (now line 1488ff): It is impossible for a modeler not to/
+  /make “any assumptions with respect to preexisting taxes such as/
+  /mineral oil taxes”. The prices used are either net or gross of taxes/
+  /before levying the CO2 tax. With constant demands, the influence on/
+  /results is indeed smaller than in e.g. a CGE analysis. Given the/
+  /large magnitude of the mineral oil tax, the distributional results/
+  /are, however, not unaffected by the assumption of taking into/
+  /account – or not taking into account – the mineral oil tax. Hence,/
+  /the approach must be briefly described (i.e. do the prices net of/
+  /carbon taxes include the mineral oil tax or not?) and motivated./
 
   I agree that Referee 2's question does have a concrete answer: HABE
   reports spending at consumer prices and thus includes mineral oil
   taxes.
 
-  In my previous response, I tried to evade the subject since this
-  does not affect the paper's results. When relating consumption of
-  gasoline and diesel to GWP, the LCA uses the physical amounts of
+  In my previous response, I evaded giving the concrete answer since
+  this does not affect the paper's results. When relating consumption
+  of gasoline and diesel to GWP, the LCA uses the physical amounts of
   those fuels directly rather than relying on expenditures (lines
   297--300 and 324--328 of the current manuscript).
 
@@ -294,38 +355,38 @@ criterion for determining GWP.''
   household expenditures (lines 1524--1529).
 
   None of the above is affected by considerations about mineral oil
-  taxes other than that they are (obviously) included in total
+  taxes other than that they are (obviously) /included/ in total
   household expenditure.
 
-- Full redistribution of CO2 tax revenues: This must be transparently
-  explained, and the associated caveat of neglecting the costs of
-  emission reductions must be prominently stated. So far, the paper
-  mentions costly emission reductions in many instances, giving the
-  misleading impression that this is what the paper is about. It is
-  really about distributional effects related purely to the payments
-  that directly belong to the policy instrument. Correcting this in
-  the text requires modifications in many locations. This is a
-  non-exhaustive list of locations with references to costly emission
-  reductions that will have to presented differently:
-  + Line 198: measuring “exposure to costly climate policy”
-  + Line 212f: “Second, the paper discusses exposure of different
-    income classes to costly climate policy.” -> especially important
-    to change this formulation, as it describes one of the main
-    objectives of the paper.
-  + Line 715: “costly reduction of the emissions”
-  + Line 1002f: “requiring costly emission reduction”
-  + Line 1010f: “higher costs from reducing emissions”
-  + Line 1133: “costly climate policy”
-  + Line 2011ff: “I assume that emission free technologies for
-    producing different consumption goods are more expensive than
-    their polluting counterparts at least in the short and medium run
-    and that the state will not fully take over these additonal
-    costs.” (further explained in footnote 17) This is incompatible
-    with the assumed full redistribution of revenues.
-  + Line 1337f: “overall costs of achieving emissions reduction”
-  + Line 1370: “The consequence of costly emissions reduction”
-  + Figure 10 shows welfare costs
-  + Line 1735: “costly emissions reduction efforts”
+- /Full redistribution of CO2 tax revenues: This must be transparently/
+  /explained, and the associated caveat of neglecting the costs of/
+  /emission reductions must be prominently stated. So far, the paper/
+  /mentions costly emission reductions in many instances, giving the/
+  /misleading impression that this is what the paper is about. It is/
+  /really about distributional effects related purely to the payments/
+  /that directly belong to the policy instrument. Correcting this in/
+  /the text requires modifications in many locations. This is a/
+  /non-exhaustive list of locations with references to costly emission/
+  /reductions that will have to presented differently:/
+  + /Line 198: measuring “exposure to costly climate policy”/
+  + /Line 212f: “Second, the paper discusses exposure of different/
+    /income classes to costly climate policy.” -> especially important/
+    /to change this formulation, as it describes one of the main/
+    /objectives of the paper./
+  + /Line 715: “costly reduction of the emissions”/
+  + /Line 1002f: “requiring costly emission reduction”/
+  + /Line 1010f: “higher costs from reducing emissions”/
+  + /Line 1133: “costly climate policy”/
+  + /Line 2011ff: “I assume that emission free technologies for/
+    /producing different consumption goods are more expensive than/
+    /their polluting counterparts at least in the short and medium run/
+    /and that the state will not fully take over these additonal/
+    /costs.” (further explained in footnote 17) This is incompatible/
+    /with the assumed full redistribution of revenues./
+  + /Line 1337f: “overall costs of achieving emissions reduction”/
+  + /Line 1370: “The consequence of costly emissions reduction”/
+  + /Figure 10 shows welfare costs/
+  + /Line 1735: “costly emissions reduction efforts”/
 
   *I talked myself into a corner here. Let's see if I can get out again.*
   *Explain in the paper what I mean by 'costly climate policy' if I*
@@ -346,5 +407,5 @@ criterion for determining GWP.''
   /income as determinants”. This helps the reader to immediately grasp/
   /what it is about./
 
-  I agree with the suggestion. Appendix B is now entitled ``Household types
-  versus income as determinants of GWP".
+  Thank you for the good suggestion. Appendix B is now entitled
+  ``Household types versus income as determinants of GWP".
