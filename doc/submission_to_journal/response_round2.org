@@ -124,14 +124,14 @@ subsection titles ``Observation for policy design'' and ``Reflections
 on the analysis''.
 
 In the now further streamlined introduction, I leave the summary of my
-findings almost as is but highlight aviation (lines 170 ff.): ``I find
+findings almost as is but highlight aviation (lines 169 ff.): ``I find
 that for some consumption categories such as transport (and aviation
 in particular), clothing, spare time activities, and eating out in
 restaurants high-income households consume a larger share of the
 national total than for other categories. Policies that lead to
 emissions reductions for these goods (and luxury versions of those
 goods in particular) can help ensure that high-income households
-participate in the emis- sions reduction effort to an appropriate
+participate in the emissions reduction effort to an appropriate
 degree.''
 
 /We look forward to receiving your final manuscript and a short note/
@@ -205,7 +205,6 @@ by about half a page.
   I thank Reviewer 1 to point out those typos. I ran a spell check program
   over the source file of the paper to remove some additional obvious mis-
   spellings.
-  *DO THIS!*
 
 - /It would be fair to acknowledge the referees' input in the/
   /acknowledgements./
@@ -244,7 +243,8 @@ by about half a page.
     /am still stumbling over the words “desirable” and “feasible”. How/
     /about “viable” to combine the two?/
 
-    Thanks for the suggestion. I now use the word ``viable''.
+    Thanks for the suggestion. I now use the word ``viable'' (line
+    1757).
 
 - /Line 193ff (now line 190ff): Considering the focus and main/
   /recommendations of the paper, the difficulty in targeting the/
@@ -257,29 +257,30 @@ by about half a page.
   /mentioned that the proposed prescriptions may partially fail to/
   /effectively reduce emissions./
 
-  At this point in the introduction, I write ``By looking at GWP per
-  consumption good, I can assess to what extent it may be possible to
-  design climate policy to target goods that are consumed in
-  particular by high income households or avoid other goods that are
-  mainly consumed by low-income households. Comparing GWP embodied in
-  households’ consumption patterns with their expenditure budgets, on
-  the other hand, gives me a measure of their exposure to costly
-  climate policy that addresses emissions from all world regions and
-  all GHGs.'' (now lines 165 ff.)  I maintain that these are correct
-  statements and choose to expand on the issues raised by Reviewer 2 in
-  Section 4 of the paper.
+  At this point in the introduction, I write (line 154 ff.) ``By
+  looking at GWP per consumption good, I can assess to what extent it
+  may be possible to design climate policy to target goods that are
+  consumed in particular by high income households or avoid other
+  goods that are mainly consumed by low-income households. Comparing
+  GWP embodied in households’ consumption patterns with their
+  expenditure budgets, on the other hand, gives me a measure of their
+  exposure to user-pays climate policy that addresses emissions from
+  all world regions and all GHGs.'' I exchanged ``costly'' with
+  ``user-pays'' but otherwise maintain that these are correct
+  statements and choose to expand on the issues raised by Reviewer 2
+  in Section 4 of the paper.
 
   There, I rewrote the introductiary paragraphs before subsections 4.1
   and 4.2 to give a better overview over different aspects of the
   policy types subsidies, standards and regulations, and emissions
   pricing. I mention there that the effect of emissions pricing
   depends on the level of emissions depends on the sensitivity of
-  emitters to emissions prices (lines 1221 ff.): ``While emissions
+  emitters to emissions prices (lines 1175 ff.): ``While emissions
   pricing allows the choice between (costly) emissions and reducing
   emissions, mandates enforce the latter. To the extent that
   individuals can afford the cost of emitting, they may sidestep
   emissions reductions under an emissions price.  Some may say that is
-  not fair and opt for mandates (or even subsidies) to regulate ghg
+  not fair and prefer mandates (or even subsidies) for regulating GHG
   emissions, others may be content to know that at least non-reducing
   parties pay for their emissions, thus contributing to public
   funds. (As I will show, these funds can be used to alleviate policy
@@ -296,7 +297,7 @@ by about half a page.
   or efficiency improvements since the survey was conducted, let alone
   give a outlook of how consumption patterns may look in the future
   when technological change will have swept through the energy
-  sector.'' (lines 1828 ff.)
+  sector.'' (lines 1782 ff.)
 
 - /Line 1344 (now line 1249f): In a chapter entitled “Climate policy/
   /design” there should be space for mentioning this. It only takes/
@@ -308,7 +309,7 @@ by about half a page.
 
   In line with your (and the editors) suggestion, I now write ``[...]
   without substantially increasing the cost of living of low-income
-  households.''
+  households.'' (line 1221)
 
 - /Line 1580 (now line 1488ff): It is impossible for a modeler not to/
   /make “any assumptions with respect to preexisting taxes such as/
@@ -329,14 +330,14 @@ by about half a page.
   this does not affect the paper's results. When relating consumption
   of gasoline and diesel to GWP, the LCA uses the physical amounts of
   those fuels directly rather than relying on expenditures (lines
-  297--300 and 324--328 of the current manuscript).
+  252--254 and 279--281 of the current manuscript).
 
-  For heating fuels (see lines 328--338), HABE only provides
+  For heating fuels (see lines 285--292), HABE only provides
   expenditure data and I infer physical quantities myself. But rather
   than using explicit consumer prices (which would have to include
   mineral oil taxes) for this, I distribute annual heating demand in
   MJ across households according to their energy expenditure (lines
-  2031 ff.).
+  1986 ff.).
 
   When I compute per capita GWP as in Figures 1, 3, 4, 5, 6, 7, 8, and
   9, I divide the GWP based on physical quantities consumed per
@@ -353,11 +354,11 @@ by about half a page.
 
   ``Direct cost'' in Figures 11 and 12 are GWP multiplied with an
   exogenously assumed GHG price of CHF 100/tCO2-eq. (This is implied
-  by lines 1484--1500 in the current manuscript.)
+  by lines 1439 ff. in the current manuscript.)
 
   ``net effects'' as in Figures 11 and 13 are the difference between
   direct cost of GHG pricing and revenue recycling divided by total
-  household expenditures (lines 1524--1529).
+  household expenditures (lines 1483--1488).
 
   None of the above is affected by considerations about mineral oil
   taxes other than that they are (obviously) /included/ in total
@@ -393,14 +394,6 @@ by about half a page.
   + /Figure 10 shows welfare costs/
   + /Line 1735: “costly emissions reduction efforts”/
 
-  *I talked myself into a corner here. Let's see if I can get out again.*
-  *Explain in the paper what I mean by 'costly climate policy' if I*
-  *don't do this already.*
-  *Check in previous round of revision what exactly the 'cost' was*
-  *that Ref2 refers to and explain that I was getting at 'economic cost'.*
-  *Explain how 'economic cost' in general relates to the paper's notion*
-  *of costliness and its distribution.*
-
   I now talk about /user-pays/ policies and relate policy types to
   (direct) policy cost a bit more extensively in
   Section 4. Specifically:
@@ -409,8 +402,8 @@ by about half a page.
     policy that is not primarily relying on subsidizing clean
     technologies) and its conclusions can be relevant for informing
     policy design.''
-  + Line 198 (now 159):  “exposure to user-pays climate policy”
-  + Line 212f (now 185): “Second, the paper discusses exposure of
+  + Line 198 (now 162):  “exposure to user-pays climate policy”
+  + Line 212f (now 177 ff.): “Second, the paper discusses exposure of
     households in different income classes to user-pays climate policy
     [...]”
   + Line 715 (now 669): “(costly) reduction of the emissions form the
@@ -420,11 +413,11 @@ by about half a page.
   + Line 1002f (now 955): I replaced ``(and thus exposure to policies requiring
     costly emissions reduc- tion)'' with ``(and thus exposure to
     policies that increase consumer prices)''.
-  + Line 1010f (now 964): I replaced “higher costs from reducing emissions” to
-    “higher direct costs from reducing emissions”. At his point in the
-    paper I have not resorted to my (simplistic) analysis of emissions
-    pricing incidence and talk about expected costs in a general
-    sense.
+  + Line 1010f (now 964): I replaced “higher costs from reducing
+    emissions” with “higher direct costs from reducing emissions”. At
+    his point in the paper I have not resorted to my (simplistic)
+    analysis of emissions pricing incidence and talk about expected
+    costs in a general sense.
   + Line 1133 (now 1087): I replaced “costly climate policy” with
     “user-pays climate policy”
   + In the introduction to Section 4, lines 1168 ff., I discuss the
@@ -445,7 +438,10 @@ by about half a page.
     Section 4.2 and the simplifying assumption that neither consumers
     nor producers adopt their behaviour and just pay the tax (this is
     how economic costs to society overall are assumed away) is only
-    introduced in Section 4.2.2.
+    introduced in Section 4.2.2. At this point in the text the
+    discussion assumes a generic /user-pays/ policy that, in general,
+    will have the purpose of changing behaviour of firms and consumers
+    and thus create economic costs.
 
   + Line 1337f (now 1295 ff.): I replace the word /overall/ with /societal/ in the
     formulation “societal costs of achieving emissions reduction”, and
@@ -456,31 +452,30 @@ by about half a page.
 
   + Line 1370 (now 1330): I keep the formulation “The consequence of
     costly emissions reduction”. This is appropriate in every sense of
-    the word costly since I'm still discussing CGE modeling results
-    where behavioral reactions to policies are included.
+    the word ``costly'' since I'm still discussing CGE modeling
+    results where behavioral reactions to policies are included.
 
   + Figure 10 The figure heading ``Welfare impacts'' is correct, the
     caption ``Welfare costs'' was wrong (/positive costs/ should be
     negative /impacts/). This is corrected in the current version of
     the manuscript, where I use /Welfare impacts/ throughout the
-    figure caption. I thank Reviewer 2 for highlighting this.
+    figure caption. I thank Reviewer 2 for bringing this to my
+    attention.
 
   + Line 1735 (now line 1690): I replaced “costly emissions reduction
     efforts” with ``direct impacts of user-pays climate policy''.
-
-  *Still: add Appendix regarding elasticities v. expenditure shares in
-  welfare impacts?*
 
 - /Line 1636ff (now line 1546): In this case I suggest adding “and/
   /communicated” after “properly designed”. This is necessary also/
   /because the sentence itself refers to the “perception of/
   /regressivity”./
 
-  Done. Thank you for the suggestion.
+  Done (line 1506). Thank you for the suggestion.
 
 - /Appendix B: The title should be changed to “Household types versus/
   /income as determinants”. This helps the reader to immediately grasp/
   /what it is about./
 
   Thank you for the good suggestion. Appendix B is now entitled
-  ``Household types versus income as determinants of GWP".
+  ``Household types versus income as determinants of GWP". (lines 2025
+  ff.)
