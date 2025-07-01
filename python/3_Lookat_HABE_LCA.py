@@ -266,7 +266,7 @@ forplotting.columns = ['GWP [t CO2-eq]', 'Per capita GWP [t CO2-eq]',
                        'Per capita spending in CHF',
                        'Decile group of lifetime income',
                        'Quintile group of lifetime income',
-                       'Urbanization', 'Renting', 'Pensioner', 'Female_head',
+                       'Urbanization', 'Home ownership', 'Pensioner', 'Female_head',
                        'Region', 'Canton',
                        'Quintile group', 'Household type',
                        'Household type / HABE income quintile group']
@@ -274,15 +274,15 @@ forplotting.columns = ['GWP [t CO2-eq]', 'Per capita GWP [t CO2-eq]',
 forplotting['Decile group of lifetime income']
 forplotting['Urbanization']     # Urban, Periurban, Rural
 forplotting['Urbanization'] = forplotting['Urbanization'].astype('category')
-forplotting['Renting'].min()
-forplotting['Renting'].max()
+forplotting['Home ownership'].min()
+forplotting['Home ownership'].max()
 # They say renaming is faster for categories:
 # https://stackoverflow.com/questions/67039036/changing-category-names-in-a-pandas-data-frame
-# So, first turn 'Renting' into a categorical variable with astype(),
+# So, first turn 'Home ownership' into a categorical variable with astype(),
 # then rename with cat.rename_categories()
-forplotting['Renting'] = forplotting['Renting'].astype('category').cat.rename_categories(
-    {0: 'Owner', 1: 'Renter'}
-)
+forplotting['Home ownership'] = forplotting[
+    'Home ownership'
+].astype('category').cat.rename_categories({0: 'Owner', 1: 'Renter'})
 forplotting['Pensioner'].min()
 forplotting['Pensioner'].max()
 forplotting['Pensioner'] = forplotting['Pensioner'].astype('category').\
@@ -412,12 +412,12 @@ decpensionerorder = []
 for decile in range(10):
     for cat in forplotting['Pensioner'].cat.categories:
         decpensionerorder.append(str(decile+1)+' - '+cat)
-forplotting['Decile group / Renting'] = \
+forplotting['Decile group / Home ownership'] = \
     forplotting['Decile group of lifetime income'].astype('str') + ' - ' + \
-    forplotting['Renting'].astype('str')
+    forplotting['Home ownership'].astype('str')
 decrentingorder = []
 for decile in range(10):
-    for cat in forplotting['Renting'].cat.categories:
+    for cat in forplotting['Home ownership'].cat.categories:
         decrentingorder.append(str(decile+1)+' - '+cat)
 forplotting['Decile group / Urbanization'] = \
     forplotting['Decile group of lifetime income'].astype('str') + ' - ' + \
@@ -568,7 +568,8 @@ forplotting_high['Per capita GWP [t CO2-eq]'] = (12*habe_lca['tot_high_gwp']
 forplotting_high['GWP in kg CO2-eq per CHF'] = (habe_lca['tot_high_gwp']
                                                 / hh_data['Spending'])
 
-# do the same for forplotting_high_d1 but only for indices for which forplotting['Decile group of lifetime income'] == 1
+# do the same for forplotting_high_d1 but only for indices for which
+# forplotting['Decile group of lifetime income'] == 1
 forplotting_high_d1['GWP [t CO2-eq]'] = \
     (12*habe_lca['tot_high_gwp']
      / 1000).loc[forplotting['Decile group of lifetime income'] == 1]
@@ -583,7 +584,8 @@ forplotting_high_d1['GWP in kg CO2-eq per CHF'] = \
 forplotting_d1
 forplotting_high_d1
 
-# do the same for forplotting_high_d10 but only for indices for which forplotting['Decile group of lifetime income'] == 10
+# do the same for forplotting_high_d10 but only for indices for which
+# forplotting['Decile group of lifetime income'] == 10
 forplotting_high_d10['GWP [t CO2-eq]'] = \
     (12*habe_lca['tot_high_gwp']
      / 1000).loc[forplotting['Decile group of lifetime income'] == 10]
@@ -597,6 +599,7 @@ forplotting_high_d10['GWP in kg CO2-eq per CHF'] = \
 
 forplotting_d10
 forplotting_high_d10
+
 
 def reindex_df(df, weight_col):
     """expand the dataframe to prepare for resampling
@@ -688,6 +691,7 @@ def plot_differentiation(xname, filename, ymin=0, ymax=50,
     boxplt.get_figure().savefig(os.path.join(fig_dir, pdfname))
     print('Writing figure: '+filename)
     plt.close()
+
 
 plot_differentiation(xname='Decile group of lifetime income', filename='pcexp_boxed',
                      ymax=140000, yname='Per capita spending in CHF',
@@ -817,10 +821,14 @@ plot_errorbars(dset=forboxplotting_d10,
 
 # Whole population
 plot_differentiation(xname=None, filename='avg_gwp_boxed', ymax=27, size=(6*cm, 6*cm))
-plot_differentiation(xname=None, dset=forboxplotting_high, filename='avg_gwp_boxed_high', ymax=27, size=(6*cm, 6*cm))
+plot_differentiation(xname=None, dset=forboxplotting_high, filename='avg_gwp_boxed_high',
+                     ymax=27, size=(6*cm, 6*cm))
 # Zoom in on population mean
-plot_differentiation(xname=None, filename='avg_gwp_zoomed', ymin=10, ymax=11, size=(6*cm, 6*cm))
-plot_differentiation(xname=None, dset=forboxplotting_high, filename='avg_gwp_high_zoomed', ymin=10, ymax=11, size=(6*cm, 6*cm))
+plot_differentiation(xname=None, filename='avg_gwp_zoomed', ymin=10, ymax=11,
+                     size=(6*cm, 6*cm))
+plot_differentiation(xname=None, dset=forboxplotting_high,
+                     filename='avg_gwp_high_zoomed',
+                     ymin=10, ymax=11, size=(6*cm, 6*cm))
 
 # Not so interesting
 plot_differentiation('Female_head', 'Female_box', size=(6*cm, 6*cm), rotate=True)
@@ -869,7 +877,7 @@ ten_pairs = sns.color_palette('Paired', 10)
 plot_differentiation('Urbanization', 'Urbanization_box',
                      size=(6*cm, 6*cm), clr_plt=3,
                      ylabscale=0.95, rotate=True, saturation=0)
-plot_differentiation('Renting', 'Renting_box', size=(6*cm, 6*cm), clr_plt=2,
+plot_differentiation('Home ownership', 'Renting_box', size=(6*cm, 6*cm), clr_plt=2,
                      ylabscale=0.95, rotate=True, saturation=0)
 plot_differentiation('Canton', 'Canton_box', size=(8*cm, 6*cm), rotate=True)
 plot_differentiation('Household type', 'hh_type_box',
@@ -888,8 +896,8 @@ plot_differentiation('Household type / Quintile group of lifetime income',
                      clr_plt=5,
                      ylabscale=0.95, rotate=True)
 
-# My conclusion: 'Renting', 'Urbanization', and 'Household type' have somewhat interesting
-#                differences.
+# My conclusion: 'Home ownership', 'Urbanization', and 'Household type'
+#                have somewhat interesting differences.
 #                I want to analyze the consumption composition of GWP in those HH types.
 
 
@@ -904,7 +912,7 @@ plot_differentiation(xname='Decile group / Pensioner',
                      givenorder=decpensionerorder,
                      size=(20*cm, 10*cm),
                      clr_plt=palette_2, rotate=True)
-plot_differentiation(xname='Decile group / Renting',
+plot_differentiation(xname='Decile group / Home ownership',
                      filename='gwp_boxed_increnting',
                      givenorder=decrentingorder,
                      size=(20*cm, 10*cm),
@@ -1006,7 +1014,7 @@ plot_differentiation(xname='Decile group of lifetime income', filename='pcexp_bo
 # Add interesting variables for plotting (we take everything for plotting from habe_lca
 habe_lca = pd.concat([habe_lca,
                       forplotting['Urbanization'],
-                      forplotting['Renting'],
+                      forplotting['Home ownership'],
                       forplotting['Household type']
                       ], axis=1)
 
@@ -1053,9 +1061,9 @@ def cats4plotting(stats_index=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         )
         stats_container['std']['CH'] = np.std(d_gwp/d_npers)
         stats_container['avg']['CH'] = np.average(d_gwp/d_npers,
-                                                     weights=d_weight * d_npers)
+                                                  weights=d_weight * d_npers)
         stats_container['avg_size']['CH'] = np.average(d_npers,
-                                                          weights=d_weight)
+                                                       weights=d_weight)
         for c in habe_lca.columns:
             if (c[0: 3] == 'gwp'):
                 # Subset of entries in column c that belong to 'decile' d
@@ -1195,7 +1203,7 @@ def cats4plotting(stats_index=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                     pcmeans_container.loc[key, c] = mean_cd
                     intmeans_container.loc[key, c] = intmean_cd
                     hhmeans_container.loc[key, c] = mean_cd
-    return pcmeans_container, stats_container, hhmeans_container, intmeans_container,\
+    return pcmeans_container, stats_container, hhmeans_container, intmeans_container, \
         pcmeans_container_ch, hhmeans_container_ch, intmeans_container_ch
 
 
@@ -1208,7 +1216,8 @@ means_expdec_ch
 means_expdec_int
 # Income deciles rather than expenditure deciles:
 (means_incdec, stats_incdec,
- hhmeans_incdec, means_incdec_int,dump1,dump2,dump3) = cats4plotting(xlabel='IncDecile')
+ hhmeans_incdec, means_incdec_int,
+ dump1, dump2, dump3) = cats4plotting(xlabel='IncDecile')
 
 # Want integers rather than floats to describe deciles
 means_incdec['IncDecile'] = means_incdec['IncDecile'].round().astype('int')
@@ -1228,14 +1237,14 @@ idx_dict = {'1high': ID_poor_intensive5, '10high': ID_rich_intensive5,
  stats_expextreme,
  hhmeans_expextreme,
  means_expextreme_int,
- dump1,dump2,dump3) = cats4plotting(stats_index=[1, 10,
-                                                 '1high', '10high',
-                                                 '10maxgwp', '10maxint',
-                                                 '1maxgwp', '1maxint',
-                                                 '1rich', '10rich'],
-                                    xrange=[0, 9],
-                                    xlabel='ExpDecile',
-                                    index_dict=idx_dict)
+ dump1, dump2, dump3) = cats4plotting(stats_index=[1, 10,
+                                                   '1high', '10high',
+                                                   '10maxgwp', '10maxint',
+                                                   '1maxgwp', '1maxint',
+                                                   '1rich', '10rich'],
+                                      xrange=[0, 9],
+                                      xlabel='ExpDecile',
+                                      index_dict=idx_dict)
 # Look at that crazy houshold spending so much on gasoline:
 habe_lca.loc[ID_max10_gwp, ['gwp_bike', 'gwp621501', 'gwp621502']]
 habe_lca.loc[ID_max10_int, ['gwp_bike', 'gwp621501', 'gwp621502']]
@@ -1271,14 +1280,14 @@ idx_dict = {'10high': ID_rich_intensive5,
  stats_sotomorich,
  hhmeans_sotomorich,
  means_sotomorich_int,
- dump1,dump2,dump3) = cats4plotting(stats_index=[10,
-                                                 '10high',
-                                                 '10max',
-                                                 '10rich',
-                                                 '10sotomo_rich'],
-                                    xrange=[9],
-                                    xlabel='ExpDecile',
-                                    index_dict=idx_dict)
+ dump1, dump2, dump3) = cats4plotting(stats_index=[10,
+                                                   '10high',
+                                                   '10max',
+                                                   '10rich',
+                                                   '10sotomo_rich'],
+                                      xrange=[9],
+                                      xlabel='ExpDecile',
+                                      index_dict=idx_dict)
 # Fix labels and entries
 means_sotomorich = means_sotomorich.drop('IncDecile', axis=1)
 hhmeans_sotomorich = hhmeans_sotomorich.drop('IncDecile', axis=1)
@@ -1302,9 +1311,9 @@ means_sotomorich
  stats_urban,
  hhmeans_urban,
  means_urban_int,
- dump1,dump2,dump3) = cats4plotting(stats_index=['Urban', 'Periurban', 'Rural'],
-                                    xrange=['Urban', 'Periurban', 'Rural'],
-                                    xlabel='Urbanization')
+ dump1, dump2, dump3) = cats4plotting(stats_index=['Urban', 'Periurban', 'Rural'],
+                                      xrange=['Urban', 'Periurban', 'Rural'],
+                                      xlabel='Urbanization')
 means_urban
 stats_urban
 
@@ -1312,9 +1321,9 @@ stats_urban
  stats_renter,
  hhmeans_renter,
  means_renter_int,
- dump1,dump2,dump3) = cats4plotting(stats_index=['Renter', 'Owner'],
-                                    xrange=['Renter', 'Owner'],
-                                    xlabel='Renting')
+ dump1, dump2, dump3) = cats4plotting(stats_index=['Renter', 'Owner'],
+                                      xrange=['Renter', 'Owner'],
+                                      xlabel='Home ownership')
 means_renter
 stats_renter
 
@@ -1322,15 +1331,15 @@ stats_renter
  stats_hhtype,
  hhmeans_hhtype,
  means_hhtype_int,
- dump1,dump2,dump3) = cats4plotting(stats_index=['Single', 'Elderly single',
-                                                 'Couple', 'Elderly couple',
-                                                 'Single parent',
-                                                 'Parent couple',
-                                                 'Others'],
-                                    xrange=['Single', 'Elderly single', 'Couple',
-                                            'Elderly couple', 'Single parent',
-                                            'Parent couple', 'Others'],
-                                    xlabel='Household type')
+ dump1, dump2, dump3) = cats4plotting(stats_index=['Single', 'Elderly single',
+                                                   'Couple', 'Elderly couple',
+                                                   'Single parent',
+                                                   'Parent couple',
+                                                   'Others'],
+                                      xrange=['Single', 'Elderly single', 'Couple',
+                                              'Elderly couple', 'Single parent',
+                                              'Parent couple', 'Others'],
+                                      xlabel='Household type')
 means_hhtype
 stats_hhtype
 
@@ -1361,6 +1370,12 @@ def aggregate_categories(means, aggregation, displayname, index):
                 means_agg[a] = means_agg[a] + means[c]
     return means_agg
 
+
+# Radiative Forcing Index multiplication factor to account for non-CO2 effects
+# in aviation:
+RFI_FACTOR = 3
+
+
 def aggregate_categories_high(means, aggregation, displayname, index):
     means_agg = pd.DataFrame()
     means_agg[displayname] = index
@@ -1371,13 +1386,14 @@ def aggregate_categories_high(means, aggregation, displayname, index):
             if aggregation.loc[a, c] is True:
                 if (c == 'gwp622300'):
                     # gwp622300 is air transport
-                    means_agg[a] = means_agg[a] + 2*means[c]
+                    means_agg[a] = means_agg[a] + RFI_FACTOR*means[c]
                 elif (c == 'gwp665000'):
                     # gwp665000 is package holidays
-                    means_agg[a] = means_agg[a] + 2*means[c]
+                    means_agg[a] = means_agg[a] + RFI_FACTOR*means[c]
                 else:
                     means_agg[a] = means_agg[a] + means[c]
     return means_agg
+
 
 incmeans_agg = aggregate_categories(means_incdec, aggregation,
                                     displayname='Income decile group',
@@ -1420,14 +1436,15 @@ urbmeans_agg
 rentmeans_agg
 typemeans_agg
 typehhmeans_agg
-high_agg = extremes_agg.drop('10 max GWP')
-high_agg = high_agg.reindex(['1', '1 rich', '1 high GWP', '10', '10 rich', '10 high GWP'])
-high_agg
-high_agg.index = ['1', '1: richest',
-                  '1: highest GWP',
-                  '10', '10: richest',
-                  '10: highest GWP']
-high_agg['Decile group of lifetime income'] = high_agg.index
+highinc_agg = extremes_agg.drop('10 max GWP')
+highinc_agg = highinc_agg.reindex(['1', '1 rich', '1 high GWP',
+                                   '10', '10 rich', '10 high GWP'])
+highinc_agg
+highinc_agg.index = ['1', '1: richest',
+                     '1: highest GWP',
+                     '10', '10: richest',
+                     '10: highest GWP']
+highinc_agg['Decile group of lifetime income'] = highinc_agg.index
 sotomo_agg = sotomo_agg.drop('10 max GWP')
 sotomo_agg = sotomo_agg.reindex(['10', '10 rich', '10 high GWP', '10 sotomo rich'])
 sotomo_agg.index = ['10', '10: richest',
@@ -1484,10 +1501,10 @@ expmeans_intagg_mob_high =\
 
 type(expmeans_agg_mob)
 with pd.ExcelWriter("beobachter.xlsx") as writer:
-    expmeans_agg_mob.to_excel(writer,sheet_name='Abb. 8a')
-    expmeans_intagg_mob.to_excel(writer,sheet_name='Abb. 8b')
-    expmeans_agg_res.to_excel(writer,sheet_name='Abb. 9a')
-    expmeans_intagg_res.to_excel(writer,sheet_name='Abb. 9b')
+    expmeans_agg_mob.to_excel(writer, sheet_name='Abb. 8a')
+    expmeans_intagg_mob.to_excel(writer, sheet_name='Abb. 8b')
+    expmeans_agg_res.to_excel(writer, sheet_name='Abb. 9a')
+    expmeans_intagg_res.to_excel(writer, sheet_name='Abb. 9b')
 
 
 
@@ -1556,7 +1573,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
                     hscale=1,
                     colorpalette=mycolororder, rotate=None,
                     placelegend=True,
-                    halfhatch=False):
+                    nco2hatch=False):
     sns.set(font_scale=0.8)
     sns.set(style='darkgrid')
     if plotdata.columns[0] != xvar:
@@ -1569,7 +1586,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
                   title=figtitle, figsize=(12.5*cm, 9.3*cm*hscale),
                   ylabel=y_label, ax=ax, linewidth=0.1, edgecolor='black',
                   rot=rotate)
-    if halfhatch:
+    if nco2hatch:
         bottom_air = (
             plotdata[plotdata.columns[1]]
             + plotdata['Restaurants']
@@ -1609,7 +1626,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
             + plotdata[plotdata.columns[16]]
         )
         ax.bar(plotdata[xvar]-1,
-               plotdata['Transport services - Air']/2,
+               (RFI_FACTOR-1)*plotdata['Transport services - Air']/RFI_FACTOR,
                bottom=bottom_air,
                hatch='xxxxxxx',
                edgecolor='black',
@@ -1619,7 +1636,7 @@ def plot_categories(plotdata, filename, xvar='Decile group of lifetime income',
                color=mycolororder[11]
                )
         ax.bar(plotdata[xvar]-1,
-               plotdata['Package holidays']/2,
+               (RFI_FACTOR-1)*plotdata['Package holidays']/RFI_FACTOR,
                bottom=bottom_package,
                hatch='xxxxxxx',
                edgecolor='black',
@@ -1684,12 +1701,12 @@ plot_categories(plotdata=expmeans_agg,
                 xvar='Decile group of lifetime income', rotate=0)
 plot_categories(plotdata=expmeans_agg_high,
                 filename='gwp_high_cat',
-                y_max=21,
-                xvar='Decile group of lifetime income', rotate=0, halfhatch=True)
+                y_max=25,
+                xvar='Decile group of lifetime income', rotate=0, nco2hatch=True)
 plot_categories(plotdata=expmeans_agg_ch,
                 filename='gwp_cat_ch',
                 xvar='Country', rotate=0)
-plot_categories(plotdata=high_agg,
+plot_categories(plotdata=highinc_agg,
                 filename='gwp_cat_high',
                 xvar='Decile group of lifetime income',
                 y_max=35)

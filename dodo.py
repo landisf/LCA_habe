@@ -129,10 +129,8 @@ def task_lookat_HABE_LCA():
 def task_eval_carbonpricing():
     """Run python script for evaluating carbon pricing"""
 
-
     def copy_bsp(targets):
         shutil.copy('Dezil_Beispiele_git.xlsx', 'Dezil_Beispiele.xlsx')
-
 
     return {
         'file_dep': ['data-HABE151617/HABE151617_Standard.txt',
